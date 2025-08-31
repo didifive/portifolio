@@ -72,7 +72,11 @@ export const Header = () => {
       <nav className="w-full px-4 sm:px-6 lg:px-8 py-4">
         <div className="flex items-center justify-between w-full">
           {/* Logo */}
-          <div className="text-xl font-bold text-gradient">Maykon Sousa</div>
+          <div className="text-xl font-bold text-gradient">
+            <a href="#hero" aria-label="Maykon Sousa - Voltar ao início">
+              Maykon Sousa
+            </a>
+          </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
@@ -108,22 +112,32 @@ export const Header = () => {
               variant="ghost"
               size="icon"
               href="https://github.com/maykonsousa"
+              aria-label="Visitar perfil do GitHub de Maykon Sousa"
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              <FaGithub className="h-5 w-5" />
+              <FaGithub className="h-5 w-5" aria-hidden="true" />
+              <span className="sr-only">GitHub</span>
             </Button>
             <Button
               variant="ghost"
               size="icon"
               href="https://www.linkedin.com/in/maykonsousa"
+              aria-label="Conectar no LinkedIn com Maykon Sousa"
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              <FaLinkedin className="h-5 w-5" />
+              <FaLinkedin className="h-5 w-5" aria-hidden="true" />
+              <span className="sr-only">LinkedIn</span>
             </Button>
             <Button
               variant="ghost"
               size="icon"
               href="mailto:maykon.sousa@hotmail.com"
+              aria-label="Enviar email para Maykon Sousa"
             >
-              <FaRegEnvelope className="h-5 w-5" />
+              <FaRegEnvelope className="h-5 w-5" aria-hidden="true" />
+              <span className="sr-only">Email</span>
             </Button>
           </div>
 
@@ -133,17 +147,29 @@ export const Header = () => {
             size="icon"
             className="md:hidden"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label={
+              isMobileMenuOpen
+                ? "Fechar menu de navegação"
+                : "Abrir menu de navegação"
+            }
+            aria-expanded={isMobileMenuOpen}
+            aria-controls="mobile-navigation"
           >
             {isMobileMenuOpen ? (
-              <FaTimes className="h-5 w-5" />
+              <FaTimes className="h-5 w-5" aria-hidden="true" />
             ) : (
-              <FaAlignJustify className="h-5 w-5" />
+              <FaAlignJustify className="h-5 w-5" aria-hidden="true" />
             )}
           </Button>
         </div>
 
         {isMobileMenuOpen && (
-          <div className="md:hidden mt-4 pb-4 space-y-4">
+          <nav
+            id="mobile-navigation"
+            className="md:hidden mt-4 pb-4 space-y-4"
+            role="navigation"
+            aria-label="Menu de navegação móvel"
+          >
             {navItems.map((item) => {
               const sectionId = item.href.replace("#", "");
               const isActive = activeSection === sectionId;
@@ -169,17 +195,36 @@ export const Header = () => {
             <div className="flex items-center space-x-4 pt-4">
               <ThemeToggle />
               <div className="w-px h-6 bg-border"></div>
-              <Button variant="ghost" size="icon">
-                <FaGithub className="h-5 w-5" />
+              <Button
+                variant="ghost"
+                size="icon"
+                href="https://github.com/maykonsousa"
+                aria-label="Visitar GitHub"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaGithub className="h-5 w-5" aria-hidden="true" />
               </Button>
-              <Button variant="ghost" size="icon">
-                <FaLinkedin className="h-5 w-5" />
+              <Button
+                variant="ghost"
+                size="icon"
+                href="https://www.linkedin.com/in/maykonsousa"
+                aria-label="Conectar no LinkedIn"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaLinkedin className="h-5 w-5" aria-hidden="true" />
               </Button>
-              <Button variant="ghost" size="icon">
-                <FaRegEnvelope className="h-5 w-5" />
+              <Button
+                variant="ghost"
+                size="icon"
+                href="mailto:maykon.sousa@hotmail.com"
+                aria-label="Enviar email"
+              >
+                <FaRegEnvelope className="h-5 w-5" aria-hidden="true" />
               </Button>
             </div>
-          </div>
+          </nav>
         )}
       </nav>
     </header>

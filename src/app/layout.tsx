@@ -6,6 +6,8 @@ import { ThemeProvider } from "@/components/providers/theme-provider";
 import { Toaster } from "@/components/ui/Toaster";
 import { defaultMetadata } from "@/lib/metadata";
 import { HomeStructuredData } from "@/components/StructuredData";
+import { AccessibilityLandmarks } from "@/components/SkipLink";
+import { FontOptimization, CriticalCSS } from "@/components/FontOptimization";
 
 export const metadata: Metadata = defaultMetadata;
 
@@ -17,6 +19,8 @@ export default function RootLayout({
   return (
     <html lang="pt-BR" suppressHydrationWarning>
       <head>
+        <CriticalCSS />
+        <FontOptimization />
         <HomeStructuredData />
       </head>
       <body className="antialiased font-sans">
@@ -26,9 +30,11 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <Header />
-          <Main>{children}</Main>
-          <Toaster />
+          <AccessibilityLandmarks>
+            <Header />
+            <Main>{children}</Main>
+            <Toaster />
+          </AccessibilityLandmarks>
         </ThemeProvider>
       </body>
     </html>
