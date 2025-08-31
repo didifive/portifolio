@@ -135,7 +135,7 @@ export async function GET() {
               color: "#6b7280",
             }}
           >
-            maykonsousa.dev
+            {siteConfig.url.replace("https://", "")}
           </div>
         </div>
       ),

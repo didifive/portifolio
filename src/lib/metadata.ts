@@ -50,6 +50,12 @@ export const defaultMetadata: Metadata = {
       "en-US": "/en"
     }
   },
+  themeColor: "#000000",
+  viewport: {
+    width: "device-width",
+    initialScale: 1,
+    maximumScale: 1,
+  },
   openGraph: {
     type: "website",
     locale: siteConfig.locale,
@@ -86,6 +92,7 @@ export const defaultMetadata: Metadata = {
     }
   },
   verification: {
+    google: "tAxyfR4XFdg2jXrxt5HEBnb3CWlPandpx1OUEfOJ9RA",
     yandex: "",
     yahoo: "",
     other: {
