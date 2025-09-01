@@ -1,19 +1,21 @@
-import { About } from "@/components/About";
-import { Contact } from "@/components/Contact";
-import { Experience } from "@/components/Experience";
-import { Footer } from "@/components/Footer";
 import { Hero } from "@/components/Hero";
-import { Projects } from "@/components/Projects";
+import { 
+  LazyAbout, 
+  LazyExperience, 
+  LazyProjects, 
+  LazyContact, 
+  LazyFooter 
+} from "@/components/LazyComponents";
 
 export default function Home() {
   return (
     <>
       <Hero />
-      <About />
-      <Experience />
-      <Projects />
-      <Contact />
-      <Footer />
+      <LazyAbout />
+      <LazyExperience />
+      <LazyProjects />
+      <LazyContact />
+      <LazyFooter />
     </>
   );
 }

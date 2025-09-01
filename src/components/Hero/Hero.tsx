@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { Button } from "../ui/Button";
-import { FiArrowDown, FiDownload, FiMail } from "react-icons/fi";
+import { FiArrowDown, FiDownload, FiMail } from "@/components/OptimizedIcons";
 import { handleNavClick } from "@/lib/utils";
 
 export const Hero = () => {
