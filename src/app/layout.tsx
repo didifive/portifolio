@@ -8,6 +8,7 @@ import { defaultMetadata } from "@/lib/metadata";
 import { HomeStructuredData } from "@/components/StructuredData";
 import { AccessibilityLandmarks } from "@/components/SkipLink";
 import { FontOptimization, CriticalCSS } from "@/components/FontOptimization";
+import { PerformanceOptimizations } from "@/components/Performance";
 
 export const metadata: Metadata = defaultMetadata;
 
@@ -34,6 +35,7 @@ export default function RootLayout({
             <Header />
             <Main>{children}</Main>
             <Toaster />
+            <PerformanceOptimizations />
           </AccessibilityLandmarks>
         </ThemeProvider>
       </body>

@@ -7,7 +7,7 @@ import {
   FaTimes,
   FaAlignJustify,
   FaRegEnvelope,
-} from "@/components/OptimizedIcons";
+} from "react-icons/fa";
 import { Button } from "../ui/Button";
 import { ThemeToggle } from "../ThemeToggle";
 import { useActiveSection } from "@/hooks/useActiveSection";

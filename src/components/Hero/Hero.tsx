@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { Button } from "../ui/Button";
-import { FiArrowDown, FiDownload, FiMail } from "@/components/OptimizedIcons";
+import { FiArrowDown, FiDownload, FiMail } from "react-icons/fi";
 import { handleNavClick } from "@/lib/utils";
 
 export const Hero = () => {
@@ -19,7 +19,8 @@ export const Hero = () => {
         className="absolute inset-0 opacity-20 dark:opacity-30 object-cover"
         priority={false}
         sizes="100vw"
-        quality={60}
+        quality={50}
+        loading="lazy"
       />
 
       {/* Overlay for better contrast */}
@@ -36,6 +37,7 @@ export const Hero = () => {
                 sizes="(max-width: 768px) 128px, (max-width: 1024px) 192px, 208px"
                 className="rounded-full shadow-glow object-cover"
                 priority
+                loading="eager"
               />
             </div>
           </div>
