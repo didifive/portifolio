@@ -250,10 +250,10 @@ npm run test:coverage # Cobertura de testes
 
 **Maykon Sousa** - Software Engineer
 
-- 🌐 **Site**: [maykonsousa.dev](https://maykonsousa.dev)
+- 🌐 **Site**: [maykonsousa.dev.br](https://maykonsousa.dev.br)
 - 📧 **Email**: maykon.sousa@hotmail.com
 - 💼 **LinkedIn**: [linkedin.com/in/maykonsousa](https://linkedin.com/in/maykonsousa)
-- 📱 **WhatsApp**: [Clique aqui para conversar](https://wa.me/5511999999999)
+- 📱 **WhatsApp**: [Clique aqui para conversar](https://wa.me/5561992943297)
 
 ---
 
@@ -265,5 +265,5 @@ Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para ma
 
 <div align="center">
   <p>⭐ Se este projeto te ajudou, deixe uma estrela!</p>
-  <p>Desenvolvido com 💜 por <strong>Maykon Sousa</strong></p>
+  
 </div>
