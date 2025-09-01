@@ -8,12 +8,16 @@ export const useActiveSection = () => {
   const [activeSection, setActiveSection] = useState("hero");
 
   useEffect(() => {
+    let timeoutId: number | null = null;
+    
     const updateActiveSection = () => {
-      const headerOffset = 120; // Altura do header + margem
+      const headerOffset = 120;
       
-      // Verifica qual seção está mais próxima do topo
-      for (let i = sections.length - 1; i >= 0; i--) {
-        const element = document.getElementById(sections[i]);
+      // Cache elements para evitar re-queries
+      const elements = sections.map(id => document.getElementById(id)).filter(Boolean);
+      
+      for (let i = elements.length - 1; i >= 0; i--) {
+        const element = elements[i];
         if (element) {
           const rect = element.getBoundingClientRect();
           if (rect.top <= headerOffset) {
@@ -24,23 +28,23 @@ export const useActiveSection = () => {
       }
     };
 
-    // Atualiza inicialmente
-    updateActiveSection();
-
-    // Listener de scroll com throttle para performance
-    let ticking = false;
+    // Debounced scroll handler para reduzir overhead
     const handleScroll = () => {
-      if (!ticking) {
-        requestAnimationFrame(() => {
-          updateActiveSection();
-          ticking = false;
-        });
-        ticking = true;
+      if (timeoutId) {
+        clearTimeout(timeoutId);
       }
+      
+      timeoutId = window.setTimeout(updateActiveSection, 100); // Debounce 100ms
     };
 
+    // Atualiza inicialmente apenas uma vez
+    setTimeout(updateActiveSection, 500);
+
     window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      if (timeoutId) clearTimeout(timeoutId);
+    };
   }, []);
 
   return { activeSection, setActiveSection };

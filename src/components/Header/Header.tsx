@@ -2,12 +2,12 @@
 
 import { useState, useEffect } from "react";
 import {
-  FaGithub,
-  FaLinkedin,
-  FaTimes,
-  FaAlignJustify,
-  FaRegEnvelope,
-} from "react-icons/fa";
+  GithubIcon,
+  LinkedinIcon,
+  CloseIcon,
+  MenuIcon,
+  MailIcon,
+} from "@/components/MinimalIcons";
 import { Button } from "../ui/Button";
 import { ThemeToggle } from "../ThemeToggle";
 import { useActiveSection } from "@/hooks/useActiveSection";
@@ -116,7 +116,7 @@ export const Header = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <FaGithub className="h-5 w-5" aria-hidden="true" />
+              <GithubIcon className="h-5 w-5" aria-hidden="true" />
               <span className="sr-only">GitHub</span>
             </Button>
             <Button
@@ -127,7 +127,7 @@ export const Header = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <FaLinkedin className="h-5 w-5" aria-hidden="true" />
+              <LinkedinIcon className="h-5 w-5" aria-hidden="true" />
               <span className="sr-only">LinkedIn</span>
             </Button>
             <Button
@@ -136,7 +136,7 @@ export const Header = () => {
               href="mailto:maykon.sousa@hotmail.com"
               aria-label="Enviar email para Maykon Sousa"
             >
-              <FaRegEnvelope className="h-5 w-5" aria-hidden="true" />
+              <MailIcon className="h-5 w-5" aria-hidden="true" />
               <span className="sr-only">Email</span>
             </Button>
           </div>
@@ -156,9 +156,9 @@ export const Header = () => {
             aria-controls="mobile-navigation"
           >
             {isMobileMenuOpen ? (
-              <FaTimes className="h-5 w-5" aria-hidden="true" />
+              <CloseIcon className="h-5 w-5" aria-hidden="true" />
             ) : (
-              <FaAlignJustify className="h-5 w-5" aria-hidden="true" />
+              <MenuIcon className="h-5 w-5" aria-hidden="true" />
             )}
           </Button>
         </div>
@@ -203,7 +203,7 @@ export const Header = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <FaGithub className="h-5 w-5" aria-hidden="true" />
+                <GithubIcon className="h-5 w-5" aria-hidden="true" />
               </Button>
               <Button
                 variant="ghost"
@@ -213,7 +213,7 @@ export const Header = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <FaLinkedin className="h-5 w-5" aria-hidden="true" />
+                <LinkedinIcon className="h-5 w-5" aria-hidden="true" />
               </Button>
               <Button
                 variant="ghost"
@@ -221,7 +221,7 @@ export const Header = () => {
                 href="mailto:maykon.sousa@hotmail.com"
                 aria-label="Enviar email"
               >
-                <FaRegEnvelope className="h-5 w-5" aria-hidden="true" />
+                <MailIcon className="h-5 w-5" aria-hidden="true" />
               </Button>
             </div>
           </nav>

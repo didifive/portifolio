@@ -2,7 +2,11 @@
 
 import Image from "next/image";
 import { Button } from "../ui/Button";
-import { FiArrowDown, FiDownload, FiMail } from "react-icons/fi";
+import {
+  ArrowDownIcon,
+  DownloadIcon,
+  MailIcon,
+} from "@/components/MinimalIcons";
 import { handleNavClick } from "@/lib/utils";
 
 export const Hero = () => {
@@ -98,7 +102,7 @@ export const Hero = () => {
                 handleNavClick(e, "#contact")
               }
             >
-              <FiMail className="h-5 w-5" aria-hidden="true" />
+              <MailIcon className="h-5 w-5" aria-hidden="true" />
               Entre em Contato
             </Button>
             <Button
@@ -110,7 +114,7 @@ export const Hero = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <FiDownload className="h-5 w-5" aria-hidden="true" />
+              <DownloadIcon className="h-5 w-5" aria-hidden="true" />
               Download CV
             </Button>
           </div>
@@ -129,7 +133,7 @@ export const Hero = () => {
                 handleNavClick(e, "#about")
               }
             >
-              <FiArrowDown
+              <ArrowDownIcon
                 className="h-5 w-5 text-primary dark:text-blue-400 animate-bounce"
                 aria-hidden="true"
               />

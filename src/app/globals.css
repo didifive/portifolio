@@ -50,7 +50,7 @@ html {
   }
 }
 
-/* Reduced motion support */
+/* Reduced motion support + Performance optimization */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -64,6 +64,25 @@ html {
   .animate-bounce {
     animation: none !important;
   }
+}
+
+/* Performance: Reduzir animações pesadas por padrão */
+.animate-bounce {
+  animation-duration: 1.5s !important; /* Mais lento = menos overhead */
+}
+
+/* Otimização: will-change apenas quando necessário */
+.optimized-animation {
+  will-change: auto;
+}
+
+.optimized-animation:hover {
+  will-change: transform;
+}
+
+/* Reduzir transições complexas */
+* {
+  transition-duration: 0.15s; /* Padrão mais rápido */
 }
 
 /* Modern Developer Portfolio Design System 
