@@ -50,11 +50,11 @@ export const defaultMetadata: Metadata = {
       "en-US": "/en"
     }
   },
-
-  icons: {
-    icon: "/favicon.ico",
-    shortcut: "/favicon-16x16.png",
-    apple: "/apple-touch-icon.png",
+  themeColor: "#000000",
+  viewport: {
+    width: "device-width",
+    initialScale: 1,
+    maximumScale: 1,
   },
   openGraph: {
     type: "website",

@@ -2,11 +2,7 @@
 
 import Image from "next/image";
 import { Button } from "../ui/Button";
-import {
-  ArrowDownIcon,
-  DownloadIcon,
-  MailIcon,
-} from "@/components/MinimalIcons";
+import { FiArrowDown, FiDownload, FiMail } from "react-icons/fi";
 import { handleNavClick } from "@/lib/utils";
 
 export const Hero = () => {
@@ -15,16 +11,14 @@ export const Hero = () => {
       id="hero"
       className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-subtle pt-20 md:pt-16"
     >
-      {/* Background Image Otimizada */}
-      <Image
-        src="/hero-bg.jpg"
-        alt=""
-        fill
-        className="absolute inset-0 opacity-20 dark:opacity-30 object-cover"
-        priority={false}
-        sizes="100vw"
-        quality={50}
-        loading="lazy"
+      {/* Background Image */}
+      <div
+        className="absolute inset-0 opacity-20 dark:opacity-30"
+        style={{
+          backgroundImage: `url(/hero-bg.jpg)`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
       />
 
       {/* Overlay for better contrast */}
@@ -36,12 +30,11 @@ export const Hero = () => {
             <div className="relative w-32 h-32 md:w-48 md:h-48 lg:w-52 lg:h-52">
               <Image
                 src="/avatar-img.jpg"
-                alt="Foto do perfil de Maykon Sousa, desenvolvedor full stack sorrindo"
+                alt="Maykon Sousa"
                 fill
                 sizes="(max-width: 768px) 128px, (max-width: 1024px) 192px, 208px"
                 className="rounded-full shadow-glow object-cover"
                 priority
-                loading="eager"
               />
             </div>
           </div>
@@ -93,28 +86,12 @@ export const Hero = () => {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-            <Button
-              variant="hero"
-              size="xl"
-              className="font-semibold"
-              aria-label="Entrar em contato com Maykon Sousa"
-              onClick={(e: React.MouseEvent<HTMLButtonElement>) =>
-                handleNavClick(e, "#contact")
-              }
-            >
-              <MailIcon className="h-5 w-5" aria-hidden="true" />
+            <Button variant="hero" size="xl" className="font-semibold">
+              <FiMail className="h-5 w-5" />
               Entre em Contato
             </Button>
-            <Button
-              variant="outline"
-              size="xl"
-              className="font-semibold"
-              aria-label="Baixar currículo de Maykon Sousa em PDF"
-              href="/cv-maykon-sousa.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <DownloadIcon className="h-5 w-5" aria-hidden="true" />
+            <Button variant="outline" size="xl" className="font-semibold">
+              <FiDownload className="h-5 w-5" />
               Download CV
             </Button>
           </div>
@@ -128,16 +105,11 @@ export const Hero = () => {
               variant="ghost"
               size="icon"
               className="animate-bounce"
-              aria-label="Rolar para a seção sobre mim"
               onClick={(e: React.MouseEvent<HTMLButtonElement>) =>
                 handleNavClick(e, "#about")
               }
             >
-              <ArrowDownIcon
-                className="h-5 w-5 text-primary dark:text-blue-400 animate-bounce"
-                aria-hidden="true"
-              />
-              <span className="sr-only">Ir para seção sobre</span>
+              <FiArrowDown className="h-5 w-5 text-primary dark:text-blue-400 animate-bounce" />
             </Button>
           </div>
         </div>

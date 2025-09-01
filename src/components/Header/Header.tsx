@@ -2,12 +2,12 @@
 
 import { useState, useEffect } from "react";
 import {
-  GithubIcon,
-  LinkedinIcon,
-  CloseIcon,
-  MenuIcon,
-  MailIcon,
-} from "@/components/MinimalIcons";
+  FaGithub,
+  FaLinkedin,
+  FaTimes,
+  FaAlignJustify,
+  FaRegEnvelope,
+} from "react-icons/fa";
 import { Button } from "../ui/Button";
 import { ThemeToggle } from "../ThemeToggle";
 import { useActiveSection } from "@/hooks/useActiveSection";
@@ -72,11 +72,7 @@ export const Header = () => {
       <nav className="w-full px-4 sm:px-6 lg:px-8 py-4">
         <div className="flex items-center justify-between w-full">
           {/* Logo */}
-          <div className="text-xl font-bold text-gradient">
-            <a href="#hero" aria-label="Maykon Sousa - Voltar ao início">
-              Maykon Sousa
-            </a>
-          </div>
+          <div className="text-xl font-bold text-gradient">Maykon Sousa</div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
@@ -112,32 +108,22 @@ export const Header = () => {
               variant="ghost"
               size="icon"
               href="https://github.com/maykonsousa"
-              aria-label="Visitar perfil do GitHub de Maykon Sousa"
-              target="_blank"
-              rel="noopener noreferrer"
             >
-              <GithubIcon className="h-5 w-5" aria-hidden="true" />
-              <span className="sr-only">GitHub</span>
+              <FaGithub className="h-5 w-5" />
             </Button>
             <Button
               variant="ghost"
               size="icon"
               href="https://www.linkedin.com/in/maykonsousa"
-              aria-label="Conectar no LinkedIn com Maykon Sousa"
-              target="_blank"
-              rel="noopener noreferrer"
             >
-              <LinkedinIcon className="h-5 w-5" aria-hidden="true" />
-              <span className="sr-only">LinkedIn</span>
+              <FaLinkedin className="h-5 w-5" />
             </Button>
             <Button
               variant="ghost"
               size="icon"
               href="mailto:maykon.sousa@hotmail.com"
-              aria-label="Enviar email para Maykon Sousa"
             >
-              <MailIcon className="h-5 w-5" aria-hidden="true" />
-              <span className="sr-only">Email</span>
+              <FaRegEnvelope className="h-5 w-5" />
             </Button>
           </div>
 
@@ -147,29 +133,17 @@ export const Header = () => {
             size="icon"
             className="md:hidden"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            aria-label={
-              isMobileMenuOpen
-                ? "Fechar menu de navegação"
-                : "Abrir menu de navegação"
-            }
-            aria-expanded={isMobileMenuOpen}
-            aria-controls="mobile-navigation"
           >
             {isMobileMenuOpen ? (
-              <CloseIcon className="h-5 w-5" aria-hidden="true" />
+              <FaTimes className="h-5 w-5" />
             ) : (
-              <MenuIcon className="h-5 w-5" aria-hidden="true" />
+              <FaAlignJustify className="h-5 w-5" />
             )}
           </Button>
         </div>
 
         {isMobileMenuOpen && (
-          <nav
-            id="mobile-navigation"
-            className="md:hidden mt-4 pb-4 space-y-4"
-            role="navigation"
-            aria-label="Menu de navegação móvel"
-          >
+          <div className="md:hidden mt-4 pb-4 space-y-4">
             {navItems.map((item) => {
               const sectionId = item.href.replace("#", "");
               const isActive = activeSection === sectionId;
@@ -195,36 +169,17 @@ export const Header = () => {
             <div className="flex items-center space-x-4 pt-4">
               <ThemeToggle />
               <div className="w-px h-6 bg-border"></div>
-              <Button
-                variant="ghost"
-                size="icon"
-                href="https://github.com/maykonsousa"
-                aria-label="Visitar GitHub"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <GithubIcon className="h-5 w-5" aria-hidden="true" />
+              <Button variant="ghost" size="icon">
+                <FaGithub className="h-5 w-5" />
               </Button>
-              <Button
-                variant="ghost"
-                size="icon"
-                href="https://www.linkedin.com/in/maykonsousa"
-                aria-label="Conectar no LinkedIn"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <LinkedinIcon className="h-5 w-5" aria-hidden="true" />
+              <Button variant="ghost" size="icon">
+                <FaLinkedin className="h-5 w-5" />
               </Button>
-              <Button
-                variant="ghost"
-                size="icon"
-                href="mailto:maykon.sousa@hotmail.com"
-                aria-label="Enviar email"
-              >
-                <MailIcon className="h-5 w-5" aria-hidden="true" />
+              <Button variant="ghost" size="icon">
+                <FaRegEnvelope className="h-5 w-5" />
               </Button>
             </div>
-          </nav>
+          </div>
         )}
       </nav>
     </header>
