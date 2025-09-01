@@ -1,29 +1,17 @@
-"use client";
-
 export function FontOptimization() {
   return (
     <>
-      {/* Preload critical fonts */}
-      <link
-        rel="preload"
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
-        as="style"
-        onLoad="this.onload=null;this.rel='stylesheet'"
-      />
-
-      {/* Fallback for non-JS environments */}
-      <noscript>
-        <link
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
-          rel="stylesheet"
-        />
-      </noscript>
-
       {/* DNS prefetch for external resources */}
       <link rel="dns-prefetch" href="//fonts.googleapis.com" />
       <link rel="dns-prefetch" href="//fonts.gstatic.com" />
       <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
+
+      {/* Load fonts with display=swap for better performance */}
+      <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+      />
     </>
   );
 }

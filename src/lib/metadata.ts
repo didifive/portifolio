@@ -50,12 +50,7 @@ export const defaultMetadata: Metadata = {
       "en-US": "/en"
     }
   },
-  themeColor: "#000000",
-  viewport: {
-    width: "device-width",
-    initialScale: 1,
-    maximumScale: 1,
-  },
+
   icons: {
     icon: "/favicon.ico",
     shortcut: "/favicon-16x16.png",
