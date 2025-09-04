@@ -60,18 +60,18 @@ export const Hero = () => {
           <div className="mb-8 flex flex-wrap justify-center gap-8 text-sm">
             <div className="flex flex-col items-center">
               <span className="text-2xl font-bold text-primary dark:text-blue-400">
-                15+
+                15+ Anos
               </span>
               <span className="text-foreground/70 dark:text-white/80">
-                Anos de Experiência em TI
+                de Experiência em TI
               </span>
             </div>
             <div className="flex flex-col items-center">
               <span className="text-2xl font-bold text-primary dark:text-blue-400">
-                3+
+                3+ Anos
               </span>
               <span className="text-foreground/70 dark:text-white/80">
-                Anos de Experiência como Dev
+                de Experiência como Dev
               </span>
             </div>
             <div className="flex flex-col items-center">

@@ -5,26 +5,13 @@ import { Button } from "../ui/Button";
 import { Card, CardContent } from "../ui/Card";
 import { FiGithub } from "react-icons/fi";
 import { Badge } from "../ui/Badge";
+import type { GithubProjectEnriched } from "@/app/api/github/route";
 
 const projectLimit = 6;
 
-type GithubProject = {
-  id: number;
-  name: string;
-  html_url: string;
-  description: string;
-  stargazers_count: number;
-  forks_count: number;
-  language: string;
-  languages_url: string;
-  languages: string[];
-  topics: string[];
-  fork: boolean;
-};
-
 export const Projects = () => {
   const GITHUB_USERNAME = "didifive";
-  const [projects, setProjects] = useState<GithubProject[]>([]);
+  const [projects, setProjects] = useState<GithubProjectEnriched[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -33,62 +20,11 @@ export const Projects = () => {
       try {
         setLoading(true);
         setError(null);
-        const GITHUB_TOKEN = process.env.NEXT_PUBLIC_GITHUB_TOKEN; // Token GitHub para autenticação https://github.com/settings/tokens
 
-        const res = await fetch(`https://api.github.com/users/${GITHUB_USERNAME}/repos?per_page=100`, {
-          headers: GITHUB_TOKEN ? { Authorization: `token ${GITHUB_TOKEN}` } : {}
-        });
+        const res = await fetch("/api/github");
         if (!res.ok) throw new Error("Erro ao buscar projetos do GitHub");
-        const data: GithubProject[] = await res.json();
-        const filtered = data
-          .filter(p => !p.fork)
-          .sort((a, b) => {
-            if (b.stargazers_count !== a.stargazers_count) {
-              return b.stargazers_count - a.stargazers_count;
-            }
-            return b.forks_count - a.forks_count;
-          })
-          .slice(0, projectLimit);
-
-        // Buscar linguagens e topics para cada projeto
-        const enrichedProjects: GithubProject[] = await Promise.all(
-          filtered.map(async (repo) => {
-            // Linguagens
-            let languages: string[] = [];
-            try {
-              const headers = {
-                Authorization: `token ${GITHUB_TOKEN}`,
-                Accept: "application/vnd.github.mercy-preview+json", // para topics
-              };
-              const langRes = await fetch(repo.languages_url, { headers });
-              if (langRes.ok) {
-                const langData = await langRes.json();
-                languages = Object.keys(langData);
-              }
-            } catch {}
-
-            // Topics
-            let topics: string[] = [];
-            try {
-              const headers = {
-                Authorization: `token ${GITHUB_TOKEN}`,
-                Accept: "application/vnd.github.mercy-preview+json", // para topics
-              };
-              const topicRes = await fetch(`https://api.github.com/repos/${GITHUB_USERNAME}/${repo.name}/topics`, { headers });
-              if (topicRes.ok) {
-                const topicData = await topicRes.json();
-                topics = topicData.names || [];
-              }
-            } catch {}
-
-            return {
-              ...repo,
-              languages,
-              topics,
-            };
-          })
-        );
-        setProjects(enrichedProjects);
+        const data: GithubProjectEnriched[] = await res.json();
+        setProjects(data);
       } catch (err: unknown) {
         if (err instanceof Error) {
           setError(err.message);
@@ -181,23 +117,13 @@ export const Projects = () => {
                         <Badge variant="secondary" className="text-xs cursor-pointer">
                           ⭐ {project.stargazers_count}
                         </Badge>
-                        <Badge variant="secondary" className="text-xs cursor-pointer">
-                          🍴 {project.forks_count}
-                        </Badge>
-                        {/* Tags (topics) - até 5, resto +N */}
-                        {project.topics && project.topics.length > 0 && (
-                          <>
-                            {project.topics.slice(0, 5).map(topic => (
-                              <Badge key={topic} variant="outline" className="text-xs cursor-pointer">
-                                #{topic}
-                              </Badge>
-                            ))}
-                            {project.topics.length > 5 && (
-                              <Badge variant="outline" className="text-xs cursor-pointer">
-                                +{project.topics.length - 5}
-                              </Badge>
-                            )}
-                          </>
+                        {project.topics.length > 3 && (
+                          <Badge
+                            variant="secondary"
+                            className="text-xs cursor-pointer"
+                          >
+                            +{project.topics.length - 3}
+                          </Badge>
                         )}
                       </div>
                     </CardContent>
