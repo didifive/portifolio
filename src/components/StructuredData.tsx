@@ -14,11 +14,10 @@ export function StructuredData({
     "@type": "Person",
     name: siteConfig.author.name,
     url: siteConfig.url,
-    image: `${siteConfig.url}/avatar-img.jpg`,
+    image: `${siteConfig.url}/avatar-img.png`,
     sameAs: [
       siteConfig.author.linkedin,
       siteConfig.author.github,
-      `https://twitter.com/${siteConfig.author.twitter.replace("@", "")}`,
     ],
     jobTitle: "Desenvolvedor Full Stack",
     worksFor: {
@@ -113,11 +112,10 @@ export function HomeStructuredData() {
     "@type": "Person",
     name: siteConfig.author.name,
     url: siteConfig.url,
-    image: `${siteConfig.url}/avatar-img.jpg`,
+    image: `${siteConfig.url}/avatar-img.png`,
     sameAs: [
       siteConfig.author.linkedin,
       siteConfig.author.github,
-      `https://twitter.com/${siteConfig.author.twitter.replace("@", "")}`,
     ],
     jobTitle: "Desenvolvedor Full Stack",
     worksFor: {

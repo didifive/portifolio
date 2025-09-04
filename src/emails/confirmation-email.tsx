@@ -11,6 +11,7 @@ import {
   Button,
   Link,
 } from "@react-email/components";
+import { urls } from "@/lib/urls";
 import { FaLinkedin, FaRegEnvelope, FaWhatsapp } from "react-icons/fa";
 
 interface ConfirmationEmailProps {
@@ -69,7 +70,7 @@ export default function ConfirmationEmail({
               </Button>
 
               <Button
-                href="https://www.linkedin.com/in/maykonsousa"
+                href={urls.linkedin}
                 style={linkedinButtonStyle}
               >
                 <FaLinkedin /> LinkedIn
@@ -108,7 +109,7 @@ export default function ConfirmationEmail({
 
           <div style={footerStyle}>
             <Text style={footerTextStyle}>
-              <strong>Maykon Sousa</strong>
+              <strong>Luis Zancanela</strong>
               <br />
               Desenvolvedor Full Stack
               <br />
@@ -117,22 +118,22 @@ export default function ConfirmationEmail({
 
             <Text style={footerTextStyle}>
               <FaRegEnvelope />{" "}
-              <Link href="mailto:maykon.sousa@hotmail.com" style={linkStyle}>
-                maykon.sousa@hotmail.com
+              <Link href={urls.mailto} style={linkStyle}>
+                {urls.email}
               </Link>
               <br />
               <FaLinkedin />{" "}
               <Link
-                href="https://www.linkedin.com/in/maykonsousa"
+                href={urls.linkedin}
                 style={linkStyle}
               >
                 LinkedIn
               </Link>
-              <br />
+              {/* <br />
               <FaWhatsapp />{" "}
               <Link href="https://wa.me/5561992943297" style={linkStyle}>
                 WhatsApp: +55 (61) 99294-3297
-              </Link>
+              </Link> */}
             </Text>
 
             <Text style={disclaimerStyle}>

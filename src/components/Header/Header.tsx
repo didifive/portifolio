@@ -11,6 +11,7 @@ import {
 import { Button } from "../ui/Button";
 import { ThemeToggle } from "../ThemeToggle";
 import { useActiveSection } from "@/hooks/useActiveSection";
+import { urls } from "@/lib/urls";
 
 export const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -72,7 +73,7 @@ export const Header = () => {
       <nav className="w-full px-4 sm:px-6 lg:px-8 py-4">
         <div className="flex items-center justify-between w-full">
           {/* Logo */}
-          <div className="text-xl font-bold text-gradient">Maykon Sousa</div>
+          <div className="text-xl font-bold text-gradient">Luis Zancanela</div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
@@ -107,21 +108,21 @@ export const Header = () => {
             <Button
               variant="ghost"
               size="icon"
-              href="https://github.com/maykonsousa"
+              href={urls.github}
             >
               <FaGithub className="h-5 w-5" />
             </Button>
             <Button
               variant="ghost"
               size="icon"
-              href="https://www.linkedin.com/in/maykonsousa"
+              href={urls.linkedin}
             >
               <FaLinkedin className="h-5 w-5" />
             </Button>
             <Button
               variant="ghost"
               size="icon"
-              href="mailto:maykon.sousa@hotmail.com"
+              href={urls.mailto}
             >
               <FaRegEnvelope className="h-5 w-5" />
             </Button>

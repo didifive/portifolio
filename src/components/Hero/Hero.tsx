@@ -2,8 +2,9 @@
 
 import Image from "next/image";
 import { Button } from "../ui/Button";
-import { FiArrowDown, FiDownload, FiMail } from "react-icons/fi";
+import { FiArrowDown, FiMail } from "react-icons/fi";
 import { handleNavClick } from "@/lib/utils";
+import { urls } from "@/lib/urls";
 
 export const Hero = () => {
   return (
@@ -15,7 +16,7 @@ export const Hero = () => {
       <div
         className="absolute inset-0 opacity-20 dark:opacity-30"
         style={{
-          backgroundImage: `url(/hero-bg.jpg)`,
+          backgroundImage: `url(/hero-bg.png)`,
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
@@ -29,8 +30,8 @@ export const Hero = () => {
           <div className="mb-6 flex justify-center">
             <div className="relative w-32 h-32 md:w-48 md:h-48 lg:w-52 lg:h-52">
               <Image
-                src="/avatar-img.jpg"
-                alt="Maykon Sousa"
+                src="/avatar-img.png"
+                alt="Luis Zancanela"
                 fill
                 sizes="(max-width: 768px) 128px, (max-width: 1024px) 192px, 208px"
                 className="rounded-full shadow-glow object-cover"
@@ -40,7 +41,7 @@ export const Hero = () => {
           </div>
 
           <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-5xl 2xl:text-7xl font-bold mb-4 text-foreground dark:text-white">
-            Maykon Sousa
+            Luis Zancanela
           </h1>
 
           <div className="mb-6 flex justify-center">
@@ -50,28 +51,27 @@ export const Hero = () => {
           </div>
 
           <p className="text-base md:text-lg lg:text-lg xl:text-lg 2xl:text-2xl text-foreground/80 dark:text-white/90 mb-4 max-w-3xl mx-auto leading-relaxed">
-            Fullstack Developer focado em construir produtos digitais completos
-            tanto para plataformas web quanto mobile. Atuo hoje com tecnologias
-            modernas e escaláveis como React, Node, React Native e venho me
-            capacitando também em Java e Kotlin.
+            Desenvolvedor Back-End com Java, Spring e Apache Camel 
+            que também mexe no Front-End com Javascript e TypeScript.
+            Criando soluções modernas e eficientes em nuvem ou on-premises.
           </p>
 
           {/* Experience Stats */}
           <div className="mb-8 flex flex-wrap justify-center gap-8 text-sm">
             <div className="flex flex-col items-center">
               <span className="text-2xl font-bold text-primary dark:text-blue-400">
-                5+
+                15+
               </span>
               <span className="text-foreground/70 dark:text-white/80">
-                Anos de Experiência
+                Anos de Experiência em TI
               </span>
             </div>
             <div className="flex flex-col items-center">
               <span className="text-2xl font-bold text-primary dark:text-blue-400">
-                20+
+                3+
               </span>
               <span className="text-foreground/70 dark:text-white/80">
-                Projetos Entregues
+                Anos de Experiência como Dev
               </span>
             </div>
             <div className="flex flex-col items-center">
@@ -86,14 +86,19 @@ export const Hero = () => {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-            <Button variant="hero" size="xl" className="font-semibold">
+            <Button 
+            variant="hero" 
+            size="xl" 
+            className="font-semibold"
+            href={urls.linkedin}
+            target="_blank">
               <FiMail className="h-5 w-5" />
               Entre em Contato
             </Button>
-            <Button variant="outline" size="xl" className="font-semibold">
+            {/* <Button variant="outline" size="xl" className="font-semibold">
               <FiDownload className="h-5 w-5" />
               Download CV
-            </Button>
+            </Button> */}
           </div>
 
           {/* Scroll Indicator */}

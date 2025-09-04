@@ -49,13 +49,13 @@ export function SEOHead({
       <meta property="og:site_name" content={siteConfig.name} />
       <meta property="og:locale" content="pt_BR" />
 
-      {/* Twitter Cards */}
+      {/* Twitter Cards
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={pageTitle} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={imageUrl} />
       <meta name="twitter:creator" content={siteConfig.author.twitter} />
-      <meta name="twitter:site" content={siteConfig.author.twitter} />
+      <meta name="twitter:site" content={siteConfig.author.twitter} /> */}
 
       {/* Meta tags adicionais */}
       <meta name="author" content={siteConfig.author.name} />

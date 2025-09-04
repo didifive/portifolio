@@ -6,74 +6,24 @@ import { FiCalendar, FiMapPin } from "react-icons/fi";
 export const Experience = () => {
   const experiences = [
     {
-      company: "Mercado Livre",
+      company: "GFT Technologies",
       position: "Software Engineer",
-      period: "Mai 2024 - Presente",
-      location: "São Paulo, SP - Híbrida",
+      period: "Mai 2022 - Presente",
+      location: "São Paulo, SP - Remoto",
       type: "Tempo Integral",
-      description:
-        "Atuando no desenvolvimento de soluções escaláveis para uma das maiores plataformas de e-commerce da América Latina.",
-      skills: ["TypeScript", "React.js", "Node.js", "Jenkins", "Docker"],
+      description: "Atendendo cliente do setor bancário desenvolvendo e sustentando APIs Java com Spring e Apache Camel em equipe ágil e ambientes cloud e on-premise.",
+      skills: ["Java", "Spring Boot", "Apache Camel", "Azure", "Azure DevOps", "APIs REST", "Microservices"],
       current: true,
     },
     {
-      company: "MODALGR",
-      position: "Software Developer",
-      period: "Set 2023 - Mai 2024",
-      location: "Santos, SP - Remota",
+      company: "Prefeitura Municipal de Orlândia",
+      position: "Monitor de Informática",
+      period: "Abr 2007 - Mai 2022",
+      location: "Orlândia, SP - Presencial",
       type: "Tempo Integral",
       description:
-        "Atuei em um time multifuncional focado na construção de uma plataforma completa de gestão, desenvolvendo soluções com tecnologias modernas.",
-      skills: ["React.js", "AWS ", "Node.js", "GraphQL", "React Native", "UX"],
-      current: false,
-    },
-    {
-      company: "Radix Engenharia e Software",
-      position: "Desenvolvedor de Software Pleno II",
-      period: "Fev 2023 - Set 2023",
-      location: "Rio de Janeiro, RJ - Remota",
-      type: "Tempo Integral",
-      description:
-        "Trabalhei em um produto interno para automatizar e facilitar o gerenciamento de projetos de software, focando em qualidade de código, escalabilidade e segurança.",
-      skills: [
-        "Next.js",
-        "Node.js",
-        ".NET",
-        "GraphQL",
-        "Strapi",
-        "Azure DevOps",
-        "Docker",
-      ],
-      current: false,
-    },
-    {
-      company: "PagBank PagSeguro",
-      position: "Software Engineer",
-      period: "Jun 2021 - Fev 2023",
-      location: "São Paulo, SP",
-      type: "Tempo Integral",
-      description:
-        "Atuei em times multidisciplinares focados na evolução e sustentação de uma plataforma própria para auxiliar os times de atendimento, trabalhando com tecnologias de ponta.",
-      skills: [
-        "React.js",
-        "Node.js",
-        "Java",
-        "AWS",
-        "Kubernetes",
-        "Jenkins",
-        "Scrum",
-      ],
-      current: false,
-    },
-    {
-      company: "Stefanini Group",
-      position: "Front-End Developer",
-      period: "Ago 2020 - Jun 2021",
-      location: "Brasília, DF",
-      type: "Tempo Integral",
-      description:
-        "Desenvolvimento Front-End focado principalmente em React, mas também atuando com ASP.NET Core em projetos diversos.",
-      skills: ["React.js", "Node.js", "React Native", "ASP.NET Core", "UX"],
+        "Atuei por 15 anos na TI em geral com destaque na área de sistema em que eu implantei e integrei sistema gestor com coletores de leituras de água, registro de boletos de pagamento e execução fiscal e revisei e otimizei fórmulas e relatórios.",
+      skills: ["SQL", "Javascript ", "HTML", "CSS", "PHP"],
       current: false,
     },
   ];
@@ -88,8 +38,7 @@ export const Experience = () => {
               Experiência Profissional
             </h2>
             <p className="text-foreground/80 dark:text-white/90 text-lg">
-              Minha jornada profissional através de empresas inovadoras e
-              projetos desafiadores.
+              Um breve resumo da minha jornada!
             </p>
           </div>
 

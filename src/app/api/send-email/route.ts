@@ -4,6 +4,7 @@ import { Resend } from "resend";
 import ContactFormEmail from "@/emails/contact-form-email";
 import ConfirmationEmail from "@/emails/confirmation-email";
 import { z } from "zod";
+import { urls } from "@/lib/urls";
 
 // Schema de validação para o request body
 const contactSchema = z.object({
@@ -48,8 +49,8 @@ export async function POST(request: NextRequest) {
     );
 
     // Configurações de email
-    const fromEmail = "Maykon Sousa <contato@devpoolbr.com.br>"; 
-    const toEmail = "maykon.sousa@hotmail.com"; // Email que receberá as mensagens
+    const fromEmail = "Luis Zancanela <luis@zancanela.dev.br>";
+    const toEmail = urls.email; // Email que receberá as mensagens
 
     console.log("Enviando emails via Resend SDK...");
     console.log("From:", fromEmail);
@@ -112,7 +113,7 @@ export async function POST(request: NextRequest) {
         {
           success: false,
           message: "Dados inválidos",
-          errors: error.issues.map((err: z.ZodIssue) => ({
+          errors: error.issues.map((err) => ({
             field: err.path.join("."),
             message: err.message,
           })),

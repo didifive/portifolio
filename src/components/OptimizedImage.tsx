@@ -17,7 +17,7 @@ export function OptimizedImage({
   errorClassName = "bg-gray-100",
   className = "",
   ...props
-}: OptimizedImageProps) {
+}: Readonly<OptimizedImageProps>) {
   const [isLoading, setIsLoading] = useState(true);
   const [hasError, setHasError] = useState(false);
   const [imageSrc, setImageSrc] = useState(src);
