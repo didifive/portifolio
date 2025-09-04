@@ -15,7 +15,7 @@ import { urls } from "@/lib/urls";
 import { FaLinkedin, FaRegEnvelope, FaWhatsapp } from "react-icons/fa";
 
 interface ConfirmationEmailProps {
-  userName: string;
+  readonly userName: string;
 }
 
 export default function ConfirmationEmail({
@@ -53,7 +53,7 @@ export default function ConfirmationEmail({
             Responderei por email em breve, geralmente em até 24 horas.
             <strong>
               Mas se precisar de um contato mais rápido, pode me chamar
-              diretamente pelo WhatsApp ou LinkedIn
+              diretamente pelo LinkedIn
             </strong>{" "}
             - use os botões abaixo!
           </Text>
@@ -62,12 +62,12 @@ export default function ConfirmationEmail({
 
           <div style={contactSectionStyle}>
             <div style={buttonContainerStyle}>
-              <Button
+              {/* <Button
                 href="https://wa.me/5561992943297?text=Olá! Acabei de enviar uma mensagem pelo seu portfólio e gostaria de conversar."
                 style={whatsappButtonStyle}
               >
                 <FaWhatsapp /> WhatsApp
-              </Button>
+              </Button> */}
 
               <Button
                 href={urls.linkedin}
@@ -84,9 +84,9 @@ export default function ConfirmationEmail({
             <Heading style={h2Style}>👨‍💻 Um pouco sobre mim</Heading>
 
             <Text style={textStyle}>
-              Sou desenvolvedor Full Stack apaixonado por criar soluções
-              inovadoras e experiências digitais excepcionais. Especializado em
-              tecnologias modernas como React, Next.js, Node.js e TypeScript.
+              Sou desenvolvedor Back-End apaixonado por criar soluções
+              com APIs ou integrações com mensageria. Especializado em
+              tecnologias modernas como Java, Spring Boot e Apache Camel.
             </Text>
 
             <Text style={textStyle}>
@@ -95,12 +95,11 @@ export default function ConfirmationEmail({
 
             <ul style={listStyle}>
               <li style={listItemStyle}>
-                Desenvolvimento Frontend (React, Next.js, TypeScript)
+                Desenvolvimento Backend (Java, Spring Boot, Apache Camel, Node.js, APIs REST)
               </li>
               <li style={listItemStyle}>
-                Desenvolvimento Backend (Node.js, APIs REST)
+                Desenvolvimento Frontend (React, Next.js, TypeScript)
               </li>
-              <li style={listItemStyle}>Design System e UI/UX</li>
               <li style={listItemStyle}>Arquitetura de Software</li>
             </ul>
           </div>
@@ -113,7 +112,7 @@ export default function ConfirmationEmail({
               <br />
               Desenvolvedor Full Stack
               <br />
-              São Paulo, SP - Brasil
+              Orlândia, SP - Brasil
             </Text>
 
             <Text style={footerTextStyle}>
