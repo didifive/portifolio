@@ -16,6 +16,7 @@ type GithubProject = {
   stargazers_count: number;
   forks_count: number;
   language: string;
+  languages_url: string;
   languages: string[];
   topics: string[];
   fork: boolean;
@@ -32,9 +33,13 @@ export const Projects = () => {
       try {
         setLoading(true);
         setError(null);
-        const res = await fetch(`https://api.github.com/users/${GITHUB_USERNAME}/repos?per_page=100`);
+        const GITHUB_TOKEN = process.env.NEXT_PUBLIC_GITHUB_TOKEN; // Token GitHub para autenticação https://github.com/settings/tokens
+
+        const res = await fetch(`https://api.github.com/users/${GITHUB_USERNAME}/repos?per_page=100`, {
+          headers: GITHUB_TOKEN ? { Authorization: `token ${GITHUB_TOKEN}` } : {}
+        });
         if (!res.ok) throw new Error("Erro ao buscar projetos do GitHub");
-        const data: any[] = await res.json();
+        const data: GithubProject[] = await res.json();
         const filtered = data
           .filter(p => !p.fork)
           .sort((a, b) => {
@@ -51,7 +56,11 @@ export const Projects = () => {
             // Linguagens
             let languages: string[] = [];
             try {
-              const langRes = await fetch(repo.languages_url);
+              const headers = {
+                Authorization: `token ${GITHUB_TOKEN}`,
+                Accept: "application/vnd.github.mercy-preview+json", // para topics
+              };
+              const langRes = await fetch(repo.languages_url, { headers });
               if (langRes.ok) {
                 const langData = await langRes.json();
                 languages = Object.keys(langData);
@@ -61,11 +70,11 @@ export const Projects = () => {
             // Topics
             let topics: string[] = [];
             try {
-              const topicRes = await fetch(`https://api.github.com/repos/${GITHUB_USERNAME}/${repo.name}/topics`, {
-                headers: {
-                  Accept: "application/vnd.github.mercy-preview+json"
-                }
-              });
+              const headers = {
+                Authorization: `token ${GITHUB_TOKEN}`,
+                Accept: "application/vnd.github.mercy-preview+json", // para topics
+              };
+              const topicRes = await fetch(`https://api.github.com/repos/${GITHUB_USERNAME}/${repo.name}/topics`, { headers });
               if (topicRes.ok) {
                 const topicData = await topicRes.json();
                 topics = topicData.names || [];
