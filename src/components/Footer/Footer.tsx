@@ -131,8 +131,7 @@ export const Footer = () => {
               variant="default" 
               size="sm" 
               className="w-full md:w-auto"
-              href={urls.linkedin}
-              target="_blank">
+              href="#contact">
                 <FaRegEnvelope className="h-4 w-4 mr-2" />
                 Entre em Contato
               </Button>

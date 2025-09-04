@@ -90,8 +90,7 @@ export const Hero = () => {
             variant="hero" 
             size="xl" 
             className="font-semibold"
-            href={urls.linkedin}
-            target="_blank">
+            href="#contact">
               <FiMail className="h-5 w-5" />
               Entre em Contato
             </Button>
