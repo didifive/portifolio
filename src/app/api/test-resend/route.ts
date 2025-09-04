@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
+import { urls } from "@/lib/urls";
 
 export async function GET() {
   try {
@@ -17,8 +18,8 @@ export async function GET() {
 
     // Teste simples de conectividade
     const testResult = await resend.emails.send({
-      from: "Maykon Sousa <contato@devpool.com.br>",
-      to: "maykon.sousa@hotmail.com",
+      from: "Luis Zancanela <luis@zancanela.dev.br>",
+      to: urls.email,
       subject: "Teste de Conectividade - Resend",
       html: "<h1>Teste</h1><p>Se você recebeu este email, o Resend está funcionando!</p>",
     });

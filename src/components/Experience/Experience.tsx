@@ -6,10 +6,10 @@ import { FiCalendar, FiMapPin } from "react-icons/fi";
 export const Experience = () => {
   const experiences = [
     {
-      company: "Mercado Livre",
+      company: "GFT Technologies",
       position: "Software Engineer",
-      period: "Mai 2024 - Presente",
-      location: "São Paulo, SP - Híbrida",
+      period: "Mai 2022 - Presente",
+      location: "São Paulo, SP - Remoto",
       type: "Tempo Integral",
       description:
         "Atuando no desenvolvimento de soluções escaláveis para uma das maiores plataformas de e-commerce da América Latina.",
@@ -17,63 +17,14 @@ export const Experience = () => {
       current: true,
     },
     {
-      company: "MODALGR",
+      company: "Prefeitura Municipal de Orlândia",
       position: "Software Developer",
-      period: "Set 2023 - Mai 2024",
-      location: "Santos, SP - Remota",
+      period: "Abr 2007 - Mai 2022",
+      location: "Orlândia, SP - Presencial",
       type: "Tempo Integral",
       description:
         "Atuei em um time multifuncional focado na construção de uma plataforma completa de gestão, desenvolvendo soluções com tecnologias modernas.",
       skills: ["React.js", "AWS ", "Node.js", "GraphQL", "React Native", "UX"],
-      current: false,
-    },
-    {
-      company: "Radix Engenharia e Software",
-      position: "Desenvolvedor de Software Pleno II",
-      period: "Fev 2023 - Set 2023",
-      location: "Rio de Janeiro, RJ - Remota",
-      type: "Tempo Integral",
-      description:
-        "Trabalhei em um produto interno para automatizar e facilitar o gerenciamento de projetos de software, focando em qualidade de código, escalabilidade e segurança.",
-      skills: [
-        "Next.js",
-        "Node.js",
-        ".NET",
-        "GraphQL",
-        "Strapi",
-        "Azure DevOps",
-        "Docker",
-      ],
-      current: false,
-    },
-    {
-      company: "PagBank PagSeguro",
-      position: "Software Engineer",
-      period: "Jun 2021 - Fev 2023",
-      location: "São Paulo, SP",
-      type: "Tempo Integral",
-      description:
-        "Atuei em times multidisciplinares focados na evolução e sustentação de uma plataforma própria para auxiliar os times de atendimento, trabalhando com tecnologias de ponta.",
-      skills: [
-        "React.js",
-        "Node.js",
-        "Java",
-        "AWS",
-        "Kubernetes",
-        "Jenkins",
-        "Scrum",
-      ],
-      current: false,
-    },
-    {
-      company: "Stefanini Group",
-      position: "Front-End Developer",
-      period: "Ago 2020 - Jun 2021",
-      location: "Brasília, DF",
-      type: "Tempo Integral",
-      description:
-        "Desenvolvimento Front-End focado principalmente em React, mas também atuando com ASP.NET Core em projetos diversos.",
-      skills: ["React.js", "Node.js", "React Native", "ASP.NET Core", "UX"],
       current: false,
     },
   ];

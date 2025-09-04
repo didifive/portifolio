@@ -37,13 +37,13 @@ export function useSEO() {
           },
         ],
       },
-      twitter: {
-        card: 'summary_large_image',
-        title: data.title ? `${data.title} | ${siteConfig.name}` : siteConfig.title,
-        description: data.description || siteConfig.description,
-        creator: siteConfig.author.twitter,
-        images: [data.image ? `${siteConfig.url}${data.image}` : `${siteConfig.url}/og-image`],
-      },
+      // twitter: {
+      //   card: 'summary_large_image',
+      //   title: data.title ? `${data.title} | ${siteConfig.name}` : siteConfig.title,
+      //   description: data.description || siteConfig.description,
+      //   creator: siteConfig.author.linkedin,
+      //   images: [data.image ? `${siteConfig.url}${data.image}` : `${siteConfig.url}/og-image`],
+      // },
       robots: data.noIndex ? 'noindex,nofollow' : 'index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1',
       keywords: data.keywords ? [...siteConfig.keywords, ...data.keywords].join(', ') : siteConfig.keywords.join(', '),
       additionalMetaTags: [

@@ -1,13 +1,32 @@
 import type { Metadata } from "next";
-
+import { urls } from "@/lib/urls";
 
 export const siteConfig = {
-  name: "Maykon Sousa",
-  title: "Maykon Sousa - Desenvolvedor Full Stack",
-  description: "Desenvolvedor Full Stack especializado em Javascript e TypeScript. Criando soluções web modernas e eficientes com ferramentas como React, Next.js, Node.js React Native.",
-  url: "https://maykonsousa.dev.br",
+  name: "Luis Zancanela",
+  title: "Luis Zancanela - Desenvolvedor Back-End",
+  description: "Desenvolvedor Back-End com Java, Spring e Apache Camel que se aventura no Front-End com Javascript e TypeScript (basicamente um Full Stack). Criando soluções modernas e eficientes em nuvem ou on-premises.",
+  url: "https://zancanela.dev.br",
   keywords: [
     "desenvolvedor",
+    "developer",
+    "software engineer",
+    "software developer",
+    "back-end",
+    "backend",
+    "java",
+    "spring",
+    "apache camel",
+    "microservices",
+    "api",
+    "apis",
+    "rest",
+    "restful",
+    "docker",
+    "cloud",
+    "azure",
+    "aws",
+    "gcp",
+    "netlify",
     "full stack",
     "react",
     "nextjs",
@@ -16,17 +35,16 @@ export const siteConfig = {
     "javascript",
     "web developer",
     "frontend",
-    "backend",
-    "maykon sousa",
+    "front-end",
+    "luis zancanela",
     "programador",
     "portfolio"
   ],
   author: {
-    name: "Maykon Sousa",
-    email: "maykon.sousa@hotmail.com",     
-    twitter: "@mykesousa", 
-    linkedin: "https://linkedin.com/in/maykonsousa", 
-    github: "https://github.com/maykonsousa"
+    name: "Luis Zancanela",
+    email: urls.email,
+    linkedin: urls.linkedin,
+    github: urls.github
   },
   locale: "pt-BR",
   type: "website"
@@ -73,13 +91,13 @@ export const defaultMetadata: Metadata = {
       }
     ]
   },
-  twitter: {
-    card: "summary_large_image",
-    title: siteConfig.title,
-    description: siteConfig.description,
-    creator: siteConfig.author.twitter,
-    images: ["/og-image"]
-  },
+  // twitter: {
+  //   card: "summary_large_image",
+  //   title: siteConfig.title,
+  //   description: siteConfig.description,
+  //   creator: siteConfig.author.linkedin,
+  //   images: ["/og-image"]
+  // },
   robots: {
     index: true,
     follow: true,
@@ -92,7 +110,7 @@ export const defaultMetadata: Metadata = {
     }
   },
   verification: {
-    google: "tAxyfR4XFdg2jXrxt5HEBnb3CWlPandpx1OUEfOJ9RA",
+    google: "AQJTKJUk9zqJyuLMwcbtXWx2m3UlIEUUEKZV83HR7gk",
     yandex: "",
     yahoo: "",
     other: {
@@ -128,11 +146,11 @@ export function generatePageMetadata({
       description: description || siteConfig.description,
       images: images || ["/og-image"]
     },
-    twitter: {
-      title: title || siteConfig.title,
-      description: description || siteConfig.description,
-      images: images || ["/og-image"]
-    },
+    // twitter: {
+    //   title: title || siteConfig.title,
+    //   description: description || siteConfig.description,
+    //   images: images || ["/og-image"]
+    // },
     robots: noIndex ? {
       index: false,
       follow: false

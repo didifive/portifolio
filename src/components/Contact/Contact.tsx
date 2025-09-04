@@ -18,6 +18,7 @@ import { Label } from "../ui/Label";
 import { Input } from "../ui/Input";
 import { Textarea } from "../ui/Textarea";
 import { Button } from "../ui/Button";
+import { urls } from "@/lib/urls";
 
 // Schema de validação com Zod
 const contactSchema = z.object({
@@ -110,42 +111,42 @@ export const Contact = () => {
     {
       icon: <FaRegEnvelope className="h-5 w-5" />,
       label: "Email",
-      value: "maykon.sousa@hotmail.com",
-      action: "mailto:maykon.sousa@hotmail.com",
+      value: urls.email,
+      action: "mailto:luis@zancanela.dev.br",
     },
-    {
-      icon: <FaPhone className="h-5 w-5" />,
-      label: "WhatsApp",
-      value: "+55 (61) 99294-3297",
-      action: "https://wa.me/5561992943297",
-    },
-    {
-      icon: <FaMapMarked className="h-5 w-5" />,
-      label: "Localização",
-      value: "São Paulo, SP - Brasil",
-      action: null,
-    },
+    // {
+    //   icon: <FaPhone className="h-5 w-5" />,
+    //   label: "WhatsApp",
+    //   value: "+55 (61) 99294-3297",
+    //   action: "https://wa.me/5561992943297",
+    // },
+    // {
+    //   icon: <FaMapMarked className="h-5 w-5" />,
+    //   label: "Localização",
+    //   value: "São Paulo, SP - Brasil",
+    //   action: null,
+    // },
   ];
 
   const socialLinks = [
     {
       icon: <FaGithub className="h-5 w-5" />,
       label: "GitHub",
-      url: "https://github.com/maykonsousa",
+      url: urls.github,
       color: "hover:text-foreground",
     },
     {
       icon: <FaLinkedin className="h-5 w-5" />,
       label: "LinkedIn",
-      url: "https://www.linkedin.com/in/maykonsousa",
+      url: urls.linkedin,
       color: "hover:text-blue-600",
     },
-    {
-      icon: <FaInstagram className="h-5 w-5" />,
-      label: "Instagram",
-      url: "https://www.instagram.com/mykesousa",
-      color: "hover:text-pink-600",
-    },
+    // {
+    //   icon: <FaInstagram className="h-5 w-5" />,
+    //   label: "Instagram",
+    //   url: "https://www.instagram.com/mykesousa",
+    //   color: "hover:text-pink-600",
+    // },
   ];
 
   return (

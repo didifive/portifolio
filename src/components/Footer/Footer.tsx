@@ -8,6 +8,7 @@ import {
   FaInstagram,
 } from "react-icons/fa";
 import { Button } from "../ui/Button";
+import { urls } from "@/lib/urls";
 
 export const Footer = () => {
   const scrollToSection = (elementId: string) => {
@@ -38,28 +39,28 @@ export const Footer = () => {
     {
       icon: <FaGithub className="h-4 w-4" />,
       label: "GitHub",
-      url: "#",
+      url: urls.github,
     },
     {
       icon: <FaLinkedin className="h-4 w-4" />,
       label: "LinkedIn",
-      url: "#",
+      url: urls.linkedin,
     },
     {
       icon: <FaRegEnvelope className="h-4 w-4" />,
       label: "Email",
-      url: "mailto:contato@exemplo.com",
+      url: `mailto:${urls.email}`,
     },
-    {
-      icon: <FaWhatsapp className="h-4 w-4" />,
-      label: "WhatsApp",
-      url: "https://wa.me/5561992943297",
-    },
-    {
-      icon: <FaInstagram className="h-4 w-4" />,
-      label: "Instagram",
-      url: "https://www.instagram.com/mykesousa",
-    },
+    // {
+    //   icon: <FaWhatsapp className="h-4 w-4" />,
+    //   label: "WhatsApp",
+    //   url: `https://wa.me/${urls.whatsapp}`,
+    // },
+    // {
+    //   icon: <FaInstagram className="h-4 w-4" />,
+    //   label: "Instagram",
+    //   url: "#",
+    // },
   ];
 
   const navLinks = [
@@ -77,16 +78,16 @@ export const Footer = () => {
           <div className="grid md:grid-cols-3 gap-8 mb-8">
             <div className="space-y-4">
               <div className="text-xl font-bold text-gradient">
-                Maykon Sousa
+                Luis Zancanela
               </div>
               <p className="text-muted-foreground text-sm leading-relaxed">
-                Desenvolvedor Full Stack apaixonado por criar soluções
-                inovadoras e experiências digitais excepcionais.
+                Desenvolvedor Back-End apaixonado por criar soluções
+                inovadoras e de alta escala.
               </p>
               <div className="flex space-x-3">
-                {socialLinks.map((social, index) => (
+                {socialLinks.map((social) => (
                   <Button
-                    key={index}
+                    key={social.label}
                     variant="ghost"
                     size="icon"
                     className="h-8 w-8"
@@ -108,9 +109,9 @@ export const Footer = () => {
             <div className="space-y-4">
               <h4 className="font-semibold">Navegação</h4>
               <div className="flex flex-col space-y-2">
-                {navLinks.map((link, index) => (
+                {navLinks.map((link) => (
                   <a
-                    key={index}
+                    key={link.label}
                     href={link.href}
                     onClick={(e) => handleNavClick(e, link.href)}
                     className="text-muted-foreground hover:text-primary dark:hover:text-blue-400 transition-smooth text-sm cursor-pointer"
@@ -136,7 +137,7 @@ export const Footer = () => {
           <div className="border-t pt-8">
             <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
               <div className="text-sm text-muted-foreground">
-                © {currentYear} Maykon Sousa. Todos os direitos reservados.
+                © {currentYear} Luis Zancanela. Todos os direitos reservados.
               </div>
             </div>
           </div>

@@ -7,15 +7,15 @@ export const About = () => {
   const highlights = [
     {
       icon: <FiCode className="h-6 w-6" />,
-      title: "Full Stack Developer",
+      title: "Back-End Developer",
       description:
-        "Especializado em tecnologias modernas como React, Node.js e TypeScript",
+        "Especializado em tecnologias Java, Spring e Apache Camel",
     },
     {
       icon: <FaRocket className="h-6 w-6" />,
       title: "Experiência Enterprise",
       description:
-        "Trabalhou em empresas de destaque como Mercado Livre e PagBank",
+        "Trabalhou em soluções corporativas para o setor público e privado",
     },
     {
       icon: <FiUsers className="h-6 w-6" />,
@@ -41,8 +41,9 @@ export const About = () => {
               Sobre Mim
             </h2>
             <p className="text-foreground/80 dark:text-white/90 text-lg max-w-2xl mx-auto">
-              Desenvolvedor apaixonado por tecnologia com mais de 4 anos de
-              experiência criando soluções inovadoras e escaláveis.
+              Desenvolvedor apaixonado por tecnologia com <strong>18+ anos de
+              experiência em TI</strong> e <strong>3+ anos com desenvolvimento de sistemas</strong>, 
+              criando soluções inovadoras e escaláveis.
             </p>
           </div>
 
@@ -53,19 +54,17 @@ export const About = () => {
                 <h3 className="text-2xl font-semibold text-foreground dark:text-white">
                   Minha Jornada
                 </h3>
-                <p className="text-foreground/80 dark:text-white/90 leading-relaxed">
-                  Comecei minha carreira como desenvolvedor em 2020 na Stefanini
-                  Group, focando em desenvolvimento Front-End com React. Desde
-                  então, evoluí constantemente, trabalhando em projetos
-                  desafiadores em empresas como PagBank, Radix e atualmente no
-                  Mercado Livre.
+                <p>
+                  👨‍💻 Gosto de codar, jogar videogame, assistir anime e falar de tecnologia (melhor ainda se acompanhado de café ☕).
                 </p>
-                <p className="text-foreground/80 dark:text-white/90 leading-relaxed">
-                  Minha paixão está em criar aplicações que não apenas funcionem
-                  bem, mas que proporcionem uma experiência excepcional aos
-                  usuários. Trabalho com tecnologias modernas e sempre busco
-                  aprender novas ferramentas que possam agregar valor aos
-                  projetos.
+                <p>
+                  🚀 Minha jornada começou há mais de 23 anos, com muita curiosidade, cursos e projetos pessoais.
+                </p>
+                <p>
+                  💼 Há mais de 18 anos iniciei a carreira em TI (Tudo Incluso 😆), tendo a oportunidade de atuar em todas as frentes como suporte, infraestrutura, comunicação e sistemas.
+                </p>
+                <p>
+                  🖥️ Com a experiência me identifiquei com a área de sistemas, deixei 15 anos de cargo público para seguir no mercado e carreira de desenvolvedor.
                 </p>
               </div>
 
@@ -75,6 +74,30 @@ export const About = () => {
                   Principais Competências
                 </h4>
                 <div className="space-y-3">
+                  <div>
+                    <span className="text-sm font-medium text-foreground/70 dark:text-white/80 mb-2 block">
+                      Backend
+                    </span>
+                    <div className="flex flex-wrap gap-2">
+                      {["Java", 
+                        "Spring Boot",
+                        "Apache Camel",
+                        "Node.js", 
+                        "APIs REST", 
+                        "Mensageria",
+                        "Microserviços"].map(
+                        (skill) => (
+                          <Badge
+                            key={skill}
+                            variant="secondary"
+                            className="cursor-pointer hover:bg-primary hover:text-white transition-all duration-300"
+                          >
+                            {skill}
+                          </Badge>
+                        )
+                      )}
+                    </div>
+                  </div>
                   <div>
                     <span className="text-sm font-medium text-foreground/70 dark:text-white/80 mb-2 block">
                       Frontend
@@ -99,28 +122,13 @@ export const About = () => {
                   </div>
                   <div>
                     <span className="text-sm font-medium text-foreground/70 dark:text-white/80 mb-2 block">
-                      Backend
-                    </span>
-                    <div className="flex flex-wrap gap-2">
-                      {["Node.js", "GraphQL", "APIs REST", "Microserviços"].map(
-                        (skill) => (
-                          <Badge
-                            key={skill}
-                            variant="secondary"
-                            className="cursor-pointer hover:bg-primary hover:text-white transition-all duration-300"
-                          >
-                            {skill}
-                          </Badge>
-                        )
-                      )}
-                    </div>
-                  </div>
-                  <div>
-                    <span className="text-sm font-medium text-foreground/70 dark:text-white/80 mb-2 block">
                       DevOps & Cloud
                     </span>
                     <div className="flex flex-wrap gap-2">
-                      {["AWS", "Docker", "Jenkins", "Kubernetes"].map(
+                      {["Azure", 
+                      "Azure DevOps", 
+                      "Docker", 
+                      "Kubernetes"].map(
                         (skill) => (
                           <Badge
                             key={skill}
@@ -139,9 +147,9 @@ export const About = () => {
 
             {/* Highlights Cards */}
             <div className="grid gap-6">
-              {highlights.map((item, index) => (
+              {highlights.map((item) => (
                 <Card
-                  key={index}
+                  key={item.title}
                   className="group shadow-soft hover:shadow-medium transition-all duration-300 dark:border-accent/10 border cursor-pointer hover:scale-[1.02] dark:hover:bg-accent/5 dark:hover:border-accent/20 hover:shadow-lg dark:hover:shadow-primary/10"
                 >
                   <CardContent className="p-6">
