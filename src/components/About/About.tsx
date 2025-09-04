@@ -58,13 +58,10 @@ export const About = () => {
                   👨‍💻 Gosto de codar, jogar videogame, assistir anime e falar de tecnologia (melhor ainda se acompanhado de café ☕).
                 </p>
                 <p>
-                  🚀 Minha jornada começou há mais de 23 anos, com muita curiosidade, cursos e projetos pessoais.
-                </p>
-                <p>
                   💼 Há mais de 18 anos iniciei a carreira em TI (Tudo Incluso 😆), tendo a oportunidade de atuar em todas as frentes como suporte, infraestrutura, comunicação e sistemas.
                 </p>
                 <p>
-                  🖥️ Com a experiência me identifiquei com a área de sistemas, deixei 15 anos de cargo público para seguir no mercado e carreira de desenvolvedor.
+                  🖥️ Há mais de 3 anos deixei a carreira pública e ingressei na carreira de desenvolvedor.
                 </p>
               </div>
 

@@ -4,7 +4,7 @@ import { urls } from "@/lib/urls";
 export const siteConfig = {
   name: "Luis Zancanela",
   title: "Luis Zancanela - Desenvolvedor Back-End",
-  description: "Desenvolvedor Back-End com Java, Spring e Apache Camel que se aventura no Front-End com Javascript e TypeScript (basicamente um Full Stack). Criando soluções modernas e eficientes em nuvem ou on-premises.",
+  description: "Desenvolvedor Back-End com Java, Spring e Apache Camel que também tem skills de Front-End com Javascript e TypeScript (formando o Full Stack). Criando soluções modernas e eficientes em nuvem ou on-premises.",
   url: "https://zancanela.dev.br",
   keywords: [
     "desenvolvedor",

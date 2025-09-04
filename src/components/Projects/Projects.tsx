@@ -139,67 +139,71 @@ export const Projects = () => {
                 </CardContent>
               </Card>
             ) : (
-              projects.map((project) => (
-                <Card key={project.id} className="shadow-soft hover:shadow-medium transition-smooth group flex flex-col h-full">
-                  <CardContent className="p-6 flex-1 flex flex-col">
-                    <div className="flex items-center justify-between mb-4">
-                      <div className="text-2xl">💻</div>
-                      <div className="flex gap-2">
-                        <Button
-                          variant="ghost"
-                          size="icon"
-                          href={project.html_url}
-                          target="_blank"
-                        >
-                          <FiGithub className="h-4 w-4 text-foreground/70 dark:text-white/80" />
-                        </Button>
-                      </div>
-                    </div>
-                    <h4 className="font-semibold mb-2 text-foreground dark:text-white">
-                      {project.name}
-                    </h4>
-                    <p className="text-foreground/80 dark:text-white/90 text-sm mb-4 leading-relaxed flex-1">
-                      {project.description}
-                    </p>
-                    <div className="flex flex-wrap gap-2 mt-auto">
-                    {/* Linguagens abaixo dos badges principais */}
-                    {project.languages && project.languages.length > 0 && (
-                      <>
-                        <div className="flex flex-wrap gap-2 mt-2">
-                          {project.languages.map(lang => (
-                            <Badge key={lang} variant="secondary" className="text-xs cursor-pointer">
-                              💻 {lang}
-                            </Badge>
-                          ))}
+              projects.map((project, idx) => {
+                const emojis = ["💻", "🛠️", "📦", "🚀", "🔧", "🌐"];
+                const emoji = emojis[idx % emojis.length];
+                return (
+                  <Card key={project.id} className="shadow-soft hover:shadow-medium transition-smooth group flex flex-col h-full">
+                    <CardContent className="p-6 flex-1 flex flex-col">
+                      <div className="flex items-center justify-between mb-4">
+                        <div className="text-2xl">{emoji}</div>
+                        <div className="flex gap-2">
+                          <Button
+                            variant="ghost"
+                            size="icon"
+                            href={project.html_url}
+                            target="_blank"
+                          >
+                            <FiGithub className="h-4 w-4 text-foreground/70 dark:text-white/80" />
+                          </Button>
                         </div>
-                        <div className="w-full h-0 my-0" />
-                      </>
-                    )}
-                    <Badge variant="secondary" className="text-xs cursor-pointer">
-                        ⭐ {project.stargazers_count}
-                      </Badge>
-                      <Badge variant="secondary" className="text-xs cursor-pointer">
-                        🍴 {project.forks_count}
-                      </Badge>
-                      {/* Tags (topics) - até 5, resto +N */}
-                      {project.topics && project.topics.length > 0 && (
-                        <>
-                          {project.topics.slice(0, 5).map(topic => (
-                            <Badge key={topic} variant="outline" className="text-xs cursor-pointer">
-                              #{topic}
-                            </Badge>
-                          ))}
-                          {project.topics.length > 5 && (
-                            <Badge variant="outline" className="text-xs cursor-pointer">
-                              +{project.topics.length - 5}
-                            </Badge>
-                          )}
-                        </>
-                      )}
-                    </div>
-                  </CardContent>
-                </Card>
-              ))
+                      </div>
+                      <h4 className="font-semibold mb-2 text-foreground dark:text-white">
+                        {project.name}
+                      </h4>
+                      <p className="text-foreground/80 dark:text-white/90 text-sm mb-4 leading-relaxed flex-1">
+                        {project.description}
+                      </p>
+                      <div className="flex flex-wrap gap-2 mt-auto">
+                        {/* Linguagens abaixo dos badges principais */}
+                        {project.languages && project.languages.length > 0 && (
+                          <>
+                            <div className="flex flex-wrap gap-2 mt-2">
+                              {project.languages.map(lang => (
+                                <Badge key={lang} variant="secondary" className="text-xs cursor-pointer">
+                                  💻 {lang}
+                                </Badge>
+                              ))}
+                            </div>
+                            <div className="w-full h-0 my-0" />
+                          </>
+                        )}
+                        <Badge variant="secondary" className="text-xs cursor-pointer">
+                          ⭐ {project.stargazers_count}
+                        </Badge>
+                        <Badge variant="secondary" className="text-xs cursor-pointer">
+                          🍴 {project.forks_count}
+                        </Badge>
+                        {/* Tags (topics) - até 5, resto +N */}
+                        {project.topics && project.topics.length > 0 && (
+                          <>
+                            {project.topics.slice(0, 5).map(topic => (
+                              <Badge key={topic} variant="outline" className="text-xs cursor-pointer">
+                                #{topic}
+                              </Badge>
+                            ))}
+                            {project.topics.length > 5 && (
+                              <Badge variant="outline" className="text-xs cursor-pointer">
+                                +{project.topics.length - 5}
+                              </Badge>
+                            )}
+                          </>
+                        )}
+                      </div>
+                    </CardContent>
+                  </Card>
+                );
+              })
             )}
           </div>
           <div className="text-center mt-12">

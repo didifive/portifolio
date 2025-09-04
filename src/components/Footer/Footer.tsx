@@ -123,11 +123,16 @@ export const Footer = () => {
             </div>
 
             <div className="space-y-4">
-              <h4 className="font-semibold">Vamos trabalhar juntos?</h4>
+              <h4 className="font-semibold">Quer falar?</h4>
               <p className="text-muted-foreground text-sm">
-                Estou sempre interessado em novos projetos e oportunidades.
+                Bora falar sobre tecnologia, sistemas e Java?
               </p>
-              <Button variant="default" size="sm" className="w-full md:w-auto">
+              <Button 
+              variant="default" 
+              size="sm" 
+              className="w-full md:w-auto"
+              href={urls.linkedin}
+              target="_blank">
                 <FaRegEnvelope className="h-4 w-4 mr-2" />
                 Entre em Contato
               </Button>

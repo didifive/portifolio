@@ -11,20 +11,19 @@ export const Experience = () => {
       period: "Mai 2022 - Presente",
       location: "São Paulo, SP - Remoto",
       type: "Tempo Integral",
-      description:
-        "Atuando no desenvolvimento de soluções escaláveis para uma das maiores plataformas de e-commerce da América Latina.",
-      skills: ["TypeScript", "React.js", "Node.js", "Jenkins", "Docker"],
+      description: "Atendendo cliente do setor bancário desenvolvendo e sustentando APIs Java com Spring e Apache Camel em equipe ágil e ambientes cloud e on-premise.",
+      skills: ["Java", "Spring Boot", "Apache Camel", "Azure", "Azure DevOps", "APIs REST", "Microservices"],
       current: true,
     },
     {
       company: "Prefeitura Municipal de Orlândia",
-      position: "Software Developer",
+      position: "Monitor de Informática",
       period: "Abr 2007 - Mai 2022",
       location: "Orlândia, SP - Presencial",
       type: "Tempo Integral",
       description:
-        "Atuei em um time multifuncional focado na construção de uma plataforma completa de gestão, desenvolvendo soluções com tecnologias modernas.",
-      skills: ["React.js", "AWS ", "Node.js", "GraphQL", "React Native", "UX"],
+        "Atuei por 15 anos na TI em geral com destaque na área de sistema em que eu implantei e integrei sistema gestor com coletores de leituras de água, registro de boletos de pagamento e execução fiscal e revisei e otimizei fórmulas e relatórios.",
+      skills: ["SQL", "Javascript ", "HTML", "CSS", "PHP"],
       current: false,
     },
   ];
@@ -39,8 +38,7 @@ export const Experience = () => {
               Experiência Profissional
             </h2>
             <p className="text-foreground/80 dark:text-white/90 text-lg">
-              Minha jornada profissional através de empresas inovadoras e
-              projetos desafiadores.
+              Um breve resumo da minha jornada!
             </p>
           </div>
 

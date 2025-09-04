@@ -120,12 +120,12 @@ export const Contact = () => {
     //   value: "+55 (61) 99294-3297",
     //   action: "https://wa.me/5561992943297",
     // },
-    // {
-    //   icon: <FaMapMarked className="h-5 w-5" />,
-    //   label: "Localização",
-    //   value: "São Paulo, SP - Brasil",
-    //   action: null,
-    // },
+    {
+      icon: <FaMapMarked className="h-5 w-5" />,
+      label: "Localização",
+      value: "Orlândia, SP - Brasil",
+      action: null,
+    },
   ];
 
   const socialLinks = [
@@ -159,8 +159,8 @@ export const Contact = () => {
               Vamos Conversar?
             </h2>
             <p className="text-foreground/80 dark:text-white/90 text-lg max-w-2xl mx-auto">
-              Estou sempre aberto para discutir novos projetos, oportunidades
-              criativas ou simplesmente trocar uma ideia sobre tecnologia.
+              Estou sempre aberto para trocar uma ideia sobre tecnologia,
+              discutir novos projetos ou oportunidades criativas.
             </p>
           </div>
 
@@ -205,9 +205,9 @@ export const Contact = () => {
                   Redes Sociais
                 </h4>
                 <div className="flex space-x-4">
-                  {socialLinks.map((social, index) => (
+                  {socialLinks.map((social) => (
                     <a
-                      key={index}
+                      key={social.label}
                       href={social.url}
                       className={`p-3 bg-muted rounded-lg transition-smooth ${social.color}`}
                       target="_blank"
@@ -223,14 +223,14 @@ export const Contact = () => {
               <Card shadow="soft">
                 <CardContent className="p-6">
                   <div className="flex items-center space-x-3 mb-3">
-                    <div className="w-3 h-3 bg-success rounded-full"></div>
+                    <div className="w-3 h-3 bg-primary rounded-full"></div>
                     <span className="font-medium text-foreground dark:text-white">
-                      Disponível para projetos
+                      Open to Help
                     </span>
                   </div>
                   <p className="text-sm text-foreground/70 dark:text-white/80">
-                    Atualmente aceitando novos projetos freelance e
-                    oportunidades de colaboração.
+                    Sempre disponível para ajudar com novos projetos, dúvidas
+                    ou colaborações. Sinta-se à vontade para entrar em contato!
                   </p>
                 </CardContent>
               </Card>
