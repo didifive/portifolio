@@ -225,12 +225,14 @@ export const Contact = () => {
                   <div className="flex items-center space-x-3 mb-3">
                     <div className="w-3 h-3 bg-primary rounded-full"></div>
                     <span className="font-medium text-foreground dark:text-white">
-                      Open to Help
+                      Open to Help and Learning
                     </span>
                   </div>
                   <p className="text-sm text-foreground/70 dark:text-white/80">
-                    Sempre disponível para ajudar com novos projetos, dúvidas
-                    ou colaborações. Sinta-se à vontade para entrar em contato!
+                    Sempre disponível para colaborar em projetos, 
+                    tirar dúvidas ou explorar novas ideias. 
+                    Em constante aprendizado em tecnologias. 
+                    Sinta-se à vontade para entrar em contato.
                   </p>
                 </CardContent>
               </Card>
