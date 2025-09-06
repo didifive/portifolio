@@ -4,6 +4,6 @@ export const urls = {
   linkedin: "https://linkedin.com/in/luis-zancanela",
   github: "https://github.com/didifive",
   site: "https://zancanela.dev.br",
-  email: "luisczdidi@gmail.com",
-  mailto: "mailto:luisczdidi@gmail.com",
+  email: "luis@zancanela.dev.br",
+  mailto: "mailto:luis@zancanela.dev.br",
 };
