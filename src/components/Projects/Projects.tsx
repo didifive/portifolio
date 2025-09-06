@@ -7,8 +7,6 @@ import { FiGithub } from "react-icons/fi";
 import { Badge } from "../ui/Badge";
 import type { GithubProjectEnriched } from "@/app/api/github/route";
 
-const projectLimit = 6;
-
 export const Projects = () => {
   const GITHUB_USERNAME = "didifive";
   const [projects, setProjects] = useState<GithubProjectEnriched[]>([]);
@@ -47,7 +45,7 @@ export const Projects = () => {
               Projetos GitHub
             </h2>
             <p className="text-foreground/80 dark:text-white/90 text-lg max-w-2xl mx-auto">
-              Os {projectLimit} principais projetos públicos do meu GitHub, ordenados por estrelas e forks.
+              Os {projects.length} principais projetos públicos do meu GitHub, ordenados por estrelas e forks.
             </p>
           </div>
           {loading && <p>Carregando projetos do GitHub...</p>}
@@ -78,6 +76,7 @@ export const Projects = () => {
               projects.map((project, idx) => {
                 const emojis = ["💻", "🛠️", "📦", "🚀", "🔧", "🌐"];
                 const emoji = emojis[idx % emojis.length];
+                const topicsLimit = 5;
                 return (
                   <Card key={project.id} className="shadow-soft hover:shadow-medium transition-smooth group flex flex-col h-full">
                     <CardContent className="p-6 flex-1 flex flex-col">
@@ -117,13 +116,24 @@ export const Projects = () => {
                         <Badge variant="secondary" className="text-xs cursor-pointer">
                           ⭐ {project.stargazers_count}
                         </Badge>
-                        {project.topics.length > 3 && (
-                          <Badge
-                            variant="secondary"
-                            className="text-xs cursor-pointer"
-                          >
-                            +{project.topics.length - 3}
+                        {project.forks_count > 0 && (
+                          <Badge variant="secondary" className="text-xs cursor-pointer">
+                            🍴 {project.forks_count}
                           </Badge>
+                        )}
+                        {project.topics && project.topics.length > 0 && (
+                          <>
+                            {project.topics.slice(0, topicsLimit).map(topic => (
+                              <Badge key={topic} variant="outline" className="text-xs cursor-pointer">
+                                #{topic}
+                              </Badge>
+                            ))}
+                            {project.topics.length > topicsLimit && (
+                              <Badge variant="outline" className="text-xs cursor-pointer">
+                                +{project.topics.length - topicsLimit}
+                              </Badge>
+                            )}
+                          </>
                         )}
                       </div>
                     </CardContent>
