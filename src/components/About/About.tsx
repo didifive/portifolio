@@ -58,10 +58,13 @@ export const About = () => {
                   👨‍💻 Gosto de codar, jogar videogame, assistir anime e falar de tecnologia (melhor ainda se acompanhado de café ☕).
                 </p>
                 <p>
-                  💼 Há mais de 18 anos iniciei a carreira em TI (Tudo Incluso 😆), tendo a oportunidade de atuar em todas as frentes como suporte, infraestrutura, comunicação e sistemas.
+                  💼 Há mais de 18 anos iniciei a carreira em TI (Tudo Incluso 😆), tendo a oportunidade de atuar em todas as frentes como suporte, 
+                  infraestrutura, comunicação e sistemas.
                 </p>
                 <p>
-                  🖥️ Há mais de 3 anos deixei a carreira pública e ingressei na carreira de desenvolvedor.
+                  🖥️ Nos últimos 3 anos, foquei minha trajetória como desenvolvedor de sistemas, especializando-me em back-end. 
+                  Tenho atuado na construção de soluções robustas, escaláveis e seguras, sempre buscando excelência técnica e alinhamento 
+                  com as necessidades do negócio.
                 </p>
               </div>
 
@@ -82,7 +85,10 @@ export const About = () => {
                         "Node.js", 
                         "APIs REST", 
                         "Mensageria",
-                        "Microserviços"].map(
+                        "Microserviços",
+                        "SQL",
+                        "NoSQL",
+                      ].map(
                         (skill) => (
                           <Badge
                             key={skill}
@@ -104,7 +110,8 @@ export const About = () => {
                         "React",
                         "TypeScript",
                         "Next.js",
-                        "React Native",
+                        "Angular",
+                        "Bootstrap CSS",
                         "Tailwind CSS",
                       ].map((skill) => (
                         <Badge
