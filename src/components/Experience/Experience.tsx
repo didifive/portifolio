@@ -49,8 +49,8 @@ export const Experience = () => {
 
             {/* Experience Cards */}
             <div className="space-y-12">
-              {experiences.map((exp, index) => (
-                <div key={index} className="relative">
+              {experiences.map((exp) => (
+                <div key={`${exp.company}-${exp.position}`} className="relative">
                   {/* Timeline Dot */}
                   <div
                     className={`absolute left-6 w-4 h-4 rounded-full border-4 border-background ${

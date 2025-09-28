@@ -10,55 +10,55 @@ All colors MUST be HSL. Tech-inspired gradients and professional styling.
   :root {
     /* Core backgrounds - clean and modern */
     --background: 0 0% 100%;
-    --foreground: 220 13% 13%;
+    --foreground: 145 15% 15%;
 
     /* Card system - elevated surfaces */
     --card: 0 0% 100%;
-    --card-foreground: 220 13% 13%;
+    --card-foreground: 145 15% 15%;
 
     /* Popover surfaces */
     --popover: 0 0% 100%;
-    --popover-foreground: 220 13% 13%;
+    --popover-foreground: 145 15% 15%;
 
-    /* Primary brand - tech blue */
-    --primary: 221 83% 53%;
+    /* Primary brand - tech green */
+    --primary: 145 63% 49%;           /* Vibrant green (Tailwind green-500) */
     --primary-foreground: 0 0% 100%;
-    --primary-glow: 221 83% 70%;
+    --primary-glow: 145 63% 70%;      /* Lighter green for glow */
 
-    /* Secondary - elegant purple */
-    --secondary: 262 83% 58%;
+    /* Secondary - elegant emerald */
+    --secondary: 160 84% 39%;         /* Emerald (Tailwind emerald-600) */
     --secondary-foreground: 0 0% 100%;
 
     /* Muted content */
-    --muted: 220 14% 96%;
-    --muted-foreground: 220 9% 46%;
+    --muted: 145 20% 95%;
+    --muted-foreground: 145 10% 40%;
 
-    /* Accent - vibrant tech colors */
-    --accent: 262 83% 58%;
-    --accent-foreground: 0 0% 100%;
+    /* Accent - lighter green */
+    --accent: 145 63% 80%;
+    --accent-foreground: 145 15% 20%;
 
     /* Status colors */
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
-    --success: 142 76% 36%;
+    --success: 145 63% 49%;
     --success-foreground: 0 0% 100%;
 
     /* Borders and inputs */
-    --border: 220 13% 91%;
-    --input: 220 13% 91%;
-    --ring: 221 83% 53%;
+    --border: 145 20% 90%;
+    --input: 145 20% 90%;
+    --ring: 145 63% 49%;
 
     /* Tech gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(221, 83%, 53%), hsl(262, 83%, 58%));
-    --gradient-secondary: linear-gradient(135deg, hsl(262, 83%, 58%), hsl(291, 64%, 42%));
-    --gradient-hero: linear-gradient(135deg, hsl(221, 83%, 53%) 0%, hsl(262, 83%, 58%) 50%, hsl(291, 64%, 42%) 100%);
-    --gradient-subtle: linear-gradient(180deg, hsl(0, 0%, 100%) 0%, hsl(220, 14%, 98%) 100%);
+    --gradient-primary: linear-gradient(135deg, hsl(145, 63%, 49%), hsl(160, 84%, 39%));
+    --gradient-secondary: linear-gradient(135deg, hsl(160, 84%, 39%), hsl(145, 63%, 70%));
+    --gradient-hero: linear-gradient(135deg, hsl(145, 63%, 49%) 0%, hsl(160, 84%, 39%) 50%, hsl(145, 63%, 70%) 100%);
+    --gradient-subtle: linear-gradient(180deg, hsl(0, 0%, 100%) 0%, hsl(145, 20%, 98%) 100%);
 
     /* Elegant shadows */
-    --shadow-soft: 0 2px 8px hsl(220, 13%, 13%, 0.08);
-    --shadow-medium: 0 4px 16px hsl(220, 13%, 13%, 0.12);
-    --shadow-strong: 0 8px 32px hsl(220, 13%, 13%, 0.16);
-    --shadow-glow: 0 0 40px hsl(221, 83%, 53%, 0.3);
+    --shadow-soft: 0 2px 8px hsl(145, 15%, 15%, 0.08);
+    --shadow-medium: 0 4px 16px hsl(145, 15%, 15%, 0.12);
+    --shadow-strong: 0 8px 32px hsl(145, 15%, 15%, 0.16);
+    --shadow-glow: 0 0 40px hsl(145, 63%, 70%, 0.3);
 
     /* Smooth animations */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -66,57 +66,57 @@ All colors MUST be HSL. Tech-inspired gradients and professional styling.
 
     --radius: 0.5rem;
 
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-background: 145 20% 98%;
+    --sidebar-foreground: 145 15% 26%;
+    --sidebar-primary: 145 63% 30%;
     --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-accent: 145 10% 95%;
+    --sidebar-accent-foreground: 145 15% 10%;
+    --sidebar-border: 145 20% 90%;
+    --sidebar-ring: 145 63% 49%;
   }
 
   .dark {
     /* Dark mode - professional dark theme */
-    --background: 220 13% 13%;
-    --foreground: 220 14% 96%;
+    --background: 145 15% 13%;
+    --foreground: 145 14% 96%;
 
-    --card: 220 13% 16%;
-    --card-foreground: 220 14% 96%;
+    --card: 145 15% 16%;
+    --card-foreground: 145 14% 96%;
 
-    --popover: 220 13% 16%;
-    --popover-foreground: 220 14% 96%;
+    --popover: 145 15% 16%;
+    --popover-foreground: 145 14% 96%;
 
-    --primary: 221 83% 53%;
+    --primary: 145 63% 49%;
     --primary-foreground: 0 0% 100%;
-    --primary-glow: 221 83% 70%;
+    --primary-glow: 145 63% 70%;
 
-    --secondary: 220 13% 20%;
-    --secondary-foreground: 220 14% 96%;
+    --secondary: 160 84% 25%;
+    --secondary-foreground: 145 14% 96%;
 
-    --muted: 220 13% 18%;
-    --muted-foreground: 220 9% 55%;
+    --muted: 145 15% 18%;
+    --muted-foreground: 145 10% 55%;
 
-    --accent: 262 83% 58%;
+    --accent: 145 63% 70%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
-    --success: 142 76% 36%;
+    --success: 145 63% 49%;
     --success-foreground: 0 0% 100%;
 
-    --border: 220 13% 20%;
-    --input: 220 13% 20%;
-    --ring: 221 83% 53%;
+    --border: 145 15% 20%;
+    --input: 145 15% 20%;
+    --ring: 145 63% 49%;
 
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-background: 145 15% 10%;
+    --sidebar-foreground: 145 10% 95%;
+    --sidebar-primary: 145 63% 25%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-accent: 145 10% 15%;
+    --sidebar-accent-foreground: 145 10% 95%;
+    --sidebar-border: 145 10% 15%;
+    --sidebar-ring: 145 63% 49%;
   }
 }
 

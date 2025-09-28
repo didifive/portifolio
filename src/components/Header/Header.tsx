@@ -88,13 +88,13 @@ export const Header = () => {
                   onClick={(e) => handleNavClick(e, item.href)}
                   className={`transition-smooth font-medium cursor-pointer relative ${
                     isActive
-                      ? "text-primary dark:text-blue-400 font-semibold"
-                      : "text-foreground hover:text-primary dark:hover:text-blue-400"
+                      ? "text-primary dark:text-emerald-400 font-semibold"
+                      : "text-foreground hover:text-primary dark:hover:text-emerald-400"
                   }`}
                 >
                   {item.label}
                   {isActive && (
-                    <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-primary dark:bg-blue-400 rounded-full transition-all duration-300"></span>
+                    <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-primary dark:bg-emerald-400 rounded-full transition-all duration-300"></span>
                   )}
                 </a>
               );
