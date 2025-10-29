@@ -4,7 +4,6 @@ import Image from "next/image";
 import { Button } from "../ui/Button";
 import { FiArrowDown, FiMail } from "react-icons/fi";
 import { handleNavClick } from "@/lib/utils";
-import { urls } from "@/lib/urls";
 
 export const Hero = () => {
   return (
@@ -23,7 +22,7 @@ export const Hero = () => {
       />
 
       {/* Overlay for better contrast */}
-      <div className="absolute inset-0 bg-gradient-to-br from-pink-50/90 via-purple-50/80 to-blue-50/90 dark:from-pink-950/80 dark:via-purple-950/70 dark:to-blue-950/80" />
+      <div className="absolute inset-0 bg-gradient-to-br from-emerald-50/50 via-emerald-55/30 to-green-50/50 dark:from-emerald-900/70 dark:via-emerald-purple-950/65 dark:to-emerald-950/70" />
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center max-w-4xl mx-auto">
@@ -51,7 +50,7 @@ export const Hero = () => {
           </div>
 
           <p className="text-base md:text-lg lg:text-lg xl:text-lg 2xl:text-2xl text-foreground/80 dark:text-white/90 mb-4 max-w-3xl mx-auto leading-relaxed">
-            Desenvolvedor Back-End com Java, Spring e Apache Camel 
+            Desenvolvedor Back-End com Java, Spring e Apache Camel
             que também mexe no Front-End com Javascript e TypeScript.
             Criando soluções modernas e eficientes em nuvem ou on-premises.
           </p>
@@ -86,11 +85,12 @@ export const Hero = () => {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-            <Button 
-            variant="hero" 
-            size="xl" 
-            className="font-semibold"
-            href="#contact">
+            <Button
+              variant="hero"
+              size="xl"
+              className="font-semibold"
+              href="#contact"
+            >
               <FiMail className="h-5 w-5" />
               Entre em Contato
             </Button>
