@@ -58,7 +58,7 @@ export const Hero = () => {
           {/* Experience Stats */}
           <div className="mb-8 flex flex-wrap justify-center gap-8 text-sm">
             <div className="flex flex-col items-center">
-              <span className="text-2xl font-bold text-primary dark:text-blue-400">
+              <span className="text-2xl font-bold text-primary dark:text-emerald-400">
                 15+ Anos
               </span>
               <span className="text-foreground/70 dark:text-white/80">
@@ -66,7 +66,7 @@ export const Hero = () => {
               </span>
             </div>
             <div className="flex flex-col items-center">
-              <span className="text-2xl font-bold text-primary dark:text-blue-400">
+              <span className="text-2xl font-bold text-primary dark:text-emerald-400">
                 3+ Anos
               </span>
               <span className="text-foreground/70 dark:text-white/80">
@@ -74,7 +74,7 @@ export const Hero = () => {
               </span>
             </div>
             <div className="flex flex-col items-center">
-              <span className="text-2xl font-bold text-primary dark:text-blue-400">
+              <span className="text-2xl font-bold text-primary dark:text-emerald-400">
                 100%
               </span>
               <span className="text-foreground/70 dark:text-white/80">
@@ -113,7 +113,7 @@ export const Hero = () => {
                 handleNavClick(e, "#about")
               }
             >
-              <FiArrowDown className="h-5 w-5 text-primary dark:text-blue-400 animate-bounce" />
+              <FiArrowDown className="h-5 w-5 text-primary dark:text-emerald-400 animate-bounce" />
             </Button>
           </div>
         </div>

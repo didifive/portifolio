@@ -1,5 +1,3 @@
-import { email } from "zod";
-
 export const urls = {
   linkedin: "https://linkedin.com/in/luis-zancanela",
   github: "https://github.com/didifive",
