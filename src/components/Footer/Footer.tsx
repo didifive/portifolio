@@ -9,7 +9,7 @@ import {
 } from "react-icons/fa";
 import { Button } from "../ui/Button";
 import { urls } from "@/lib/urls";
-import { version } from '../../../package.json';
+import { appConfig } from "@/lib/appConfig";
 
 export const Footer = () => {
   const scrollToSection = (elementId: string) => {
@@ -145,7 +145,7 @@ export const Footer = () => {
                 © {currentYear} Luis Zancanela. Todos os direitos reservados.
               </div>
               <div className="text-xs text-muted-foreground">
-                v{version}
+                v{appConfig.version}
               </div>
             </div>
           </div>
