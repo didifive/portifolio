@@ -9,6 +9,7 @@ import {
 } from "react-icons/fa";
 import { Button } from "../ui/Button";
 import { urls } from "@/lib/urls";
+import { version } from '../../../package.json';
 
 export const Footer = () => {
   const scrollToSection = (elementId: string) => {
@@ -142,6 +143,9 @@ export const Footer = () => {
             <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
               <div className="text-sm text-muted-foreground">
                 © {currentYear} Luis Zancanela. Todos os direitos reservados.
+              </div>
+              <div className="text-xs text-muted-foreground">
+                v{version}
               </div>
             </div>
           </div>
