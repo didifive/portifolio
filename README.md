@@ -125,6 +125,18 @@ Acesse [http://localhost:3000](http://localhost:3000) para ver o resultado.
 
 ---
 
+### Atualizando
+
+```bash
+npx npm-check-updates -u
+npm install
+
+# Para testar use o run dev abaixo
+npm run dev
+```
+
+---
+
 ## 📁 Estrutura do Projeto
 
 ```
@@ -254,6 +266,14 @@ npm run test:coverage # Cobertura de testes
 - 📧 **Email**: maykon.sousa@hotmail.com
 - 💼 **LinkedIn**: [linkedin.com/in/maykonsousa](https://linkedin.com/in/maykonsousa)
 - 📱 **WhatsApp**: [Clique aqui para conversar](https://wa.me/5561992943297)
+
+
+**Luis Zancanela** - Software Engineer
+
+- 🌐 **Site**: [zancanela.dev.br](https://zancanela.dev.br)
+- 📧 **Email**: luis@zancanela.dev.br
+- 💼 **LinkedIn**: [linkedin.com/in/luiszancanela](https://linkedin.com/in/luiszancanela)
+- 📱 **WhatsApp**: [Clique aqui para conversar](https://wa.me/5516992976058)
 
 ---
 
