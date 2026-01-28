@@ -30,3 +30,16 @@ export const handleNavClick = (
   scrollToSection(elementId);
 
 };
+
+const START_YEAR_IT = 2007; // Quando começou em TI
+const START_YEAR_DEV = 2022; // Quando começou como desenvolvedor
+
+export const getYearsOfExperienceIT = () => {
+  const currentYear = new Date().getFullYear();
+  return currentYear - START_YEAR_IT;
+};
+
+export const getYearsOfExperienceDev = () => {
+  const currentYear = new Date().getFullYear();
+  return currentYear - START_YEAR_DEV;
+};
