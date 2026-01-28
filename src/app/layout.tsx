@@ -4,10 +4,12 @@ import { Header } from "@/components/Header";
 import { Main } from "@/components/Main";
 import { ThemeProvider } from "@/components/providers/theme-provider";
 import { Toaster } from "@/components/ui/Toaster";
-import { defaultMetadata } from "@/lib/metadata";
+import { defaultMetadata, viewport } from "@/lib/metadata";
 import { HomeStructuredData } from "@/components/StructuredData";
 
 export const metadata: Metadata = defaultMetadata;
+
+export const generateViewport = () => viewport;
 
 export default function RootLayout({
   children,

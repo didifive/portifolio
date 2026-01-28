@@ -55,7 +55,6 @@ export async function GET() {
     );
     console.log(`Fetching page ${page} of repos for user ${username}`);
     console.log(`GitHub API rate limit remaining: ${res.headers.get("X-RateLimit-Remaining")}`);
-    console.log(res);
     const data = await res.json();
     console.log(`Fetched page ${page} with ${data.length} repos`);
     allRepos = allRepos.concat(data);

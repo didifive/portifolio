@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { urls } from "@/lib/urls";
 
 export const siteConfig = {
@@ -68,12 +68,6 @@ export const defaultMetadata: Metadata = {
       "en-US": "/en"
     }
   },
-  themeColor: "#000000",
-  viewport: {
-    width: "device-width",
-    initialScale: 1,
-    maximumScale: 1,
-  },
   openGraph: {
     type: "website",
     locale: siteConfig.locale,
@@ -117,6 +111,13 @@ export const defaultMetadata: Metadata = {
       me: [siteConfig.author.email, siteConfig.author.linkedin]
     }
   }
+};
+
+export const viewport: Viewport = {
+  themeColor: "#000000",
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
 };
 
 export function generatePageMetadata({
