@@ -3,9 +3,12 @@
 import Image from "next/image";
 import { Button } from "../ui/Button";
 import { FiArrowDown, FiMail } from "react-icons/fi";
-import { handleNavClick } from "@/lib/utils";
+import { handleNavClick, getYearsOfExperienceIT, getYearsOfExperienceDev } from "@/lib/utils";
 
 export const Hero = () => {
+  const yearsIT = getYearsOfExperienceIT();
+  const yearsDev = getYearsOfExperienceDev();
+
   return (
     <section
       id="hero"
@@ -22,7 +25,7 @@ export const Hero = () => {
       />
 
       {/* Overlay for better contrast */}
-      <div className="absolute inset-0 bg-gradient-to-br from-emerald-50/50 via-emerald-55/30 to-green-50/50 dark:from-emerald-900/70 dark:via-emerald-purple-950/65 dark:to-emerald-950/70" />
+      <div className="absolute inset-0 bg-linear-to-br from-emerald-50/50 via-emerald-55/30 to-green-50/50 dark:from-emerald-900/70 dark:via-emerald-purple-950/65 dark:to-emerald-950/70" />
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center max-w-4xl mx-auto">
@@ -44,7 +47,7 @@ export const Hero = () => {
           </h1>
 
           <div className="mb-6 flex justify-center">
-            <span className="bg-primary/90 dark:bg-primary text-white px-6 py-2 rounded-full font-semibold text-base md:text-lg shadow-medium backdrop-blur-sm">
+            <span className="bg-primary/90 dark:bg-primary text-white px-6 py-2 rounded-full font-semibold text-base md:text-lg shadow-medium backdrop-blur-xs">
               Software Engineer
             </span>
           </div>
@@ -59,7 +62,7 @@ export const Hero = () => {
           <div className="mb-8 flex flex-wrap justify-center gap-8 text-sm">
             <div className="flex flex-col items-center">
               <span className="text-2xl font-bold text-primary dark:text-emerald-400">
-                15+ Anos
+                {yearsIT}+ Anos
               </span>
               <span className="text-foreground/70 dark:text-white/80">
                 de Experiência em TI
@@ -67,7 +70,7 @@ export const Hero = () => {
             </div>
             <div className="flex flex-col items-center">
               <span className="text-2xl font-bold text-primary dark:text-emerald-400">
-                3+ Anos
+                {yearsDev}+ Anos
               </span>
               <span className="text-foreground/70 dark:text-white/80">
                 de Experiência como Dev
