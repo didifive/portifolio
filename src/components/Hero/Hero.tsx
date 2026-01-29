@@ -3,9 +3,12 @@
 import Image from "next/image";
 import { Button } from "../ui/Button";
 import { FiArrowDown, FiMail } from "react-icons/fi";
-import { handleNavClick } from "@/lib/utils";
+import { handleNavClick, getYearsOfExperienceIT, getYearsOfExperienceDev } from "@/lib/utils";
 
 export const Hero = () => {
+  const yearsIT = getYearsOfExperienceIT();
+  const yearsDev = getYearsOfExperienceDev();
+
   return (
     <section
       id="hero"
@@ -59,7 +62,7 @@ export const Hero = () => {
           <div className="mb-8 flex flex-wrap justify-center gap-8 text-sm">
             <div className="flex flex-col items-center">
               <span className="text-2xl font-bold text-primary dark:text-emerald-400">
-                15+ Anos
+                {yearsIT}+ Anos
               </span>
               <span className="text-foreground/70 dark:text-white/80">
                 de Experiência em TI
@@ -67,7 +70,7 @@ export const Hero = () => {
             </div>
             <div className="flex flex-col items-center">
               <span className="text-2xl font-bold text-primary dark:text-emerald-400">
-                3+ Anos
+                {yearsDev}+ Anos
               </span>
               <span className="text-foreground/70 dark:text-white/80">
                 de Experiência como Dev

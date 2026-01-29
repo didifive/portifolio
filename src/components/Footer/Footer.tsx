@@ -4,12 +4,11 @@ import {
   FaGithub,
   FaLinkedin,
   FaRegEnvelope,
-  FaWhatsapp,
-  FaInstagram,
 } from "react-icons/fa";
 import { Button } from "../ui/Button";
 import { urls } from "@/lib/urls";
 import { appConfig } from "@/lib/appConfig";
+import { currentYear } from "@/lib/utils";
 
 export const Footer = () => {
   const scrollToSection = (elementId: string) => {
@@ -34,7 +33,6 @@ export const Footer = () => {
     const elementId = href.replace("#", "");
     scrollToSection(elementId);
   };
-  const currentYear = new Date().getFullYear();
 
   const socialLinks = [
     {
