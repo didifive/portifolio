@@ -3,8 +3,8 @@ import { urls } from "@/lib/urls";
 
 export const siteConfig = {
   name: "Luis Zancanela",
-  title: "Luis Zancanela - Desenvolvedor Back-End",
-  description: "Desenvolvedor Back-End com Java, Spring e Apache Camel que também tem skills de Front-End com Javascript e TypeScript (formando o Full Stack). Criando soluções modernas e eficientes em nuvem ou on-premises.",
+  title: "Luis Zancanela - Desenvolvedor Back-End | Java, Spring, TypeScript, Azure",
+  description: "Portfólio de Luis Zancanela, desenvolvedor back-end especializado em Java, Spring Boot, Apache Camel e TypeScript. Mais de 5 anos de experiência em desenvolvimento de soluções modernas e eficientes na nuvem.",
   url: "https://zancanela.dev.br",
   keywords: [
     "desenvolvedor",
@@ -65,7 +65,6 @@ export const defaultMetadata: Metadata = {
     canonical: "/",
     languages: {
       "pt-BR": "/",
-      "en-US": "/en"
     }
   },
   themeColor: "#000000",
@@ -91,13 +90,14 @@ export const defaultMetadata: Metadata = {
       }
     ]
   },
-  // twitter: {
-  //   card: "summary_large_image",
-  //   title: siteConfig.title,
-  //   description: siteConfig.description,
-  //   creator: siteConfig.author.linkedin,
-  //   images: ["/og-image"]
-  // },
+  twitter: {
+    card: "summary_large_image",
+    title: siteConfig.title,
+    description: siteConfig.description,
+    creator: "@didifive",
+    site: "@zancanela",
+    images: ["/og-image"]
+  },
   robots: {
     index: true,
     follow: true,
@@ -146,11 +146,12 @@ export function generatePageMetadata({
       description: description || siteConfig.description,
       images: images || ["/og-image"]
     },
-    // twitter: {
-    //   title: title || siteConfig.title,
-    //   description: description || siteConfig.description,
-    //   images: images || ["/og-image"]
-    // },
+    twitter: {
+      card: "summary_large_image",
+      title: title || siteConfig.title,
+      description: description || siteConfig.description,
+      images: images || ["/og-image"]
+    },
     robots: noIndex ? {
       index: false,
       follow: false

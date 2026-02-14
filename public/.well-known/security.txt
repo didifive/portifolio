@@ -1,0 +1,5 @@
+Contact: mailto:luis@zancanela.dev.br
+Contact: https://linkedin.com/in/luis-zancanela
+Expires: 2026-12-31T23:59:59.000Z
+Preferred-Languages: pt-br, en
+Canonical: https://zancanela.dev.br/.well-known/security.txt

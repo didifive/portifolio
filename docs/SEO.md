@@ -204,7 +204,19 @@ import { OptimizedImage } from "@/components/OptimizedImage";
 
 ## 🛠️ Manutenção
 
-### Atualizações Regulares
+### Melhorias Recentes (Fevereiro 2026)
+
+**Otimizações SEO Aplicadas:**
+- ✅ Atualizado título para incluir keywords: "Luis Zancanela - Desenvolvedor Back-End | Java, Spring, TypeScript, Azure"
+- ✅ Melhorada descrição META com foco em back-end e stack específico
+- ✅ Twitter Cards ativadas em todas as páginas (summary_large_image)
+- ✅ Schema.org Person atualizado com jobTitle "Desenvolvedor Back-End"
+- ✅ Tecnologias no schema alteradas para back-end focus (Java, Spring Boot, Apache Camel, Docker, Azure)
+- ✅ Arquivo `public/.well-known/security.txt` criado (RFC 9116 compliance)
+- ✅ Google verification meta tag adicionada ao metadata
+- ✅ Canonical tags configuradas corretamente em todas as páginas
+
+### Verificações por Realizar
 
 - Revisar e atualizar keywords mensalmente
 - Verificar links quebrados
@@ -242,11 +254,11 @@ import { OptimizedImage } from "@/components/OptimizedImage";
 - [x] Internal linking estratégico
 
 **Dados Estruturados e Social:**
-- [x] Schema.org Person (desenvolvedor)
+- [x] Schema.org Person (desenvolvedor) - Atualizado com jobTitle "Desenvolvedor Back-End"
 - [x] Schema.org Website (site)
 - [x] Open Graph image dinâmica (`/og-image`)
 - [x] Cores atualizadas (green theme)
-- [x] Twitter Cards implementadas
+- [x] Twitter Cards implementadas e ativadas
 
 **Performance e Security:**
 - [x] Lazy loading em imagens
@@ -256,7 +268,19 @@ import { OptimizedImage } from "@/components/OptimizedImage";
 - [x] Core Web Vitals otimizados
 - [x] Security headers implementados
 
-### Verificações Técnicas
+### Verificações por Realizar
+
+- [ ] Submeter sitemap ao Google Search Console
+- [ ] Verificar indexação em `site:zancanela.dev.br`
+- [ ] Testar Open Graph em [Facebook Debugger](https://developers.facebook.com/tools/debug/)
+- [ ] Validar Twitter Cards em [Twitter Validator](https://cards-dev.twitter.com/validator)
+- [ ] Executar PageSpeed Insights para Core Web Vitals
+- [ ] Validar Schema.org em [Rich Results Test](https://search.google.com/test/rich-results)
+- [ ] Verificar `robots.txt` em zancanela.dev.br/robots.txt
+- [ ] Confirmar `sitemap.xml` em zancanela.dev.br/sitemap.xml
+- [ ] Validar `security.txt` em zancanela.dev.br/.well-known/security.txt
+
+### Atualizações Regulares
 
 - [x] Sitemap XML implementado (`src/app/sitemap.ts`)
 - [x] Robots.txt configurado (`src/app/robots.ts`)
