@@ -12,7 +12,7 @@ import {
   Link,
 } from "@react-email/components";
 import { urls } from "@/lib/urls";
-import { FaLinkedin, FaRegEnvelope, FaWhatsapp } from "react-icons/fa";
+import { FaLinkedin, FaRegEnvelope } from "react-icons/fa";
 
 interface ConfirmationEmailProps {
   readonly userName: string;
@@ -90,17 +90,19 @@ export default function ConfirmationEmail({
             </Text>
 
             <Text style={textStyle}>
-              <strong>Algumas áreas de expertise:</strong>
+              <strong>Principais tecnologias:</strong>
             </Text>
 
             <ul style={listStyle}>
               <li style={listItemStyle}>
-                Desenvolvimento Backend (Java, Spring Boot, Apache Camel, Node.js, APIs REST)
+                <strong>Backend:</strong> Java, Spring Boot, Apache Camel, Node.js, APIs REST, Microserviços
               </li>
               <li style={listItemStyle}>
-                Desenvolvimento Frontend (React, Next.js, TypeScript)
+                <strong>Frontend:</strong> React, Next.js, TypeScript, Angular, Tailwind CSS
               </li>
-              <li style={listItemStyle}>Arquitetura de Software</li>
+              <li style={listItemStyle}>
+                <strong>DevOps & Cloud:</strong> Azure, Azure DevOps, Docker, Kubernetes
+              </li>
             </ul>
           </div>
 
@@ -162,7 +164,7 @@ const mainStyle = {
 };
 
 const headerStyle = {
-  background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
+  background: "linear-gradient(135deg, #059669 0%, #22C55E 100%)",
   padding: "40px 45px 30px",
   textAlign: "center" as const,
 };
@@ -207,9 +209,9 @@ const contactSectionStyle = {
 const aboutSectionStyle = {
   margin: "30px 45px",
   padding: "20px",
-  backgroundColor: "#fff8f0",
+  backgroundColor: "#f0fdf4",
   borderRadius: "6px",
-  border: "1px solid #f0e6d2",
+  border: "1px solid #dcfce7",
 };
 
 const buttonContainerStyle = {
@@ -278,7 +280,7 @@ const footerTextStyle = {
 };
 
 const linkStyle = {
-  color: "#667eea",
+  color: "#059669",
   textDecoration: "none",
 };
 

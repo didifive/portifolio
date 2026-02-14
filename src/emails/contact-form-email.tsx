@@ -12,10 +12,10 @@ import {
 } from "@react-email/components";
 
 interface ContactFormEmailProps {
-  name: string;
-  email: string;
-  subject: string;
-  message: string;
+  readonly name: string;
+  readonly email: string;
+  readonly subject: string;
+  readonly message: string;
 }
 
 export default function ContactFormEmail({
@@ -74,7 +74,7 @@ export default function ContactFormEmail({
 
           <Text style={footerStyle}>
             Esta mensagem foi enviada através do formulário de contato do seu
-            portfólio. Para responder, use o email: {email}
+           ame portfólio. Para responder, use o email: {email}
           </Text>
         </Section>
       </Container>
@@ -97,7 +97,7 @@ const mainStyle = {
 };
 
 const h1Style = {
-  color: "#333",
+  color: "#059669",
   fontSize: "24px",
   fontWeight: "bold",
   margin: "40px 0 20px",
@@ -112,7 +112,7 @@ const textStyle = {
 };
 
 const labelStyle = {
-  color: "#666",
+  color: "#059669",
   fontSize: "12px",
   fontWeight: "bold",
   textTransform: "uppercase" as const,
@@ -134,9 +134,9 @@ const messageStyle = {
   lineHeight: "24px",
   margin: "8px 0 20px",
   padding: "16px",
-  backgroundColor: "#f8f9fa",
+  backgroundColor: "#f0fdf4",
   borderRadius: "6px",
-  border: "1px solid #e9ecef",
+  border: "1px solid #dcfce7",
   whiteSpace: "pre-wrap" as const,
 };
 
