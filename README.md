@@ -324,6 +324,8 @@ O formulário de contato envia **dois emails automaticamente**:
 - **Acessibilidade**: WCAG 2.1 AA compliant
 - **Performance**: First Load ideal em todas as conexões
 
+> 📄 Para um guia completo sobre SEO, implementações e checklist, consulte [docs/SEO.md](docs/SEO.md)
+
 ---
 
 ## 🚀 Deploy
