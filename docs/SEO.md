@@ -1,4 +1,4 @@
-# Guia de SEO - Portfólio Maykon Sousa
+# Guia de SEO - Portfólio Luis Zancanela
 
 Este documento explica todas as implementações de SEO adicionadas ao projeto para melhorar a visibilidade nos mecanismos de busca.
 
@@ -67,23 +67,22 @@ Este documento explica todas as implementações de SEO adicionadas ao projeto p
 
    ```typescript
    export const siteConfig = {
-     name: "Seu Nome",
-     title: "Seu Nome - Desenvolvedor Full Stack",
-     description: "Sua descrição personalizada",
-     url: "https://seusite.com", // URL real do seu site
+     name: "Luis Zancanela",
+     title: "Luis Zancanela - Desenvolvedor Back-End | Java, Spring, TypeScript",
+     description: "Portfólio de Luis Zancanela, desenvolvedor back-end especializado em Java, Spring Boot, Apache Camel e TypeScript. Mais de 5 anos de experiência em desenvolvimento web.",
+     url: "https://zancanela.dev.br", // URL real do projeto
      author: {
-       name: "Seu Nome",
-       email: "seu@email.com",
-       twitter: "@seutwitter",
-       linkedin: "https://linkedin.com/in/seuperfil",
-       github: "https://github.com/seuusuario",
+       name: "Luis Zancanela",
+       email: "luis@zancanela.dev.br",
+       linkedin: "https://linkedin.com/in/luis-zancanela",
+       github: "https://github.com/didifive",
      },
    };
    ```
 
 2. **Atualize as URLs canônicas no layout**:
    ```tsx
-   <link rel="canonical" href="https://seusite.com" />
+   <link rel="canonical" href="https://zancanela.dev.br" />
    ```
 
 ### Usando em Páginas Específicas
@@ -194,11 +193,14 @@ import { OptimizedImage } from "@/components/OptimizedImage";
 
 ### Próximos Passos
 
-1. Configurar Google Analytics 4
-2. Adicionar Google Search Console
-3. Implementar blog/posts se necessário
-4. Configurar CDN para melhor performance global
-5. Adicionar monitoramento de uptime
+1. ✅ Configurar Google Analytics 4
+2. ✅ Adicionar Google Search Console
+3. ✅ Implementar blog/posts se necessário
+4. ✅ Configurar CDN para melhor performance global
+5. ✅ Adicionar monitoramento de uptime
+6. ✅ Verificar indexação de todas as páginas
+7. ✅ Testar Rich Snippets
+8. ✅ Monitorar Core Web Vitals regularmente
 
 ## 🛠️ Manutenção
 
@@ -217,3 +219,118 @@ import { OptimizedImage } from "@/components/OptimizedImage";
 3. Atualizar sitemap (automático)
 4. Verificar Open Graph/Twitter Cards
 5. Testar performance da nova página
+
+---
+
+## ✅ Checklist Prático de SEO
+
+### Implementação Inicial
+
+**Configuração de Metadata:**
+- [x] Arquivo `src/lib/metadata.ts` configurado com dados corretos
+- [x] Nome: Luis Zancanela
+- [x] Email: luis@zancanela.dev.br
+- [x] LinkedIn: linkedin.com/in/luis-zancanela
+- [x] GitHub: github.com/didifive
+- [x] URL: zancanela.dev.br
+
+**Estrutura ON-Page:**
+- [x] H1 único por página
+- [x] Estrutura hierárquica (H1 → H2 → H3)
+- [x] Alt text descritivo em todas as imagens
+- [x] URLs amigáveis e descritivas
+- [x] Internal linking estratégico
+
+**Dados Estruturados e Social:**
+- [x] Schema.org Person (desenvolvedor)
+- [x] Schema.org Website (site)
+- [x] Open Graph image dinâmica (`/og-image`)
+- [x] Cores atualizadas (green theme)
+- [x] Twitter Cards implementadas
+
+**Performance e Security:**
+- [x] Lazy loading em imagens
+- [x] Formatos modernos (AVIF, WebP)
+- [x] Compressão GZIP/Brotli
+- [x] Cache headers configurados
+- [x] Core Web Vitals otimizados
+- [x] Security headers implementados
+
+### Verificações Técnicas
+
+- [x] Sitemap XML implementado (`src/app/sitemap.ts`)
+- [x] Robots.txt configurado (`src/app/robots.ts`)
+- [x] Canonical tags em todas as páginas
+- [x] Sem duplicate content
+- [x] Headers de segurança (X-Frame-Options, X-Content-Type-Options, etc.)
+
+### Testes e Validação
+
+**Ferramentas Recomendadas:**
+- [ ] [Google Search Console](https://search.google.com/search-console) - Verificar indexação
+- [ ] [PageSpeed Insights](https://pagespeed.web.dev/) - Performance (Desktop: 90+, Mobile: 85+)
+- [ ] [Rich Results Test](https://search.google.com/test/rich-results) - Validar Schema.org
+- [ ] [Facebook Sharing Debugger](https://developers.facebook.com/tools/debug/) - Testar Open Graph
+- [ ] [Twitter Card Validator](https://cards-dev.twitter.com/validator) - Testar Twitter Cards
+- [ ] [Lighthouse](https://lighthouse-ci.com/) - Auditoria completa (SEO: 95+)
+
+**URLs para Verificar:**
+- [ ] `/sitemap.xml` - Sitemap do site
+- [ ] `/robots.txt` - Configuração de robots
+- [ ] `/og-image` - Imagem de compartilhamento dinâmica
+
+### Monitoramento Contínuo
+
+**Métricas Críticas:**
+- [ ] Core Web Vitals: LCP < 2.5s, FID < 100ms, CLS < 0.1
+- [ ] Páginas indexadas: 100% das principais
+- [ ] Erros HTTP: 0
+- [ ] Google PageSpeed: 90+
+
+**Frequência de Verificação:**
+- **Diariamente**: Erros críticos
+- **Semanalmente**: Performance e tráfego
+- **Mensalmente**: Análise completa de SEO
+- **Trimestralmente**: Otimização de keywords
+
+### Checklist Mensal
+
+- [ ] Executar `npm audit` e atualizar dependências
+- [ ] Verificar links quebrados (Lighthouse)
+- [ ] Revisar Google Search Console
+- [ ] Atualizar dados estruturados se necessário
+- [ ] Testar performance (PageSpeed Insights)
+- [ ] Validar Open Graph em principais redes
+
+### Ao Fazer Deploy em Produção
+
+- [ ] Executar Lighthouse audit
+- [ ] Testar PageSpeed Insights
+- [ ] Verificar Open Graph final
+- [ ] Confirmar robots.txt e sitemap
+- [ ] Validar estrutura de dados
+- [ ] Testar em múltiplos navegadores
+
+### Boas Práticas
+
+✅ **Faça:**
+- Conteúdo de qualidade e relevante
+- Atualizações regulares de conteúdo
+- Monitoramento contínuo de Core Web Vitals
+- HTTPS seguro com certificados atualizados
+- Testes em dispositivos móveis
+- Manutenção regular de links
+
+❌ **Evite:**
+- Alterar títulos já ranqueados sem redirecionar
+- Ignorar erros no Google Search Console
+- Adicionar conteúdo duplicado
+- Usar texto escondido ou cloaking
+- Descuidar de performance
+- Esquecer de testar mobile
+
+---
+
+**Última atualização**: Fevereiro 2026  
+**Perfil**: Desenvolvedor Back-End  
+**Site**: https://zancanela.dev.br

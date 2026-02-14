@@ -15,8 +15,8 @@ export async function GET() {
             flexDirection: "column",
             alignItems: "center",
             justifyContent: "center",
-            backgroundColor: "#0a0a0a",
-            backgroundImage: "linear-gradient(45deg, #0a0a0a 0%, #1a1a1a 100%)",
+            backgroundColor: "#0f2e1a",
+            backgroundImage: "linear-gradient(45deg, #0f2e1a 0%, #1a3a24 100%)",
             fontSize: 32,
             fontWeight: 600,
           }}
@@ -30,7 +30,7 @@ export async function GET() {
               right: 0,
               bottom: 0,
               background:
-                "radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.1) 0%, transparent 70%)",
+                "radial-gradient(circle at 50% 50%, rgba(34, 197, 94, 0.15) 0%, transparent 70%)",
             }}
           />
 
@@ -51,7 +51,7 @@ export async function GET() {
               style={{
                 fontSize: "72px",
                 fontWeight: "bold",
-                background: "linear-gradient(90deg, #3b82f6 0%, #8b5cf6 100%)",
+                background: "linear-gradient(90deg, #22c55e 0%, #10b981 100%)",
                 backgroundClip: "text",
                 color: "transparent",
                 marginBottom: "24px",
@@ -64,13 +64,13 @@ export async function GET() {
             <div
               style={{
                 fontSize: "36px",
-                color: "#e5e7eb",
+                color: "#d1fae5",
                 marginBottom: "40px",
                 maxWidth: "800px",
                 lineHeight: 1.3,
               }}
             >
-              Desenvolvedor Full Stack
+              Desenvolvedor Back-End
             </div>
 
             {/* Tecnologias */}
@@ -79,48 +79,50 @@ export async function GET() {
                 display: "flex",
                 gap: "24px",
                 fontSize: "24px",
-                color: "#9ca3af",
+                color: "#a7f3d0",
+                flexWrap: "wrap",
+                justifyContent: "center",
               }}
             >
               <span
                 style={{
-                  background: "rgba(59, 130, 246, 0.1)",
+                  background: "rgba(34, 197, 94, 0.15)",
                   padding: "8px 16px",
                   borderRadius: "8px",
-                  border: "1px solid rgba(59, 130, 246, 0.2)",
+                  border: "1px solid rgba(34, 197, 94, 0.3)",
                 }}
               >
-                React
+                Java
               </span>
               <span
                 style={{
-                  background: "rgba(59, 130, 246, 0.1)",
+                  background: "rgba(34, 197, 94, 0.15)",
                   padding: "8px 16px",
                   borderRadius: "8px",
-                  border: "1px solid rgba(59, 130, 246, 0.2)",
+                  border: "1px solid rgba(34, 197, 94, 0.3)",
                 }}
               >
-                Next.js
+                Spring
               </span>
               <span
                 style={{
-                  background: "rgba(59, 130, 246, 0.1)",
+                  background: "rgba(34, 197, 94, 0.15)",
                   padding: "8px 16px",
                   borderRadius: "8px",
-                  border: "1px solid rgba(59, 130, 246, 0.2)",
+                  border: "1px solid rgba(34, 197, 94, 0.3)",
                 }}
               >
                 TypeScript
               </span>
               <span
                 style={{
-                  background: "rgba(59, 130, 246, 0.1)",
+                  background: "rgba(34, 197, 94, 0.15)",
                   padding: "8px 16px",
                   borderRadius: "8px",
-                  border: "1px solid rgba(59, 130, 246, 0.2)",
+                  border: "1px solid rgba(34, 197, 94, 0.3)",
                 }}
               >
-                Node.js
+                Azure
               </span>
             </div>
           </div>
@@ -132,7 +134,7 @@ export async function GET() {
               bottom: "40px",
               right: "40px",
               fontSize: "20px",
-              color: "#6b7280",
+              color: "#6ee7b7",
             }}
           >
             {siteConfig.url.replace("https://", "")}

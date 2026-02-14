@@ -32,16 +32,16 @@ npm run dev
 
 **Quando alguém preenche o formulário:**
 
-1. **Email para você**: `maykon.sousa@hotmail.com`
+1. **Email para você**: `luis@zancanela.dev.br`
    - Contém: nome, email, assunto, mensagem do visitante
    - Reply-to: email do visitante (resposta direta)
 
 2. **Email para visitante**: email fornecido no formulário
    - Agradecimento personalizado
-   - Seus contatos (WhatsApp, LinkedIn)
+   - Seus contatos (LinkedIn, GitHub)
    - Expectativa de resposta em 24h
 
-**Remetente**: `Maykon Sousa <contato@devpoorbr.com.br>`
+**Remetente**: `Luis Zancanela <luis@zancanela.dev.br>`
 
 ## 🎯 Pronto para Produção
 

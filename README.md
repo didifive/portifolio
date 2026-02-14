@@ -1,106 +1,203 @@
-# 🚀 Portfólio - Maykon Sousa V3
-
 <div align="center">
-  <img src="https://img.shields.io/badge/Next.js-15.5.2-black?style=for-the-badge&logo=next.js&logoColor=white" alt="Next.js"/>
-  <img src="https://img.shields.io/badge/TypeScript-5.0-blue?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript"/>
-  <img src="https://img.shields.io/badge/Tailwind_CSS-3.4-06B6D4?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="Tailwind CSS"/>
-  <img src="https://img.shields.io/badge/React-19.1.0-61DAFB?style=for-the-badge&logo=react&logoColor=black" alt="React"/>
+
+# Portfólio - Luis Zancanela
+
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![Next.js](https://img.shields.io/badge/Next.js-15.5.2-black?logo=next.js)](https://nextjs.org/)
+[![React](https://img.shields.io/badge/React-19.1.0-61DAFB?logo=react)](https://reactjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.0-3178C6?logo=typescript)](https://www.typescriptlang.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.4-06B6D4?logo=tailwind-css)](https://tailwindcss.com/)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/947bcbd3-022a-4c09-84b7-06b47e1859ee/deploy-status)](https://app.netlify.com/projects/zancaneladev/deploys)
+
+**Portfólio moderno e responsivo desenvolvido com Next.js, React e Tailwind CSS**
+
+[Demo ao Vivo](https://zancanela.dev.br) · [Reportar Bug](https://github.com/didifive/portifolio/issues) · [Solicitar Funcionalidade](https://github.com/didifive/portifolio/issues)
+
 </div>
 
-<div align="center">
-  <h3>✨ Portfólio moderno e responsivo para desenvolvedor fullstack ✨</h3>
-  <p>Sistema completo com formulário de contato integrado, tema dark/light e design profissional</p>
-</div>
+---
+
+## 📋 Tabela de Conteúdos
+
+- [Sobre](#-sobre)
+- [Características](#-características)
+- [Tecnologias](#-tecnologias)
+- [Arquitetura](#-arquitetura)
+- [Como Começar](#-como-começar)
+- [Resend](#-resend)
+- [Funcionalidades](#-funcionalidades)
+- [Performance](#-performance)
+- [Deploy](#-deploy)
+- [Créditos](#-créditos)
+- [Contato](#-contato)
+- [Licença](#-licença)
 
 ---
 
-## 📖 Sobre o Projeto
+## 💼 Sobre
 
-Este é o portfólio pessoal do **Maykon Sousa**, desenvolvedor fullstack com mais de 5 anos de experiência. O site apresenta uma interface moderna e profissional, destacando habilidades, experiências e projetos realizados.
+Este é o portfólio pessoal do **Luis Zancanela**, desenvolvedor back-end com mais de 5 anos de experiência em desenvolvimento web. O site apresenta uma interface moderna e profissional, destacando as habilidades, experiências e projetos desenvolvidos ao longo da carreira.
 
-### 🎯 Principais Características
+O projeto foi desenvolvido como uma oportunidade de demonstrar conhecimento em tecnologias modernas como Next.js 15, React 19, TypeScript e Tailwind CSS, aplicando os melhores padrões de desenvolvimento web, performance e acessibilidade. Para configurações rápidas, consulte o [RESEND.md](docs/RESEND.md).
 
-- **Design Responsivo**: Funciona perfeitamente em todos os dispositivos
-- **Sistema de Temas**: Alternância entre modo claro e escuro
-- **Formulário de Contato**: Integração com Resend para envio de emails
-- **Animações Suaves**: Transições e efeitos visuais elegantes
-- **Performance Otimizada**: Built com Next.js 15 e Turbopack
-- **Acessibilidade**: Componentes seguindo padrões ARIA
+### 🎯 Objetivos do Projeto
 
----
-
-## 🛠️ Tecnologias Utilizadas
-
-### 🎨 Frontend
-
-- **Next.js 15.5.2** - Framework React com App Router
-- **React 19.1.0** - Biblioteca para interfaces de usuário
-- **TypeScript 5** - JavaScript com tipagem estática
-- **Tailwind CSS 3.4** - Framework CSS utility-first
-- **Radix UI** - Componentes acessíveis e não estilizados
-
-### 📧 Comunicação
-
-- **Resend** - Serviço de envio de emails
-- **React Email** - Templates de email em React
-
-### 🎭 UI/UX
-
-- **React Icons** - Coleção de ícones populares
-- **Next Themes** - Sistema de temas
-- **Class Variance Authority** - Utilitário para variantes de componentes
-
-### 📊 Análise & Qualidade
-
-- **React Hook Form** - Gerenciamento de formulários
-- **Zod** - Validação de schema TypeScript
-- **ESLint** - Análise estática de código
-- **Jest** - Framework de testes
+- Apresentar um portfólio profissional e responsivo
+- Demonstrar habilidades com tecnologias modernas do mercado
+- Facilitar o contato através de formulário de mensagens
+- Implementar boas práticas de SEO e acessibilidade
+- Otimizar performance e experiência do usuário
 
 ---
 
-## 🚀 Como Executar o Projeto
+## ✨ Características
+
+- ⚡ **Framework Moderno**: Construído com Next.js 15 e React 19
+- 🎨 **Design Profissional**: Interface moderna e responsiva com Tailwind CSS
+- 🌙 **Tema Dinâmico**: Alternância entre modo claro e escuro
+- 📧 **Formulário Integrado**: Envio de emails automático com Resend
+- 🚀 **Performance Otimizada**: Build optimizado e carregamento rápido
+- ♿ **Acessibilidade**: Componentes WCAG 2.1 AA compliant
+- 📱 **Responsivo**: Funciona perfeitamente em todos os dispositivos
+- 🔍 **SEO Otimizado**: Meta tags estruturadas e schema markup
+- 🎯 **UX Focado**: Animações suaves e micro-interações
+- 📊 **Análise Integrada**: Métricas de desempenho monitoradas
+
+---
+
+## 🛠️ Tecnologias
+
+### Tecnologias Principais
+- **[Next.js](https://nextjs.org/)** (v15.5.2) - Framework React com App Router
+- **[React](https://reactjs.org/)** (v19.1.0) - Biblioteca para UI
+- **[TypeScript](https://www.typescriptlang.org/)** (v5) - Tipagem estática
+- **[Tailwind CSS](https://tailwindcss.com/)** (v3.4) - Framework CSS utility-first
+
+### Bibliotecas Adicionais
+- **[Radix UI](https://www.radix-ui.com/)** - Componentes acessíveis
+- **[React Email](https://react.email/)** - Templates de email
+- **[React Hook Form](https://react-hook-form.com/)** - Gerenciamento de formulários
+- **[Zod](https://zod.dev/)** - Validação de schema
+- **[Next Themes](https://github.com/pacocoursey/next-themes)** - Sistema de temas
+- **[Resend](https://resend.com/)** - Serviço de envio de emails
+
+### Ferramentas de Desenvolvimento
+- **[ESLint](https://eslint.org/)** - Análise estática de código
+- **[Jest](https://jestjs.io/)** - Framework de testes
+- **[TypeScript](https://www.typescriptlang.org/)** - Verificação de tipos
+
+---
+
+## 🏗️ Arquitetura
+
+### Estrutura do Projeto
+
+```
+src/
+├── app/                    # App Router do Next.js
+│   ├── api/               # API Routes
+│   │   ├── send-email/    # Endpoint para envio de emails
+│   │   ├── test-resend/   # Teste da integração Resend
+│   │   └── github/        # Integração com GitHub
+│   ├── og-image/          # Geração de Open Graph images
+│   ├── globals.css        # Estilos globais
+│   ├── layout.tsx         # Layout raiz
+│   ├── page.tsx           # Página principal
+│   ├── robots.ts          # Meta tags de robots
+│   └── sitemap.ts         # Mapa do site
+├── components/            # Componentes React
+│   ├── About/            # Seção sobre
+│   ├── Contact/          # Formulário de contato
+│   ├── Experience/       # Experiência profissional
+│   ├── Footer/           # Rodapé
+│   ├── Header/           # Cabeçalho/navegação
+│   ├── Hero/             # Seção principal
+│   ├── Projects/         # Projetos realizados
+│   ├── Main/             # Layout principal
+│   ├── Section/          # Componente de seção
+│   ├── ThemeToggle/      # Alternador de tema
+│   ├── providers/        # Providers (tema, etc.)
+│   ├── OptimizedImage.tsx  # Componente de imagem otimizada
+│   ├── SEOHead.tsx        # Cabeçalho com SEO
+│   ├── StructuredData.tsx # Schema markup
+│   └── ui/               # Componentes base de UI
+│       ├── Badge/
+│       ├── Button/
+│       ├── Card/
+│       ├── Form/
+│       ├── Input/
+│       ├── Label/
+│       ├── Textarea/
+│       ├── Toast/
+│       └── Toaster/
+├── emails/               # Templates de email
+│   ├── confirmation-email.tsx
+│   └── contact-form-email.tsx
+├── hooks/                # Custom hooks
+│   ├── use-toast.ts
+│   ├── useActiveSection.ts
+│   └── useSEO.ts
+├── lib/                  # Utilitários e configurações
+│   ├── appConfig.ts
+│   ├── metadata.ts
+│   ├── urls.ts
+│   └── utils.ts
+└── public/              # Arquivos estáticos
+```
+
+### Componentes Principais
+
+- **Hero**: Seção de apresentação principal com foto e informações
+- **About**: Histórico pessoal e profissional
+- **Experience**: Trajetória profissional e habilidades técnicas
+- **Projects**: Showcase de projetos destacados
+- **Contact**: Formulário funcional de contato
+- **Footer**: Links sociais e informações de rodapé
+- **ThemeToggle**: Sistema de alternância entre temas
+
+---
+
+## 🚀 Como Começar
 
 ### 📋 Pré-requisitos
 
-- Node.js 18+
-- npm, yarn, pnpm ou bun
+- **Node.js** 18+
+- **npm**, **yarn**, **pnpm** ou **bun**
 
 ### ⚡ Instalação
 
-```bash
-# 1. Clone o repositório
-git clone https://github.com/seu-usuario/maykonsousa.git
+1. **Clone o repositório**
+   ```bash
+   git clone https://github.com/didifive/portifolio.git
+   cd portifolio
+   ```
 
-# 2. Entre no diretório
-cd maykonsousa
+2. **Instale as dependências**
+   ```bash
+   npm install
+   # ou
+   yarn install
+   # ou
+   pnpm install
+   ```
 
-# 3. Instale as dependências
-npm install
-# ou
-yarn install
-# ou
-pnpm install
-```
+3. **Configure as variáveis de ambiente**
+   ```bash
+   cp .env.example .env.local
+   ```
 
-### 🔧 Configuração do Email
-
-Para o formulário de contato funcionar, configure o Resend:
-
-```bash
-# 1. Crie o arquivo de ambiente
-cp .env.example .env.local
-
-# 2. Adicione sua chave do Resend
-echo "RESEND_API_KEY=sua_chave_aqui" >> .env.local
-```
-
-**📝 Como obter a chave:**
-
-1. Acesse [resend.com](https://resend.com)
-2. Crie uma conta gratuita
-3. Vá para Dashboard → API Keys
-4. Crie uma nova chave e copie
+4. **Configure a chave do Resend**
+   
+   - Acesse [resend.com](https://resend.com)
+   - Crie uma conta ou faça login
+   - Vá para Dashboard → API Keys
+   - Crie uma nova chave e copie
+   - Adicione ao arquivo `.env.local`:
+   ```bash
+   RESEND_API_KEY=sua_chave_aqui
+   ```
+   
+   > 💡 **Para mais detalhes**, consulte a seção [📧 Resend](#-resend) ou [📄 RESEND.md](docs/RESEND.md)
 
 ### 🏃‍♂️ Executando
 
@@ -111,50 +208,102 @@ npm run dev
 # Build de produção
 npm run build
 
-# Iniciar produção
+# Iniciar servidor de produção
 npm run start
 
 # Executar testes
 npm run test
 
-# Linting
+# Análise de código
 npm run lint
 ```
 
-Acesse [http://localhost:3000](http://localhost:3000) para ver o resultado.
+Acesso [http://localhost:3000](http://localhost:3000) para ver o portfólio em ação.
+
+### 📦 Gerenciamento de Dependências
+
+Para manter as dependências seguras, atualizadas e evitar problemas com **dependency confusion**:
+
+#### ✅ Procedimento Recomendado
+
+```bash
+# 1. Verificar dependências desatualizadas
+npm outdated
+
+# 2. Executar auditoria de segurança
+npm audit
+
+# 3. Corrigir vulnerabilidades automaticamente
+npm audit fix
+
+# 4. Atualizar dependências security/patch
+npm update
+
+# 5. Verificar se há conflitos
+npm ls
+
+# 6. Sincronizar lock file se necessário
+npm install
+```
+
+#### 🔒 Prevenção de Dependency Confusion
+
+**No desenvolvimento:**
+1. Sempre commite o `package-lock.json`
+2. Use `npm ci` em CI/CD pipelines ao invés de `npm install`
+3. Configure `.npmrc` para o registry correto (se usar privado):
+   ```bash
+   npm config set registry https://registry.npmjs.org
+   ```
+
+**Ao reinstalar do zero:**
+```bash
+# Remover node_modules e lock file
+rm -r node_modules package-lock.json
+
+# Reinstalar com integridade verificada
+npm install
+```
+
+**Manter segurança:**
+- Execute `npm audit` regularmente
+- Use versões exatas para produção quando necessário
+- Revise `package.json` antes de fazer merge
+- Use `npm ci` ao invés de `npm install` em CI/CD
 
 ---
 
-## 📁 Estrutura do Projeto
+## 📧 Resend
 
-```
-src/
-├── app/                    # App Router (Next.js 13+)
-│   ├── api/               # API Routes
-│   │   ├── send-email/    # Endpoint de contato
-│   │   └── test-resend/   # Teste do Resend
-│   ├── globals.css        # Estilos globais
-│   ├── layout.tsx         # Layout raiz
-│   └── page.tsx           # Página principal
-├── components/            # Componentes React
-│   ├── About/            # Seção sobre
-│   ├── Contact/          # Formulário de contato
-│   ├── Experience/       # Experiência profissional
-│   ├── Footer/           # Rodapé
-│   ├── Header/           # Cabeçalho/navegação
-│   ├── Hero/             # Seção principal
-│   ├── Projects/         # Projetos realizados
-│   ├── providers/        # Providers (tema, etc.)
-│   └── ui/               # Componentes base
-├── emails/               # Templates de email
-├── hooks/                # Custom hooks
-├── lib/                  # Utilitários e configurações
-└── assets/               # Imagens e recursos
-```
+Para uma configuração rápida e simplificada do sistema de emails com Resend, consulte [📄 RESEND.md](docs/RESEND.md).
+
+**Resumo dos 3 passos:**
+1. Obtenha sua chave API em [resend.com](https://resend.com)
+2. Configure `.env.local` com `RESEND_API_KEY=sua_chave`
+3. Execute `npm run dev` e teste em [http://localhost:3000/#contact](http://localhost:3000/#contact)
 
 ---
 
 ## ✨ Funcionalidades
+
+### 📧 Sistema de Email
+
+O formulário de contato envia **dois emails automaticamente**:
+
+1. **Para você** (`luis@zancanela.dev.br`):
+   - Nome, email, assunto e mensagem do visitante
+   - Reply-to configurado para resposta direta
+
+2. **Para o visitante**:
+   - Email de agradecimento personalizado
+   - Seus contatos (LinkedIn, GitHub)
+   - Expectativa de resposta em 24h
+
+### 🎨 Sistema de Tema
+
+- **Tema Claro/Escuro**: Alternância suave entre temas
+- **Persistência**: Preferência do usuário salva no navegador
+- **Animações Suaves**: Transições elegantes entre temas
 
 ### 🏠 Seções do Portfólio
 
@@ -165,95 +314,61 @@ src/
 - **Contato**: Formulário funcional de contato
 - **Footer**: Links sociais e informações adicionais
 
-### 📧 Sistema de Email
-
-O formulário de contato envia **dois emails automaticamente**:
-
-1. **Para você** (`maykon.sousa@hotmail.com`):
-   - Nome, email, assunto e mensagem do visitante
-   - Reply-to configurado para resposta direta
-
-2. **Para o visitante**:
-   - Email de agradecimento personalizado
-   - Seus contatos (WhatsApp, LinkedIn)
-   - Expectativa de resposta em 24h
-
-### 🎨 Sistema de Design
-
-- **Design System**: Cores, tipografia e componentes padronizados
-- **Modo Escuro/Claro**: Alternância suave entre temas
-- **Responsividade**: Mobile-first e adaptável
-- **Animações**: Transições suaves e micro-interações
-
 ---
 
 ## 📊 Performance
 
 - **Lighthouse Score**: 95+ em todas as métricas
-- **Bundle Size**: ~214kb otimizado
-- **First Load**: < 2s em conexões 3G
-- **SEO**: Meta tags otimizadas
+- **Otimização de Imagens**: Imagens responsivas com Next.js Image
+- **SEO Otimizado**: Meta tags estruturadas e schema markup
 - **Acessibilidade**: WCAG 2.1 AA compliant
+- **Performance**: First Load ideal em todas as conexões
 
 ---
 
 ## 🚀 Deploy
 
-### Vercel (Recomendado)
+### Netlify (Atual)
 
-```bash
-# 1. Install Vercel CLI
-npm i -g vercel
+Este projeto está hospedado no Netlify. Para fazer deploy:
 
-# 2. Deploy
-vercel
-
-# 3. Configure environment variables no dashboard
-```
+1. Conecte o repositório GitHub ao Netlify
+2. Configure as variáveis de ambiente no dashboard
+3. Clique em deploy
 
 ### Outras Plataformas
 
 O projeto é compatível com qualquer plataforma que suporte Next.js:
 
-- **Netlify**
+- **Vercel** - Recomendado para Next.js
 - **Railway**
 - **Digital Ocean**
 - **AWS Amplify**
 
 ---
 
-## 🤝 Como Contribuir
+## 🙏 Créditos
 
-1. Faça um fork do projeto
-2. Crie uma branch para sua feature (`git checkout -b feature/AmazingFeature`)
-3. Commit suas mudanças (`git commit -m 'Add some AmazingFeature'`)
-4. Push para a branch (`git push origin feature/AmazingFeature`)
-5. Abra um Pull Request
+### Desenvolvimento
+- **Luis Zancanela** - Desenvolvedor Principal
 
----
-
-## 📄 Scripts Disponíveis
-
-```bash
-npm run dev          # Servidor de desenvolvimento
-npm run build        # Build de produção
-npm run start        # Servidor de produção
-npm run lint         # Análise de código
-npm run test         # Executar testes
-npm run test:watch   # Testes em modo watch
-npm run test:coverage # Cobertura de testes
-```
+### Inspiração e Recursos
+- [Next.js Documentation](https://nextjs.org/docs)
+- [React Documentation](https://react.dev)
+- [Tailwind CSS](https://tailwindcss.com)
+- [Radix UI](https://www.radix-ui.com/)
+- [Resend](https://resend.com/)
 
 ---
 
 ## 📞 Contato
 
-**Maykon Sousa** - Software Engineer
+**Luis Zancanela** - Back-End Developer
 
-- 🌐 **Site**: [maykonsousa.dev.br](https://maykonsousa.dev.br)
-- 📧 **Email**: maykon.sousa@hotmail.com
-- 💼 **LinkedIn**: [linkedin.com/in/maykonsousa](https://linkedin.com/in/maykonsousa)
-- 📱 **WhatsApp**: [Clique aqui para conversar](https://wa.me/5561992943297)
+- 🌐 **Site**: [zancanela.dev.br](https://zancanela.dev.br)
+- 📧 **Email**: [luis@zancanela.dev.br](mailto:luis@zancanela.dev.br)
+- 💼 **LinkedIn**: [linkedin.com/in/luis-zancanela](https://linkedin.com/in/luis-zancanela)
+- 🐙 **GitHub**: [github.com/didifive](https://github.com/didifive)
 
 ---
 
@@ -264,6 +379,10 @@ Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para ma
 ---
 
 <div align="center">
-  <p>⭐ Se este projeto te ajudou, deixe uma estrela!</p>
-  
+
+**Feito com ❤️ por [Luis Zancanela](https://zancanela.dev.br)**
+
+[![GitHub](https://img.shields.io/badge/GitHub-didifive-181717?logo=github)](https://github.com/didifive)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Conectar-0A66C2?logo=linkedin)](https://linkedin.com/in/luis-zancanela)
+
 </div>
