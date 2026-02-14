@@ -67,12 +67,6 @@ export const defaultMetadata: Metadata = {
       "pt-BR": "/",
     }
   },
-  themeColor: "#000000",
-  viewport: {
-    width: "device-width",
-    initialScale: 1,
-    maximumScale: 1,
-  },
   openGraph: {
     type: "website",
     locale: siteConfig.locale,
@@ -118,6 +112,15 @@ export const defaultMetadata: Metadata = {
     }
   }
 };
+
+export function generateViewport() {
+  return {
+    width: "device-width",
+    initialScale: 1,
+    maximumScale: 1,
+    themeColor: "#000000",
+  };
+}
 
 export function generatePageMetadata({
   title,

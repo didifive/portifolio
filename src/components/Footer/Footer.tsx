@@ -113,7 +113,7 @@ export const Footer = () => {
                     key={link.label}
                     href={link.href}
                     onClick={(e) => handleNavClick(e, link.href)}
-                    className="text-muted-foreground hover:text-primary dark:hover:text-blue-400 transition-smooth text-sm cursor-pointer"
+                    className="text-muted-foreground hover:text-primary dark:hover:text-emerald-400 transition-smooth text-sm cursor-pointer"
                   >
                     {link.label}
                   </a>

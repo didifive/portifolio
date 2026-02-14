@@ -69,8 +69,6 @@ const styles = {
   } as const,
 };
 
-export const runtime = "edge";
-
 export async function GET() {
   try {
     return new ImageResponse(
