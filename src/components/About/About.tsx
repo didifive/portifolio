@@ -2,8 +2,11 @@ import { FaRocket } from "react-icons/fa";
 import { FiCode, FiTarget, FiUsers } from "react-icons/fi";
 import { Badge } from "../ui/Badge";
 import { Card, CardContent } from "../ui/Card";
+import { getYearsOfExperienceIT, getYearsOfExperienceDev } from "@/lib/utils";
 
 export const About = () => {
+  const yearsIT = getYearsOfExperienceIT();
+  const yearsDev = getYearsOfExperienceDev();
   const highlights = [
     {
       icon: <FiCode className="h-6 w-6" />,
@@ -41,8 +44,8 @@ export const About = () => {
               Sobre Mim
             </h2>
             <p className="text-foreground/80 dark:text-white/90 text-lg max-w-2xl mx-auto">
-              Desenvolvedor apaixonado por tecnologia com <strong>18+ anos de
-              experiência em TI</strong> e <strong>3+ anos com desenvolvimento de sistemas</strong>, 
+              Desenvolvedor apaixonado por tecnologia com <strong>{yearsIT}+ anos de
+              experiência em TI</strong> e <strong>{yearsDev}+ anos com desenvolvimento de sistemas</strong>,
               criando soluções inovadoras e escaláveis.
             </p>
           </div>
@@ -58,11 +61,11 @@ export const About = () => {
                   👨‍💻 Gosto de codar, jogar videogame, assistir anime e falar de tecnologia (melhor ainda se acompanhado de café ☕).
                 </p>
                 <p>
-                  💼 Há mais de 18 anos iniciei a carreira em TI (Tudo Incluso 😆), tendo a oportunidade de atuar em todas as frentes como suporte, 
+                  💼 Há mais de {yearsIT} anos iniciei a carreira em TI (Tudo Incluso 😆), tendo a oportunidade de atuar em todas as frentes como suporte, 
                   infraestrutura, comunicação e sistemas.
                 </p>
                 <p>
-                  🖥️ Nos últimos 3 anos, foquei minha trajetória como desenvolvedor de sistemas, especializando-me em back-end. 
+                  🖥️ Nos últimos {yearsDev} anos, foquei minha trajetória como desenvolvedor de sistemas, especializando-me em back-end. 
                   Tenho atuado na construção de soluções robustas, escaláveis e seguras, sempre buscando excelência técnica e alinhamento 
                   com as necessidades do negócio.
                 </p>
@@ -79,26 +82,28 @@ export const About = () => {
                       Backend
                     </span>
                     <div className="flex flex-wrap gap-2">
-                      {["Java", 
+                      {[
+                        "Java",
                         "Spring Boot",
                         "Apache Camel",
-                        "Node.js", 
-                        "APIs REST", 
+                        "Node.js",
+                        "APIs REST",
                         "Mensageria",
                         "Microserviços",
+                        "Arquitetura Limpa",
+                        "SOLID",
+                        "DDD",
                         "SQL",
                         "NoSQL",
-                      ].map(
-                        (skill) => (
-                          <Badge
-                            key={skill}
-                            variant="secondary"
-                            className="cursor-pointer hover:bg-primary hover:text-white transition-all duration-300"
-                          >
-                            {skill}
-                          </Badge>
-                        )
-                      )}
+                      ].map((skill, i) => (
+                        <Badge
+                          key={`${skill}-${i}`}
+                          variant="secondary"
+                          className="cursor-pointer hover:bg-primary hover:text-white transition-all duration-300"
+                        >
+                          {skill}
+                        </Badge>
+                      ))}
                     </div>
                   </div>
                   <div>
@@ -113,9 +118,11 @@ export const About = () => {
                         "Angular",
                         "Bootstrap CSS",
                         "Tailwind CSS",
-                      ].map((skill) => (
+                        "Angular",
+                        "Twelve-Factor Apps",
+                      ].map((skill, i) => (
                         <Badge
-                          key={skill}
+                          key={`${skill}-${i}`}
                           variant="secondary"
                           className="cursor-pointer hover:bg-primary hover:text-white transition-all duration-300"
                         >
@@ -129,20 +136,20 @@ export const About = () => {
                       DevOps & Cloud
                     </span>
                     <div className="flex flex-wrap gap-2">
-                      {["Azure", 
-                      "Azure DevOps", 
-                      "Docker", 
-                      "Kubernetes"].map(
-                        (skill) => (
-                          <Badge
-                            key={skill}
-                            variant="secondary"
-                            className="cursor-pointer hover:bg-primary hover:text-white transition-all duration-300"
-                          >
-                            {skill}
-                          </Badge>
-                        )
-                      )}
+                      {[
+                        "Azure",
+                        "Azure DevOps",
+                        "Docker",
+                        "Kubernetes",
+                      ].map((skill, i) => (
+                        <Badge
+                          key={`${skill}-${i}`}
+                          variant="secondary"
+                          className="cursor-pointer hover:bg-primary hover:text-white transition-all duration-300"
+                        >
+                          {skill}
+                        </Badge>
+                      ))}
                     </div>
                   </div>
                 </div>
