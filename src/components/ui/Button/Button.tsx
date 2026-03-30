@@ -57,7 +57,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     if (href && !asChild && !props.disabled) {
       return (
         <a
-          className={cn(buttonVariants({ variant, size, className }))}
+          className={cn(buttonVariants({ variant, size, className }), size ?? undefined)}
           href={href}
           ref={ref as React.Ref<HTMLAnchorElement>}
           target={target}
@@ -69,7 +69,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     const Comp = asChild ? Slot : "button";
     return (
       <Comp
-        className={cn(buttonVariants({ variant, size, className }))}
+        className={cn(buttonVariants({ variant, size, className }), size ?? undefined)}
         ref={ref}
         {...props}
       />

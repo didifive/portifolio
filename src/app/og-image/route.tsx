@@ -10,9 +10,10 @@ const styles = {
     alignItems: "center",
     justifyContent: "center",
     backgroundColor: "#0f2e1a",
-    backgroundImage: "linear-gradient(45deg, #0f2e1a 0%, #1a3a24 100%)",
+    backgroundImage: `url(${new URL("/hero-bg.png", siteConfig.url).toString()})`,
+    backgroundSize: "cover",
+    backgroundPosition: "center",
     fontSize: 32,
-    fontWeight: 600,
   } as const,
   gradientOverlay: {
     position: "absolute",
@@ -20,7 +21,10 @@ const styles = {
     left: 0,
     right: 0,
     bottom: 0,
-    background: "radial-gradient(circle at 50% 50%, rgba(34, 197, 94, 0.15) 0%, transparent 70%)",
+    // dark linear overlay + subtle green radial highlight for brand tint
+    background:
+      "linear-gradient(180deg, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.45) 100%), radial-gradient(circle at 50% 30%, rgba(34, 197, 94, 0.06) 0%, transparent 50%)",
+    mixBlendMode: "normal",
   } as const,
   contentWrapper: {
     display: "flex",
@@ -33,10 +37,10 @@ const styles = {
   } as const,
   name: {
     fontSize: "72px",
-    fontWeight: "bold",
-    background: "linear-gradient(90deg, #22c55e 0%, #10b981 100%)",
+    background: "linear-gradient(90deg, #9ef7c8 0%, #34d67a 100%)",
     backgroundClip: "text",
     color: "transparent",
+    textShadow: "0 6px 18px rgba(0,0,0,0.6)",
     marginBottom: "24px",
   } as const,
   description: {
@@ -55,10 +59,10 @@ const styles = {
     justifyContent: "center",
   } as const,
   techBadge: {
-    background: "rgba(34, 197, 94, 0.15)",
+    background: "rgba(0,0,0,0.22)",
     padding: "8px 16px",
     borderRadius: "8px",
-    border: "1px solid rgba(34, 197, 94, 0.3)",
+    border: "1px solid rgba(255,255,255,0.06)",
   } as const,
   siteUrl: {
     position: "absolute",
@@ -83,19 +87,25 @@ export async function GET() {
             <div style={styles.name}>{siteConfig.author.name}</div>
 
             {/* Descrição */}
-            <div style={styles.description}>Desenvolvedor Back-End</div>
+            <div style={styles.description}>Software Enginer | Desenvolvedor Back-End</div>
 
             {/* Tecnologias */}
             <div style={styles.technologiesContainer}>
               <span style={styles.techBadge}>Java</span>
               <span style={styles.techBadge}>Spring</span>
+              <span style={styles.techBadge}>Apache Camel</span>
               <span style={styles.techBadge}>TypeScript</span>
-              <span style={styles.techBadge}>Azure</span>
+              <span style={styles.techBadge}>Next.js</span>
+              <span style={styles.techBadge}>Angular</span>
+              <span style={styles.techBadge}>Cloud</span>
+              <span style={styles.techBadge}>On-Premises</span>
+              <span style={styles.techBadge}>SQL</span>
+              <span style={styles.techBadge}>NoSQL</span>
             </div>
           </div>
 
           {/* URL do site */}
-          <div style={styles.siteUrl}>{siteConfig.url.replace("https://", "")}</div>
+          <div style={styles.siteUrl}>{siteConfig.url}</div>
         </div>
       ),
       {

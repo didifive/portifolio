@@ -12,6 +12,7 @@ export const Projects = () => {
   const [projects, setProjects] = useState<GithubProjectEnriched[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [featuredMeta, setFeaturedMeta] = useState<{ title?: string | null; description?: string | null; image?: string | null } | null>(null);
 
   useEffect(() => {
     async function fetchProjects() {
@@ -34,7 +35,31 @@ export const Projects = () => {
       }
     }
     fetchProjects();
+
+    // fetch featured project meta from server-side proxy
+    async function fetchFeaturedMeta() {
+      try {
+        const resp = await fetch("/api/fetch-meta?url=https://vetorpessoal.com.br");
+        if (!resp.ok) return;
+        const json = await resp.json();
+        if (json?.ok && json.meta) setFeaturedMeta(json.meta);
+      } catch (e) {
+        // ignore
+      }
+    }
+    fetchFeaturedMeta();
   }, []);
+
+  // Exclude featured/non-GitHub projects from the GitHub list (e.g., vetorpessoal)
+  const filteredProjects = projects.filter((p) => {
+    const name = (p.name || "").toLowerCase();
+    const homepage = (((p as any).homepage) || "").toLowerCase();
+    const html = (p.html_url || "").toLowerCase();
+    if (name.includes("vetor") || homepage.includes("vetorpessoal") || html.includes("vetorpessoal")) {
+      return false;
+    }
+    return true;
+  });
 
   return (
     <section id="projects" className="py-20 bg-muted/30">
@@ -42,12 +67,56 @@ export const Projects = () => {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground dark:text-white">
-              Projetos GitHub
+              Projetos
             </h2>
-            <p className="text-foreground/80 dark:text-white/90 text-lg max-w-2xl mx-auto">
-              Os {projects.length} principais projetos públicos do meu GitHub, ordenados por estrelas e forks.
-            </p>
           </div>
+          {/* Featured projects */}
+          <div className="mb-8">
+            <h3 className="text-2xl font-semibold mb-4 text-foreground dark:text-white">Projetos em destaque</h3>
+            <div className="grid md:grid-cols-2 gap-6">
+              <Card className="shadow-soft hover:shadow-medium transition-smooth group flex flex-col h-full">
+                <CardContent className="p-0 flex-1">
+                  <div style={{ display: "grid", gridTemplateRows: "2fr 1fr", height: "100%" }}>
+                    {featuredMeta?.image ? (
+                      <a href="https://vetorpessoal.com.br" target="_blank" rel="noreferrer" className="block w-full row-span-1">
+                        <div className="w-full h-full flex items-center justify-center bg-gray-900 dark:bg-gray-800 overflow-hidden">
+                          <img
+                            src={featuredMeta.image}
+                            alt={featuredMeta.title || "Vetor Pessoal"}
+                            className="w-full h-full object-contain object-center"
+                            style={{ objectPosition: "center center" }}
+                          />
+                        </div>
+                      </a>
+                    ) : (
+                      <div className="w-full h-full bg-gray-100 dark:bg-gray-800" />
+                    )}
+
+                    <div className="p-6 flex-1 row-span-1 flex flex-col">
+                      <h4 className="font-semibold mb-2 text-foreground dark:text-white">
+                        {featuredMeta?.title ?? "Vetor Pessoal"}
+                      </h4>
+                      <p className="text-foreground/80 dark:text-white/90 text-sm mb-4 leading-relaxed flex-1">
+                        {featuredMeta?.description ?? "Site pessoal e portfólio - Vetor Pessoal."}
+                      </p>
+                      <div className="mt-auto flex gap-2 items-center">
+                        <Button variant="ghost" size="sm" href="https://vetorpessoal.com.br" target="_blank">
+                          Visitar
+                        </Button>
+                        <Badge variant="secondary" className="text-xs">Website</Badge>
+                      </div>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+            <h3 className="text-2xl font-semibold mb-4 text-foreground dark:text-white">
+              Projetos GitHub
+            </h3>
+            <p className="text-foreground/80 dark:text-white/90 mb-3 text-lg max-w-2xl">
+              Os {filteredProjects.length} principais projetos públicos do meu GitHub, ordenados por estrelas e forks.
+            </p>
           {loading && <p>Carregando projetos do GitHub...</p>}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
             {error ? (
@@ -73,7 +142,7 @@ export const Projects = () => {
                 </CardContent>
               </Card>
             ) : (
-              projects.map((project, idx) => {
+              filteredProjects.map((project, idx) => {
                 const emojis = ["💻", "🛠️", "📦", "🚀", "🔧", "🌐"];
                 const emoji = emojis[idx % emojis.length];
                 const topicsLimit = 5;
