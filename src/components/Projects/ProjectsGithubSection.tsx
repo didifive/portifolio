@@ -9,7 +9,7 @@ import type { GithubProject } from "./Projects.types";
 type ProjectsGithubSectionProps = {
   pages: GithubProject[][];
   currentPage: number;
-  carouselRef: RefObject<HTMLDivElement>;
+  carouselRef: RefObject<HTMLDivElement | null>;
   onScroll: () => void;
   onDotSelect: (page: number) => void;
   loading: boolean;

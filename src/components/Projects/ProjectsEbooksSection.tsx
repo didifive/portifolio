@@ -10,7 +10,7 @@ import type { EbookItem } from "./Projects.types";
 type ProjectsEbooksSectionProps = {
   pages: EbookItem[][];
   currentPage: number;
-  carouselRef: RefObject<HTMLDivElement>;
+  carouselRef: RefObject<HTMLDivElement | null>;
   onScroll: () => void;
   onDotSelect: (page: number) => void;
   ebookCoverMap: Record<string, string>;

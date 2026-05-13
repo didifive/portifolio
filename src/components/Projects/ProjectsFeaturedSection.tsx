@@ -8,7 +8,7 @@ import type { FeaturedProject } from "./Projects.types";
 type ProjectsFeaturedSectionProps = {
   pages: FeaturedProject[][];
   currentPage: number;
-  carouselRef: RefObject<HTMLDivElement>;
+  carouselRef: RefObject<HTMLDivElement | null>;
   onScroll: () => void;
   onDotSelect: (page: number) => void;
 };

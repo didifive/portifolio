@@ -150,7 +150,7 @@ export const Projects = () => {
               canvas.width = viewport.width;
               canvas.height = viewport.height;
 
-              await firstPage.render({ canvasContext: context, viewport }).promise;
+              await firstPage.render({ canvas, canvasContext: context, viewport }).promise;
               const coverDataUrl = canvas.toDataURL("image/png");
 
               if (!cancelled) {
@@ -198,7 +198,7 @@ export const Projects = () => {
     [publishedEbooks, carouselLayout.githubItemsPerPage]
   );
 
-  const goToCarouselPage = (ref: React.RefObject<HTMLDivElement>, page: number, behavior: ScrollBehavior = "smooth") => {
+  const goToCarouselPage = (ref: React.RefObject<HTMLDivElement | null>, page: number, behavior: ScrollBehavior = "smooth") => {
     const element = ref.current;
     if (!element) return;
 
@@ -206,7 +206,7 @@ export const Projects = () => {
   };
 
   const handleCarouselScroll = (
-    ref: React.RefObject<HTMLDivElement>,
+    ref: React.RefObject<HTMLDivElement | null>,
     originalPageCount: number,
     setCurrentPage: (page: number) => void
   ) => {
