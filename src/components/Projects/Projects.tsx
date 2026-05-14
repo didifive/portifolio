@@ -19,7 +19,7 @@ export const Projects = () => {
       title: "Java Bushidō - Do Java 8 ao 25: cortes precisos na evolução",
       description: "Guia prático que apresenta a evolução do Java do 8 ao 25, explicando de forma clara e progressiva os recursos mais importantes para quem está iniciando na linguagem.",
       pdfUrl: "https://github.com/didifive/ebook-com-ia/blob/feature/java-versions/ebook-Java-Bushido.pdf",
-      publicationUrl: "",
+      publicationUrl: "https://www.linkedin.com/posts/luis-zancanela_ebook-java-bushido-do-java-8-ao-25-ugcPost-7460482597991833600-0gqe",
       tags: ["Java", "Java 8", "Java 11", "Java 17", "Java 21", "Java 25", "Evolução do Java", "Streams API", "Records", "Pattern Matching", "Virtual Threads", "Backend"],
       publishedAt: "2026-05-14",
     },
@@ -30,7 +30,7 @@ export const Projects = () => {
       pdfUrl: "https://github.com/didifive/ebook-com-ia/blob/kubernetes/ebook-A-Empresa-Dos-Deploys-Infinitos.pdf",
       publicationUrl: "https://www.linkedin.com/posts/luis-zancanela_ebook-a-empresa-dos-deploys-infinitos-ugcPost-7456528397234667520-M8Z6",
       tags: ["Kubernetes", "DevOps", "Cloud Computing", "Containers", "Orquestração de Containers", "Pods", "Diagnósticos de erros"],
-      publishedAt: "2026-05-11",
+      publishedAt: "2026-05-04",
     },
     {
       id: "ebook-apache-camel",
