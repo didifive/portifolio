@@ -4,7 +4,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { Button } from "../ui/Button";
 import { FiGithub } from "react-icons/fi";
 import type { GithubProjectEnriched } from "@/app/api/github/route";
-import { chunkItems, getCarouselLayout, normalizeGitHubUrl } from "./Projects.helpers";
+import { chunkItems, getCachedPdfProxyUrl, getCarouselLayout, normalizeGitHubUrl } from "./Projects.helpers";
 import { ProjectsEbooksSection } from "./ProjectsEbooksSection";
 import { ProjectsFeaturedSection } from "./ProjectsFeaturedSection";
 import { ProjectsGithubSection } from "./ProjectsGithubSection";
@@ -135,7 +135,7 @@ export const Projects = () => {
 
         await Promise.all(
           publishedEbooks.map(async (ebook) => {
-            const pdfUrl = normalizeGitHubUrl(ebook.pdfUrl);
+            const pdfUrl = getCachedPdfProxyUrl(normalizeGitHubUrl(ebook.pdfUrl));
 
             try {
               const loadingTask = pdfjs.getDocument({ url: pdfUrl });

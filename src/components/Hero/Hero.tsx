@@ -47,7 +47,7 @@ export const Hero = () => {
           </h1>
 
           <div className="mb-6 flex justify-center">
-            <span className="bg-primary/90 dark:bg-primary text-white px-6 py-2 rounded-full font-semibold text-base md:text-lg shadow-medium backdrop-blur-xs">
+            <span className="bg-primary/90 dark:bg-primary text-white px-6 py-2 rounded-full font-semibold text-base md:text-lg shadow-medium backdrop-blur-xs dark:drop-shadow-[0_1px_2px_rgba(0,0,0,0.45)]">
               Software Engineer
             </span>
           </div>
