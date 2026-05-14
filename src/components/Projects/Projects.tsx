@@ -1,18 +1,82 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { Button } from "../ui/Button";
-import { Card, CardContent } from "../ui/Card";
 import { FiGithub } from "react-icons/fi";
-import { Badge } from "../ui/Badge";
 import type { GithubProjectEnriched } from "@/app/api/github/route";
+import { chunkItems, getCarouselLayout, normalizeGitHubUrl } from "./Projects.helpers";
+import { ProjectsEbooksSection } from "./ProjectsEbooksSection";
+import { ProjectsFeaturedSection } from "./ProjectsFeaturedSection";
+import { ProjectsGithubSection } from "./ProjectsGithubSection";
+import type { CarouselLayout, EbookItem, FeaturedProject } from "./Projects.types";
 
 export const Projects = () => {
   const GITHUB_USERNAME = "didifive";
   const [projects, setProjects] = useState<GithubProjectEnriched[]>([]);
+  const [ebooks] = useState<EbookItem[]>([
+    {
+      id: "ebook-java-versions",
+      title: "Java Bushidō - Do Java 8 ao 25: cortes precisos na evolução",
+      description: "Guia prático que apresenta a evolução do Java do 8 ao 25, explicando de forma clara e progressiva os recursos mais importantes para quem está iniciando na linguagem.",
+      pdfUrl: "https://github.com/didifive/ebook-com-ia/blob/feature/java-versions/ebook-Java-Bushido.pdf",
+      publicationUrl: "https://www.linkedin.com/posts/luis-zancanela_ebook-java-bushido-do-java-8-ao-25-ugcPost-7460482597991833600-0gqe",
+      tags: ["Java", "Java 8", "Java 11", "Java 17", "Java 21", "Java 25", "Evolução do Java", "Streams API", "Records", "Pattern Matching", "Virtual Threads", "Backend"],
+      publishedAt: "2026-05-14",
+    },
+    {
+      id: "ebook-kubernetes",
+      title: "A Empresa dos Deploys Infinitos: Onde os Microserviços Nunca Dormem",
+      description: "Uma explicação didática do Kubernetes usando a analogia de uma empresa, tornando conceitos como pods, nodes, workloads e autoscaling simples e intuitivos.",
+      pdfUrl: "https://github.com/didifive/ebook-com-ia/blob/kubernetes/ebook-A-Empresa-Dos-Deploys-Infinitos.pdf",
+      publicationUrl: "https://www.linkedin.com/posts/luis-zancanela_ebook-a-empresa-dos-deploys-infinitos-ugcPost-7456528397234667520-M8Z6",
+      tags: ["Kubernetes", "DevOps", "Cloud Computing", "Containers", "Orquestração de Containers", "Pods", "Diagnósticos de erros"],
+      publishedAt: "2026-05-04",
+    },
+    {
+      id: "ebook-apache-camel",
+      title: "O Despertar do Guerreiro Java: A Arte Shinobi dos Microsserviços Apache Camel",
+      description: "Desenvolvimento de uma arquitetura de microsserviços em Java utilizando Apache Camel para rotas. O projeto demonstra comunicação assíncrona entre serviços (Kage e Shinobi) com integração prática com Spring Boot.",
+      pdfUrl: "https://github.com/didifive/ebook-com-ia/blob/main/ebook-O-Despertar-do-Guerreiro-Java.pdf",
+      publicationUrl: "https://www.linkedin.com/posts/luis-zancanela_ebook-o-despertar-do-guerreiro-java-activity-7337951881333256193-kBKw",
+      tags: ["Apache Camel", "Java", "Spring Boot", "Microsserviços", "Mensageria", "ActiveMQ", "Arquitetura distribuída", "EIP", "Integração de Sistemas", "IA", "Backend"],
+      publishedAt: "2025-06-09",
+    },
+  ]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [featuredMeta, setFeaturedMeta] = useState<{ title?: string | null; description?: string | null; image?: string | null } | null>(null);
+  const [carouselLayout, setCarouselLayout] = useState<CarouselLayout>({
+    featuredItemsPerPage: 1,
+    githubItemsPerPage: 1,
+  });
+  const [featuredCurrentPage, setFeaturedCurrentPage] = useState(0);
+  const [githubCurrentPage, setGithubCurrentPage] = useState(0);
+  const [ebookCurrentPage, setEbookCurrentPage] = useState(0);
+  const featuredCarouselRef = useRef<HTMLDivElement>(null);
+  const githubCarouselRef = useRef<HTMLDivElement>(null);
+  const ebookCarouselRef = useRef<HTMLDivElement>(null);
+  const [ebookCoverMap, setEbookCoverMap] = useState<Record<string, string>>({});
+  const [ebookCoverErrorMap, setEbookCoverErrorMap] = useState<Record<string, boolean>>({});
+
+  const publishedEbooks = useMemo(
+    () =>
+      ebooks.filter((ebook) => Boolean(ebook.publishedAt?.trim()) && Boolean(ebook.publicationUrl?.trim())),
+    [ebooks]
+  );
+
+  const featuredProjects = useMemo<FeaturedProject[]>(
+    () => [
+      {
+        id: "vetor-pessoal",
+        title: featuredMeta?.title ?? "Vetor Pessoal",
+        description: featuredMeta?.description ?? "Site pessoal e portfólio - Vetor Pessoal.",
+        image: featuredMeta?.image,
+        href: "https://vetorpessoal.com.br",
+        badge: "Website",
+      },
+    ],
+    [featuredMeta]
+  );
 
   useEffect(() => {
     async function fetchProjects() {
@@ -34,187 +98,168 @@ export const Projects = () => {
         setLoading(false);
       }
     }
-    fetchProjects();
 
-    // fetch featured project meta from server-side proxy
     async function fetchFeaturedMeta() {
       try {
         const resp = await fetch("/api/fetch-meta?url=https://vetorpessoal.com.br");
         if (!resp.ok) return;
         const json = await resp.json();
         if (json?.ok && json.meta) setFeaturedMeta(json.meta);
-      } catch (e) {
+      } catch {
         // ignore
       }
     }
+
+    fetchProjects();
     fetchFeaturedMeta();
   }, []);
 
-  // Exclude featured/non-GitHub projects from the GitHub list (e.g., vetorpessoal)
-  const filteredProjects = projects.filter((p) => {
-    const name = (p.name || "").toLowerCase();
-    const homepage = (((p as any).homepage) || "").toLowerCase();
-    const html = (p.html_url || "").toLowerCase();
+  useEffect(() => {
+    const updateLayout = () => {
+      setCarouselLayout(getCarouselLayout(window.innerWidth));
+    };
+
+    updateLayout();
+    window.addEventListener("resize", updateLayout);
+
+    return () => window.removeEventListener("resize", updateLayout);
+  }, []);
+
+  useEffect(() => {
+    let cancelled = false;
+
+    async function renderEbookCovers() {
+      try {
+        const pdfjs = await import("pdfjs-dist");
+        pdfjs.GlobalWorkerOptions.workerSrc = new URL("pdfjs-dist/build/pdf.worker.min.mjs", import.meta.url).toString();
+
+        await Promise.all(
+          publishedEbooks.map(async (ebook) => {
+            const pdfUrl = normalizeGitHubUrl(ebook.pdfUrl);
+
+            try {
+              const loadingTask = pdfjs.getDocument({ url: pdfUrl });
+              const pdf = await loadingTask.promise;
+              const firstPage = await pdf.getPage(1);
+              const viewport = firstPage.getViewport({ scale: 1.6 });
+              const canvas = document.createElement("canvas");
+              const context = canvas.getContext("2d");
+
+              if (!context) throw new Error("Canvas context unavailable");
+
+              canvas.width = viewport.width;
+              canvas.height = viewport.height;
+
+              await firstPage.render({ canvas, canvasContext: context, viewport }).promise;
+              const coverDataUrl = canvas.toDataURL("image/png");
+
+              if (!cancelled) {
+                setEbookCoverMap((current) => ({
+                  ...current,
+                  [ebook.id]: coverDataUrl,
+                }));
+              }
+            } catch (coverError) {
+              console.warn(`Falha ao renderizar a primeira página do PDF do ebook ${ebook.id}`, coverError);
+              if (!cancelled) {
+                setEbookCoverErrorMap((current) => ({ ...current, [ebook.id]: true }));
+              }
+            }
+          })
+        );
+      } catch (coverError) {
+        console.warn("Falha ao carregar pdfjs-dist para ebooks", coverError);
+      }
+    }
+
+    renderEbookCovers();
+
+    return () => {
+      cancelled = true;
+    };
+  }, [publishedEbooks]);
+
+  const filteredProjects = projects.filter((project) => {
+    const name = (project.name || "").toLowerCase();
+    const homepage = (((project as any).homepage) || "").toLowerCase();
+    const html = (project.html_url || "").toLowerCase();
+
     if (name.includes("vetor") || homepage.includes("vetorpessoal") || html.includes("vetorpessoal")) {
       return false;
     }
+
     return true;
   });
+
+  const featuredPages = useMemo(() => chunkItems(featuredProjects, carouselLayout.featuredItemsPerPage), [featuredProjects, carouselLayout.featuredItemsPerPage]);
+  const githubPages = useMemo(() => chunkItems(filteredProjects, carouselLayout.githubItemsPerPage), [filteredProjects, carouselLayout.githubItemsPerPage]);
+  const ebookPages = useMemo(
+    () => chunkItems(publishedEbooks, carouselLayout.githubItemsPerPage),
+    [publishedEbooks, carouselLayout.githubItemsPerPage]
+  );
+
+  const goToCarouselPage = (ref: React.RefObject<HTMLDivElement | null>, page: number, behavior: ScrollBehavior = "smooth") => {
+    const element = ref.current;
+    if (!element) return;
+
+    element.scrollTo({ left: page * element.clientWidth, behavior });
+  };
+
+  const handleCarouselScroll = (
+    ref: React.RefObject<HTMLDivElement | null>,
+    originalPageCount: number,
+    setCurrentPage: (page: number) => void
+  ) => {
+    const element = ref.current;
+    if (!element || originalPageCount <= 0) return;
+
+    const pageWidth = element.clientWidth;
+    if (!pageWidth) return;
+
+    const rawPage = Math.round(element.scrollLeft / pageWidth);
+    const normalizedPage = rawPage % originalPageCount;
+    setCurrentPage(normalizedPage);
+  };
 
   return (
     <section id="projects" className="py-20 bg-muted/30">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground dark:text-white">
-              Projetos
-            </h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground dark:text-white">Projetos</h2>
           </div>
-          {/* Featured projects */}
-          <div className="mb-8">
-            <h3 className="text-2xl font-semibold mb-4 text-foreground dark:text-white">Projetos em destaque</h3>
-            <div className="grid md:grid-cols-2 gap-6">
-              <Card className="shadow-soft hover:shadow-medium transition-smooth group flex flex-col h-full">
-                <CardContent className="p-0 flex-1">
-                  <div style={{ display: "grid", gridTemplateRows: "2fr 1fr", height: "100%" }}>
-                    {featuredMeta?.image ? (
-                      <a href="https://vetorpessoal.com.br" target="_blank" rel="noreferrer" className="block w-full row-span-1">
-                        <div className="w-full h-full flex items-center justify-center bg-gray-900 dark:bg-gray-800 overflow-hidden">
-                          <img
-                            src={featuredMeta.image}
-                            alt={featuredMeta.title || "Vetor Pessoal"}
-                            className="w-full h-full object-contain object-center"
-                            style={{ objectPosition: "center center" }}
-                          />
-                        </div>
-                      </a>
-                    ) : (
-                      <div className="w-full h-full bg-gray-100 dark:bg-gray-800" />
-                    )}
 
-                    <div className="p-6 flex-1 row-span-1 flex flex-col">
-                      <h4 className="font-semibold mb-2 text-foreground dark:text-white">
-                        {featuredMeta?.title ?? "Vetor Pessoal"}
-                      </h4>
-                      <p className="text-foreground/80 dark:text-white/90 text-sm mb-4 leading-relaxed flex-1">
-                        {featuredMeta?.description ?? "Site pessoal e portfólio - Vetor Pessoal."}
-                      </p>
-                      <div className="mt-auto flex gap-2 items-center">
-                        <Button variant="ghost" size="sm" href="https://vetorpessoal.com.br" target="_blank">
-                          Visitar
-                        </Button>
-                        <Badge variant="secondary" className="text-xs">Website</Badge>
-                      </div>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-            <h3 className="text-2xl font-semibold mb-4 text-foreground dark:text-white">
-              Projetos GitHub
-            </h3>
-            <p className="text-foreground/80 dark:text-white/90 mb-3 text-lg max-w-2xl">
-              Os {filteredProjects.length} principais projetos públicos do meu GitHub, ordenados por estrelas e forks.
-            </p>
-          {loading && <p>Carregando projetos do GitHub...</p>}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
-            {error ? (
-              <Card className="shadow-soft hover:shadow-medium transition-smooth group flex flex-col h-full">
-                <CardContent className="p-6 flex-1 flex flex-col">
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="text-2xl">💻</div>
-                  </div>
-                  <h4 className="font-semibold mb-2 text-foreground dark:text-white">
-                    Projeto Indisponível
-                  </h4>
-                  <p className="text-foreground/80 dark:text-white/90 text-sm mb-4 leading-relaxed flex-1">
-                    Não foi possível carregar os projetos do GitHub no momento. Tente novamente mais tarde.
-                  </p>
-                  <div className="flex flex-wrap gap-2 mt-auto">
-                    <Badge variant="secondary" className="text-xs cursor-pointer">
-                      ⭐ --
-                    </Badge>
-                    <Badge variant="secondary" className="text-xs cursor-pointer">
-                      🍴 --
-                    </Badge>
-                  </div>
-                </CardContent>
-              </Card>
-            ) : (
-              filteredProjects.map((project, idx) => {
-                const emojis = ["💻", "🛠️", "📦", "🚀", "🔧", "🌐"];
-                const emoji = emojis[idx % emojis.length];
-                const topicsLimit = 5;
-                return (
-                  <Card key={project.id} className="shadow-soft hover:shadow-medium transition-smooth group flex flex-col h-full">
-                    <CardContent className="p-6 flex-1 flex flex-col">
-                      <div className="flex items-center justify-between mb-4">
-                        <div className="text-2xl">{emoji}</div>
-                        <div className="flex gap-2">
-                          <Button
-                            variant="ghost"
-                            size="icon"
-                            href={project.html_url}
-                            target="_blank"
-                          >
-                            <FiGithub className="h-4 w-4 text-foreground/70 dark:text-white/80" />
-                          </Button>
-                        </div>
-                      </div>
-                      <h4 className="font-semibold mb-2 text-foreground dark:text-white">
-                        {project.name}
-                      </h4>
-                      <p className="text-foreground/80 dark:text-white/90 text-sm mb-4 leading-relaxed flex-1">
-                        {project.description}
-                      </p>
-                      <div className="flex flex-wrap gap-2 mt-auto">
-                        {/* Linguagens abaixo dos badges principais */}
-                        {project.languages && project.languages.length > 0 && (
-                          <>
-                            <div className="flex flex-wrap gap-2 mt-2">
-                              {project.languages.map(lang => (
-                                <Badge key={lang} variant="secondary" className="text-xs cursor-pointer">
-                                  💻 {lang}
-                                </Badge>
-                              ))}
-                            </div>
-                            <div className="w-full h-0 my-0" />
-                          </>
-                        )}
-                        <Badge variant="secondary" className="text-xs cursor-pointer">
-                          ⭐ {project.stargazers_count}
-                        </Badge>
-                        {project.forks_count > 0 && (
-                          <Badge variant="secondary" className="text-xs cursor-pointer">
-                            🍴 {project.forks_count}
-                          </Badge>
-                        )}
-                        {project.topics && project.topics.length > 0 && (
-                          <>
-                            {project.topics.slice(0, topicsLimit).map(topic => (
-                              <Badge key={topic} variant="outline" className="text-xs cursor-pointer">
-                                #{topic}
-                              </Badge>
-                            ))}
-                            {project.topics.length > topicsLimit && (
-                              <Badge variant="outline" className="text-xs cursor-pointer">
-                                +{project.topics.length - topicsLimit}
-                              </Badge>
-                            )}
-                          </>
-                        )}
-                      </div>
-                    </CardContent>
-                  </Card>
-                );
-              })
-            )}
-          </div>
+          <ProjectsFeaturedSection
+            pages={featuredPages}
+            currentPage={featuredCurrentPage}
+            carouselRef={featuredCarouselRef}
+            onScroll={() => handleCarouselScroll(featuredCarouselRef, featuredPages.length, setFeaturedCurrentPage)}
+            onDotSelect={(page) => goToCarouselPage(featuredCarouselRef, page)}
+          />
+
+          <ProjectsEbooksSection
+            pages={ebookPages}
+            currentPage={ebookCurrentPage}
+            carouselRef={ebookCarouselRef}
+            onScroll={() => handleCarouselScroll(ebookCarouselRef, ebookPages.length, setEbookCurrentPage)}
+            onDotSelect={(page) => goToCarouselPage(ebookCarouselRef, page)}
+            ebookCoverMap={ebookCoverMap}
+            ebookCoverErrorMap={ebookCoverErrorMap}
+          />
+
+          <ProjectsGithubSection
+            pages={githubPages}
+            currentPage={githubCurrentPage}
+            carouselRef={githubCarouselRef}
+            onScroll={() => handleCarouselScroll(githubCarouselRef, githubPages.length, setGithubCurrentPage)}
+            onDotSelect={(page) => goToCarouselPage(githubCarouselRef, page)}
+            loading={loading}
+            error={error}
+            totalProjects={filteredProjects.length}
+          />
+
           <div className="text-center mt-12">
-            <p className="text-foreground/80 dark:text-white/90 mb-6">
-              Interessado em ver mais projetos ou discutir uma colaboração?
-            </p>
+            <p className="text-foreground/80 dark:text-white/90 mb-6">Interessado em ver mais projetos ou discutir uma colaboração?</p>
             <Button variant="hero" size="lg" href={`https://github.com/${GITHUB_USERNAME}`} target="_blank">
               <FiGithub className="h-5 w-5 mr-2" />
               Ver Mais no GitHub
