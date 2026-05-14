@@ -10,7 +10,7 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default:
-          "bg-primary text-primary-foreground hover:bg-primary/90 shadow-soft hover:shadow-medium",
+          "bg-primary text-white dark:text-white font-semibold [text-shadow:0_1px_1px_rgba(0,0,0,0.35)] hover:bg-primary/90 shadow-soft hover:shadow-medium",
         destructive:
           "bg-destructive text-destructive-foreground hover:bg-destructive/90",
         outline:
@@ -21,10 +21,10 @@ const buttonVariants = cva(
         ghostHover:
           "opacity-0 group-hover:opacity-100 transition-smooth hover:bg-accent/50 dark:hover:bg-accent/20 hover:text-primary dark:hover:text-primary disabled:opacity-0 disabled:group-hover:opacity-100",
         link: "text-primary underline-offset-4 hover:underline",
-        hero: "bg-gradient-primary text-white hover:shadow-glow transition-all duration-300 hover:scale-105",
+        hero: "bg-gradient-primary text-white dark:text-white font-semibold [text-shadow:0_1px_1px_rgba(0,0,0,0.35)] hover:shadow-glow transition-all duration-300 hover:scale-105",
         gradient:
-          "bg-gradient-secondary text-white hover:bg-gradient-primary transition-all duration-300",
-        success: "bg-success text-success-foreground hover:bg-success/90",
+          "bg-gradient-secondary text-white dark:text-white font-semibold [text-shadow:0_1px_1px_rgba(0,0,0,0.35)] hover:bg-gradient-primary transition-all duration-300",
+        success: "bg-success text-white dark:text-white font-semibold [text-shadow:0_1px_1px_rgba(0,0,0,0.35)] hover:bg-success/90",
       },
       size: {
         default: "h-10 px-4 py-2",

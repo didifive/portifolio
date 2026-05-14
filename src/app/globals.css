@@ -169,9 +169,9 @@ All colors MUST be HSL. Tech-inspired gradients and professional styling.
     --popover-foreground: 145 15% 15%;
 
     /* Primary brand - tech green */
-    --primary: 145 63% 49%;           /* Vibrant green (Tailwind green-500) */
+    --primary: 145 63% 40%;           /* Darker green for better contrast with white text */
     --primary-foreground: 0 0% 100%;
-    --primary-glow: 145 63% 70%;      /* Lighter green for glow */
+    --primary-glow: 145 63% 60%;      /* Slightly softer glow to match the darker primary */
 
     /* Secondary - elegant emerald */
     --secondary: 160 84% 39%;         /* Emerald (Tailwind emerald-600) */
@@ -197,9 +197,9 @@ All colors MUST be HSL. Tech-inspired gradients and professional styling.
     --ring: 145 63% 49%;
 
     /* Tech gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(145, 63%, 49%), hsl(160, 84%, 39%));
-    --gradient-secondary: linear-gradient(135deg, hsl(160, 84%, 39%), hsl(145, 63%, 70%));
-    --gradient-hero: linear-gradient(135deg, hsl(145, 63%, 49%) 0%, hsl(160, 84%, 39%) 50%, hsl(145, 63%, 70%) 100%);
+    --gradient-primary: linear-gradient(135deg, hsl(145, 63%, 40%), hsl(160, 84%, 34%));
+    --gradient-secondary: linear-gradient(135deg, hsl(160, 84%, 34%), hsl(145, 63%, 60%));
+    --gradient-hero: linear-gradient(135deg, hsl(145, 63%, 40%) 0%, hsl(160, 84%, 34%) 50%, hsl(145, 63%, 60%) 100%);
     --gradient-subtle: linear-gradient(180deg, hsl(0, 0%, 100%) 0%, hsl(145, 20%, 98%) 100%);
 
     /* Elegant shadows */
@@ -216,7 +216,7 @@ All colors MUST be HSL. Tech-inspired gradients and professional styling.
 
     --sidebar-background: 145 20% 98%;
     --sidebar-foreground: 145 15% 26%;
-    --sidebar-primary: 145 63% 30%;
+    --sidebar-primary: 145 63% 24%;
     --sidebar-primary-foreground: 0 0% 98%;
     --sidebar-accent: 145 10% 95%;
     --sidebar-accent-foreground: 145 15% 10%;
@@ -235,9 +235,9 @@ All colors MUST be HSL. Tech-inspired gradients and professional styling.
     --popover: 145 15% 16%;
     --popover-foreground: 145 14% 96%;
 
-    --primary: 145 63% 49%;
+    --primary: 145 63% 42%;
     --primary-foreground: 0 0% 100%;
-    --primary-glow: 145 63% 70%;
+    --primary-glow: 145 63% 58%;
 
     --secondary: 160 84% 25%;
     --secondary-foreground: 145 14% 96%;
@@ -259,7 +259,7 @@ All colors MUST be HSL. Tech-inspired gradients and professional styling.
 
     --sidebar-background: 145 15% 10%;
     --sidebar-foreground: 145 10% 95%;
-    --sidebar-primary: 145 63% 25%;
+    --sidebar-primary: 145 63% 22%;
     --sidebar-primary-foreground: 0 0% 100%;
     --sidebar-accent: 145 10% 15%;
     --sidebar-accent-foreground: 145 10% 95%;
