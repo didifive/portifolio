@@ -50,8 +50,8 @@ function EbookCard({ ebook, cover, hasError }: { ebook: EbookItem; cover?: strin
 
             <div className="flex flex-wrap gap-2 mb-4">
               {ebook.tags.map((tag) => (
-                <Badge key={tag} variant="outline" className="text-xs cursor-pointer">
-                  #{tag}
+                <Badge key={tag} variant="secondary" className="text-xs">
+                  {tag}
                 </Badge>
               ))}
             </div>

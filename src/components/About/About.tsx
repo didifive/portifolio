@@ -138,7 +138,10 @@ export const About = () => {
                     <div className="flex flex-wrap gap-2">
                       {[
                         "Azure",
+                        "GCP",
+                        "AWS",
                         "Azure DevOps",
+                        "Jenkins",
                         "Docker",
                         "Kubernetes",
                       ].map((skill, i) => (
