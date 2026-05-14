@@ -23,13 +23,17 @@ export function getCarouselLayout(width: number): CarouselLayout {
 }
 
 export function formatDate(value?: string | null) {
-  if (!value) return "Atualização indisponível";
+  if (!value) return "Publicação indisponível";
+
+  const isDateOnly = /^\d{4}-\d{2}-\d{2}$/.test(value);
+  const date = isDateOnly ? new Date(`${value}T00:00:00Z`) : new Date(value);
 
   return new Intl.DateTimeFormat("pt-BR", {
     day: "2-digit",
     month: "2-digit",
     year: "numeric",
-  }).format(new Date(value));
+    timeZone: isDateOnly ? "UTC" : undefined,
+  }).format(date);
 }
 
 export function normalizeGitHubUrl(url: string) {
@@ -48,4 +52,10 @@ export function normalizeGitHubUrl(url: string) {
   }
 
   return url;
+}
+
+export function getCachedPdfProxyUrl(url: string) {
+  if (!url) return url;
+
+  return `/api/pdf-proxy?url=${encodeURIComponent(url)}`;
 }
