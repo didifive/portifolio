@@ -4,7 +4,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { Button } from "../ui/Button";
 import { FiGithub } from "react-icons/fi";
 import type { GithubProjectEnriched } from "@/app/api/github/route";
-import { chunkItems, getCachedPdfProxyUrl, getCarouselLayout, normalizeGitHubUrl } from "./Projects.helpers";
+import { chunkItems, getCarouselLayout } from "./Projects.helpers";
 import { ProjectsEbooksSection } from "./ProjectsEbooksSection";
 import { ProjectsFeaturedSection } from "./ProjectsFeaturedSection";
 import { ProjectsGithubSection } from "./ProjectsGithubSection";
@@ -55,8 +55,6 @@ export const Projects = () => {
   const featuredCarouselRef = useRef<HTMLDivElement>(null);
   const githubCarouselRef = useRef<HTMLDivElement>(null);
   const ebookCarouselRef = useRef<HTMLDivElement>(null);
-  const [ebookCoverMap, setEbookCoverMap] = useState<Record<string, string>>({});
-  const [ebookCoverErrorMap, setEbookCoverErrorMap] = useState<Record<string, boolean>>({});
 
   const publishedEbooks = useMemo(
     () =>
@@ -125,60 +123,6 @@ export const Projects = () => {
     return () => window.removeEventListener("resize", updateLayout);
   }, []);
 
-  useEffect(() => {
-    let cancelled = false;
-
-    async function renderEbookCovers() {
-      try {
-        const pdfjs = await import("pdfjs-dist");
-        pdfjs.GlobalWorkerOptions.workerSrc = new URL("pdfjs-dist/build/pdf.worker.min.mjs", import.meta.url).toString();
-
-        await Promise.all(
-          publishedEbooks.map(async (ebook) => {
-            const pdfUrl = getCachedPdfProxyUrl(normalizeGitHubUrl(ebook.pdfUrl));
-
-            try {
-              const loadingTask = pdfjs.getDocument({ url: pdfUrl });
-              const pdf = await loadingTask.promise;
-              const firstPage = await pdf.getPage(1);
-              const viewport = firstPage.getViewport({ scale: 1.6 });
-              const canvas = document.createElement("canvas");
-              const context = canvas.getContext("2d");
-
-              if (!context) throw new Error("Canvas context unavailable");
-
-              canvas.width = viewport.width;
-              canvas.height = viewport.height;
-
-              await firstPage.render({ canvas, canvasContext: context, viewport }).promise;
-              const coverDataUrl = canvas.toDataURL("image/png");
-
-              if (!cancelled) {
-                setEbookCoverMap((current) => ({
-                  ...current,
-                  [ebook.id]: coverDataUrl,
-                }));
-              }
-            } catch (coverError) {
-              console.warn(`Falha ao renderizar a primeira página do PDF do ebook ${ebook.id}`, coverError);
-              if (!cancelled) {
-                setEbookCoverErrorMap((current) => ({ ...current, [ebook.id]: true }));
-              }
-            }
-          })
-        );
-      } catch (coverError) {
-        console.warn("Falha ao carregar pdfjs-dist para ebooks", coverError);
-      }
-    }
-
-    renderEbookCovers();
-
-    return () => {
-      cancelled = true;
-    };
-  }, [publishedEbooks]);
-
   const filteredProjects = projects.filter((project) => {
     const name = (project.name || "").toLowerCase();
     const homepage = (((project as any).homepage) || "").toLowerCase();
@@ -243,8 +187,6 @@ export const Projects = () => {
             carouselRef={ebookCarouselRef}
             onScroll={() => handleCarouselScroll(ebookCarouselRef, ebookPages.length, setEbookCurrentPage)}
             onDotSelect={(page) => goToCarouselPage(ebookCarouselRef, page)}
-            ebookCoverMap={ebookCoverMap}
-            ebookCoverErrorMap={ebookCoverErrorMap}
           />
 
           <ProjectsGithubSection
