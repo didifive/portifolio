@@ -76,7 +76,7 @@ export async function GET(req: Request) {
       expiresAt: Date.now() + CACHE_TTL_MS,
     });
 
-    const freshBody = bytes.buffer.slice(bytes.byteOffset, bytes.byteOffset + bytes.byteLength) as ArrayBuffer;
+    const freshBody = bytes.buffer.slice(bytes.byteOffset, bytes.byteOffset + bytes.byteLength);
 
     return new Response(freshBody, {
       headers: {
