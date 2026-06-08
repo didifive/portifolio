@@ -9,8 +9,6 @@ export type EbookCoverMap = Record<string, string>;
 
 export type EbookCoverErrorMap = Record<string, boolean>;
 
-export type EbookCoverCache = Map<string, string>;
-
 export type EbookItem = {
   id: string;
   title: string;

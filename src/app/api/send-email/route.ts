@@ -1,5 +1,4 @@
 import { NextRequest, NextResponse } from "next/server";
-import { render } from "@react-email/render";
 import { Resend } from "resend";
 import ContactFormEmail from "@/emails/contact-form-email";
 import ConfirmationEmail from "@/emails/confirmation-email";
@@ -9,7 +8,7 @@ import { urls } from "@/lib/urls";
 // Schema de validação para o request body
 const contactSchema = z.object({
   name: z.string().min(2, "Nome deve ter pelo menos 2 caracteres"),
-  email: z.string().email("Email inválido"),
+  email: z.string().regex(/^[^\s@]+@[^\s@]+\.[^\s@]+$/, "Email inválido"),
   subject: z.string().min(5, "Assunto deve ter pelo menos 5 caracteres"),
   message: z.string().min(10, "Mensagem deve ter pelo menos 10 caracteres"),
 });
@@ -32,21 +31,16 @@ export async function POST(request: NextRequest) {
 
     const { name, email, subject, message } = validatedData;
 
-    // Render dos templates de email usando react-email
-    const contactEmailHtml = await render(
-      ContactFormEmail({
-        name,
-        email,
-        subject,
-        message,
-      })
-    );
+    const contactEmailHtml = ContactFormEmail({
+      name,
+      email,
+      subject,
+      message,
+    });
 
-    const confirmationEmailHtml = await render(
-      ConfirmationEmail({
-        userName: name,
-      })
-    );
+    const confirmationEmailHtml = ConfirmationEmail({
+      userName: name,
+    });
 
     // Configurações de email
     const fromEmail = "Luis Zancanela <luis@zancanela.dev.br>";

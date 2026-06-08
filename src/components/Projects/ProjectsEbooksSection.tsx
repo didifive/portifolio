@@ -1,16 +1,13 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
 import type { RefObject } from "react";
 import { Button } from "../ui/Button";
 import { Card, CardContent } from "../ui/Card";
 import { Badge } from "../ui/Badge";
 import { ProjectsCarouselDots } from "./ProjectsCarouselDots";
-import { formatDate, getCachedPdfProxyUrl, normalizeGitHubUrl } from "./Projects.helpers";
+import { formatDate } from "./Projects.helpers";
 import { urls } from "@/lib/urls";
-import type { EbookCoverCache, EbookCoverErrorMap, EbookCoverMap, EbookItem } from "./Projects.types";
-
-const ebookCoverCache: EbookCoverCache = new Map<string, string>();
+import type { EbookCoverErrorMap, EbookCoverMap, EbookItem } from "./Projects.types";
 
 type ProjectsEbooksSectionProps = Readonly<{
   pages: EbookItem[][];
@@ -19,74 +16,6 @@ type ProjectsEbooksSectionProps = Readonly<{
   onScroll: () => void;
   onDotSelect: (page: number) => void;
 }>;
-
-type RenderEbookCoverParams = {
-  ebook: EbookItem;
-  pdfjs: typeof import("pdfjs-dist");
-  cancelledRef: { current: boolean };
-  setEbookCoverMap: React.Dispatch<React.SetStateAction<EbookCoverMap>>;
-  setEbookCoverErrorMap: React.Dispatch<React.SetStateAction<EbookCoverErrorMap>>;
-};
-
-async function renderEbookCover({
-  ebook,
-  pdfjs,
-  cancelledRef,
-  setEbookCoverMap,
-  setEbookCoverErrorMap,
-}: RenderEbookCoverParams) {
-  const normalizedPdfUrl = normalizeGitHubUrl(ebook.pdfUrl).trim();
-  const cachedCover = ebookCoverCache.get(normalizedPdfUrl);
-
-  if (cachedCover) {
-    if (!cancelledRef.current) {
-      setEbookCoverMap((current) => ({
-        ...current,
-        [ebook.id]: cachedCover,
-      }));
-    }
-
-    return;
-  }
-
-  const pdfUrl = `${getCachedPdfProxyUrl(normalizedPdfUrl)}&v=${encodeURIComponent(normalizedPdfUrl)}`;
-
-  try {
-    const loadingTask = pdfjs.getDocument({
-      url: pdfUrl,
-      disableAutoFetch: false,
-      disableStream: false,
-    });
-    const pdf = await loadingTask.promise;
-    const firstPage = await pdf.getPage(1);
-    const viewport = firstPage.getViewport({ scale: 1.6 });
-    const canvas = document.createElement("canvas");
-    const context = canvas.getContext("2d");
-
-    if (!context) throw new Error("Canvas context unavailable");
-
-    canvas.width = viewport.width;
-    canvas.height = viewport.height;
-
-    await firstPage.render({ canvas, canvasContext: context, viewport }).promise;
-    const coverDataUrl = canvas.toDataURL("image/png");
-
-    ebookCoverCache.set(normalizedPdfUrl, coverDataUrl);
-    await pdf.destroy();
-
-    if (!cancelledRef.current) {
-      setEbookCoverMap((current) => ({
-        ...current,
-        [ebook.id]: coverDataUrl,
-      }));
-    }
-  } catch (coverError) {
-    console.warn(`Falha ao renderizar a primeira página do PDF do ebook ${ebook.id}`, coverError);
-    if (!cancelledRef.current) {
-      setEbookCoverErrorMap((current) => ({ ...current, [ebook.id]: true }));
-    }
-  }
-}
 
 function EbookCard({ ebook, cover, hasError }: Readonly<{ ebook: EbookItem; cover?: string; hasError?: boolean }>) {
   let coverContent: React.ReactNode;
@@ -140,58 +69,15 @@ function EbookCard({ ebook, cover, hasError }: Readonly<{ ebook: EbookItem; cove
 }
 
 export function ProjectsEbooksSection({ pages, currentPage, carouselRef, onScroll, onDotSelect }: ProjectsEbooksSectionProps) {
-  const [ebookCoverMap, setEbookCoverMap] = useState<EbookCoverMap>({});
-  const [ebookCoverErrorMap, setEbookCoverErrorMap] = useState<EbookCoverErrorMap>({});
-
-  const publishedEbooks = useMemo(
-    () => pages.flat().filter((ebook) => Boolean(ebook.publishedAt?.trim()) && Boolean(ebook.publicationUrl?.trim())),
-    [pages]
-  );
-
-  useEffect(() => {
-    const cancelledRef = { current: false };
-
-    const cachedCoverMap = publishedEbooks.reduce<EbookCoverMap>((accumulator, ebook) => {
-      const normalizedPdfUrl = normalizeGitHubUrl(ebook.pdfUrl).trim();
-      const cachedCover = ebookCoverCache.get(normalizedPdfUrl);
-
-      if (cachedCover) {
-        accumulator[ebook.id] = cachedCover;
-      }
-
-      return accumulator;
-    }, {});
-
-    setEbookCoverMap(cachedCoverMap);
-    setEbookCoverErrorMap({});
-
-    async function renderEbookCovers() {
-      try {
-        const pdfjs = await import("pdfjs-dist");
-        pdfjs.GlobalWorkerOptions.workerSrc = new URL("pdfjs-dist/build/pdf.worker.min.mjs", import.meta.url).toString();
-
-        await Promise.all(
-          publishedEbooks.map((ebook) =>
-            renderEbookCover({
-              ebook,
-              pdfjs,
-              cancelledRef,
-              setEbookCoverMap,
-              setEbookCoverErrorMap,
-            })
-          )
-        );
-      } catch (coverError) {
-        console.warn("Falha ao carregar pdfjs-dist para ebooks", coverError);
-      }
+  const ebookCoverMap = pages.flat().reduce<EbookCoverMap>((accumulator, ebook) => {
+    if (ebook.imageUrl) {
+      accumulator[ebook.id] = ebook.imageUrl;
     }
 
-    renderEbookCovers();
+    return accumulator;
+  }, {});
 
-    return () => {
-      cancelledRef.current = true;
-    };
-  }, [publishedEbooks]);
+  const ebookCoverErrorMap: EbookCoverErrorMap = {};
 
   return (
     <div className="mt-16 mb-8">
