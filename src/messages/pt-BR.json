@@ -1,0 +1,210 @@
+{
+  "common": {
+    "nav": {
+      "home": "Início",
+      "about": "Sobre",
+      "experience": "Experiência",
+      "projects": "Projetos",
+      "contact": "Contato"
+    },
+    "languageSwitcher": {
+      "ptBr": "Português do Brasil",
+      "enUs": "Inglês dos Estados Unidos"
+    }
+  },
+  "about": {
+    "title": "Sobre Mim",
+    "intro": "Desenvolvedor apaixonado por tecnologia com {yearsIT}+ anos de experiência em TI e {yearsDev}+ anos com desenvolvimento de sistemas, criando soluções inovadoras e escaláveis.",
+    "journeyTitle": "Minha Jornada",
+    "journey": [
+      "Gosto de codar, jogar videogame, assistir anime e falar de tecnologia, melhor ainda se acompanhado de café.",
+      "Há mais de {yearsIT} anos iniciei a carreira em TI, tendo a oportunidade de atuar em todas as frentes como suporte, infraestrutura, comunicação e sistemas.",
+      "Nos últimos {yearsDev} anos, foquei minha trajetória como desenvolvedor de sistemas, especializando-me em back-end e em soluções robustas, escaláveis e seguras."
+    ],
+    "skillsTitle": "Principais Competências",
+    "skills": {
+      "backend": ["Java", "Spring Boot", "Apache Camel", "Node.js", "APIs REST", "Mensageria", "Microserviços", "Arquitetura Limpa", "SOLID", "DDD", "SQL", "NoSQL"],
+      "frontend": ["React", "TypeScript", "Next.js", "Angular", "Bootstrap CSS", "Tailwind CSS", "Twelve-Factor Apps"],
+      "cloud": ["Azure", "GCP", "AWS", "Azure DevOps", "Jenkins", "Docker", "Kubernetes"]
+    },
+    "highlights": {
+      "backend": {
+        "title": "Back-End Developer",
+        "description": "Especializado em tecnologias Java, Spring e Apache Camel"
+      },
+      "enterprise": {
+        "title": "Experiência Enterprise",
+        "description": "Atuação em soluções corporativas para o setor público e privado"
+      },
+      "team": {
+        "title": "Trabalho em Equipe",
+        "description": "Experiência em times multidisciplinares e metodologias ágeis"
+      },
+      "quality": {
+        "title": "Foco em Qualidade",
+        "description": "Comprometido com código limpo, escalabilidade e boas práticas"
+      }
+    }
+  },
+  "experience": {
+    "title": "Experiência Profissional",
+    "subtitle": "Um breve resumo da minha jornada",
+    "current": "Atual",
+    "techTitle": "Principais Tecnologias:",
+    "items": {
+      "gft": {
+        "company": "GFT Technologies",
+        "position": "Software Engineer",
+        "period": "Mai 2022 - Presente",
+        "location": "São Paulo, SP - Remoto",
+        "type": "Tempo Integral",
+        "description": "Atendendo cliente do setor bancário desenvolvendo e sustentando APIs Java com Spring e Apache Camel em equipe ágil e ambientes cloud e on-premise.",
+        "skills": ["Java", "Spring Boot", "Apache Camel", "Azure", "Azure DevOps", "APIs REST", "Microservices"]
+      },
+      "orlandia": {
+        "company": "Prefeitura Municipal de Orlândia",
+        "position": "Monitor de Informática",
+        "period": "Abr 2007 - Mai 2022",
+        "location": "Orlândia, SP - Presencial",
+        "type": "Tempo Integral",
+        "description": "Atuei por 15 anos na TI em geral com destaque na área de sistema em que eu implantei e integrei sistema gestor com coletores de leituras de água, registro de boletos de pagamento e execução fiscal e revisei e otimizei fórmulas e relatórios.",
+        "skills": ["SQL", "Javascript", "HTML", "CSS", "PHP"]
+      }
+    }
+  },
+  "footer": {
+    "tagline": "Desenvolvedor Back-End apaixonado por criar soluções inovadoras e de alta escala.",
+    "navTitle": "Navegação",
+    "talkTitle": "Quer falar?",
+    "talkText": "Bora falar sobre tecnologia, sistemas e Java?",
+    "button": "Entre em Contato",
+    "copyright": "Todos os direitos reservados."
+  },
+  "hero": {
+    "name": "Luis Zancanela",
+    "badge": "Software Engineer",
+    "title": "Backend Java Engineer com visão de produto e front-end moderno",
+    "subtitle": "APIs críticas • Microsserviços • Integrações • Cloud • React/Next.js quando o desafio pede uma interface forte",
+    "description": "Transformo sistemas complexos em soluções estáveis, escaláveis e fáceis de evoluir. Meu foco está em backend Java, mas eu também entrego front-end com experiência real em UX, performance e consistência visual.",
+    "stats": {
+      "it": "{years}+ anos em TI",
+      "itLabel": "de experiência em TI",
+      "dev": "{years}+ anos como dev",
+      "devLabel": "de experiência como dev",
+      "endToEnd": "Soluções end-to-end"
+    },
+    "cta": "Entre em Contato",
+    "scroll": "Role para baixo"
+  },
+  "projects": {
+    "title": "Projetos",
+    "cta": "Interessado em ver mais projetos ou discutir uma colaboração?",
+    "button": "Ver Mais no GitHub",
+    "highlighted": {
+      "title": "Projetos em destaque"
+    },
+    "ebooks":{
+      "title": "Ebooks publicados",
+      "description": "Ebooks sobre tecnologias e desenvolvimento de sistemas publicados no LinkedIn.",
+      "labels": {
+        "publishedOn": "Publicado em",
+        "viewOnLinkedIn": "Ver no LinkedIn"
+      },
+      "items": {
+        "javaVersions": {
+          "title": "Java Bushidō - Do Java 8 ao 25: cortes precisos na evolução",
+          "description": "Guia prático que apresenta a evolução do Java do 8 ao 25, explicando de forma clara e progressiva os recursos mais importantes para quem está iniciando na linguagem."
+        },
+        "kubernetes": {
+          "title": "A Empresa dos Deploys Infinitos: Onde os Microserviços Nunca Dormem",
+          "description": "Uma explicação didática do Kubernetes usando a analogia de uma empresa, tornando conceitos como pods, nodes, workloads e autoscaling simples e intuitivos."
+        },
+        "apacheCamel": {
+          "title": "O Despertar do Guerreiro Java: A Arte Shinobi dos Microsserviços Apache Camel",
+          "description": "Desenvolvimento de uma arquitetura de microsserviços em Java utilizando Apache Camel para rotas. O projeto demonstra comunicação assíncrona entre serviços (Kage e Shinobi) com integração prática com Spring Boot."
+        },
+        "tags": {
+          "java": "Java",
+          "java8": "Java 8",
+          "java11": "Java 11",
+          "java17": "Java 17",
+          "java21": "Java 21",
+          "java25": "Java 25",
+          "evolucaoJava": "Evolução do Java",
+          "streamsApi": "Streams API",
+          "records": "Records",
+          "patternMatching": "Pattern Matching",
+          "virtualThreads": "Virtual Threads",
+          "kubernetes": "Kubernetes",
+          "docker": "Docker",
+          "microservices": "Microsserviços",
+          "cloud": "Cloud",
+          "cloudComputing": "Cloud Computing",
+          "devOps": "DevOps",
+          "pods": "Pods",
+          "containers": "Containers",
+          "orchestration": "Orquestração de Containers",
+          "errorDiagostics": "Diagnósticos de erros",
+          "backend": "Backend",
+          "apacheCamel": "Apache Camel",
+          "springBoot":"Spring Boot", 
+          "messaging":"Mensageria", 
+          "activeMQ": "ActiveMQ",
+          "distributedArchitecture": "Arquitetura distribuída",
+          "eip": "EIP (Enterprise Integration Patterns)",
+          "systemsIntegration": "Integração de Sistemas",
+          "ai": "IA"
+        }
+      }
+    },
+    "github": {
+      "title": "Projetos GitHub",
+      "description": "Os 6 principais projetos públicos do meu GitHub, ordenados por estrelas e forks."
+    }
+  },
+  "contact": {
+    "title": "Vamos Conversar?",
+    "subtitle": "Estou sempre aberto para trocar uma ideia sobre tecnologia, discutir novos projetos ou oportunidades criativas.",
+    "infoTitle": "Informações de Contato",
+    "socialTitle": "Redes Sociais",
+    "availabilityTitle": "Disponível para ajudar e aprender",
+    "availabilityText": "Sempre disponível para colaborar em projetos, tirar dúvidas ou explorar novas ideias. Em constante aprendizado em tecnologias. Sinta-se à vontade para entrar em contato.",
+    "formTitle": "Envie uma Mensagem",
+    "labels": {
+      "name": "Nome *",
+      "email": "Email *",
+      "subject": "Assunto *",
+      "message": "Mensagem *"
+    },
+    "placeholders": {
+      "name": "Seu nome completo",
+      "email": "Seu melhor email",
+      "subject": "Sobre o que gostaria de conversar?",
+      "message": "Descreva seu projeto ou ideia em detalhes..."
+    },
+    "contactInfo": {
+      "email": "Email",
+      "location": "Localização",
+      "locationValue": "Orlândia, SP - Brasil"
+    },
+    "toast": {
+      "successTitle": "Mensagem enviada!",
+      "successDescription": "Obrigado pelo contato! Você receberá um email de confirmação e responderei em breve.",
+      "errorTitle": "Erro ao enviar mensagem",
+      "errorDescription": "Tente novamente em alguns instantes."
+    },
+    "validation": {
+      "nameMin": "Nome deve ter pelo menos 2 caracteres",
+      "nameMax": "Nome deve ter no máximo 50 caracteres",
+      "emailInvalid": "Por favor, insira um email válido",
+      "emailRequired": "Email é obrigatório",
+      "subjectMin": "Assunto deve ter pelo menos 5 caracteres",
+      "subjectMax": "Assunto deve ter no máximo 100 caracteres",
+      "messageMin": "Mensagem deve ter pelo menos 10 caracteres",
+      "messageMax": "Mensagem deve ter no máximo 500 caracteres"
+    },
+    "buttons": {
+      "submit": "Enviar Mensagem"
+    }
+  }
+}

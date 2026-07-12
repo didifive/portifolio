@@ -8,6 +8,7 @@ import { ProjectsCarouselDots } from "./ProjectsCarouselDots";
 import { formatDate } from "./Projects.helpers";
 import { urls } from "@/lib/urls";
 import type { EbookCoverErrorMap, EbookCoverMap, EbookItem } from "./Projects.types";
+import { useTranslations } from "next-intl";
 
 type ProjectsEbooksSectionProps = Readonly<{
   pages: EbookItem[][];
@@ -18,6 +19,9 @@ type ProjectsEbooksSectionProps = Readonly<{
 }>;
 
 function EbookCard({ ebook, cover, hasError }: Readonly<{ ebook: EbookItem; cover?: string; hasError?: boolean }>) {
+  const t = useTranslations("projects");
+  const publishedOn = t("ebooks.labels.publishedOn");
+  const viewOnLinkedIn = t("ebooks.labels.viewOnLinkedIn");
   let coverContent: React.ReactNode;
 
   if (cover) {
@@ -44,7 +48,7 @@ function EbookCard({ ebook, cover, hasError }: Readonly<{ ebook: EbookItem; cove
             <p className="text-foreground/80 dark:text-white/90 text-sm mb-4 leading-relaxed flex-1">{ebook.description}</p>
 
             <div className="mb-4 flex items-center gap-2 text-xs text-foreground/70 dark:text-white/70">
-              <span className="font-medium">Publicado em</span>
+              <span className="font-medium">{publishedOn}</span>
               <span>{formatDate(ebook.publishedAt)}</span>
             </div>
 
@@ -58,7 +62,7 @@ function EbookCard({ ebook, cover, hasError }: Readonly<{ ebook: EbookItem; cove
 
             <div className="mt-auto flex gap-2 items-center">
               <Button variant="ghost" size="sm" href={ebook.publicationUrl ?? urls.linkedin} target="_blank">
-                Ver no LinkedIn
+                {viewOnLinkedIn}
               </Button>
             </div>
           </div>
@@ -69,6 +73,10 @@ function EbookCard({ ebook, cover, hasError }: Readonly<{ ebook: EbookItem; cove
 }
 
 export function ProjectsEbooksSection({ pages, currentPage, carouselRef, onScroll, onDotSelect }: ProjectsEbooksSectionProps) {
+  const t = useTranslations("projects");
+  const title = t("ebooks.title");
+  const description = t("ebooks.description");
+  
   const ebookCoverMap = pages.flat().reduce<EbookCoverMap>((accumulator, ebook) => {
     if (ebook.imageUrl) {
       accumulator[ebook.id] = ebook.imageUrl;
@@ -81,9 +89,9 @@ export function ProjectsEbooksSection({ pages, currentPage, carouselRef, onScrol
 
   return (
     <div className="mt-16 mb-8">
-      <h3 className="text-2xl font-semibold mb-4 text-foreground dark:text-white">Ebooks publicados</h3>
+      <h3 className="text-2xl font-semibold mb-4 text-foreground dark:text-white">{title}</h3>
       <p className="text-foreground/80 dark:text-white/90 mb-3 text-lg max-w-2xl">
-        Ebooks sobre tecnologias e desenvolvimento de sistemas publicados no LinkedIn.
+        {description}
       </p>
 
       <div

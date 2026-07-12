@@ -4,10 +4,12 @@ import Image from "next/image";
 import { Button } from "../ui/Button";
 import { FiArrowDown, FiMail } from "react-icons/fi";
 import { handleNavClick, getYearsOfExperienceIT, getYearsOfExperienceDev } from "@/lib/utils";
+import { useTranslations } from "next-intl";
 
 export const Hero = () => {
   const yearsIT = getYearsOfExperienceIT();
   const yearsDev = getYearsOfExperienceDev();
+  const t = useTranslations("hero");
 
   return (
     <section
@@ -43,37 +45,43 @@ export const Hero = () => {
           </div>
 
           <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-5xl 2xl:text-7xl font-bold mb-4 text-foreground dark:text-white">
-            Luis Zancanela
+            {t("name")}
           </h1>
 
           <div className="mb-6 flex justify-center">
             <span className="bg-primary/90 dark:bg-primary text-white px-6 py-2 rounded-full font-semibold text-base md:text-lg shadow-medium backdrop-blur-xs dark:drop-shadow-[0_1px_2px_rgba(0,0,0,0.45)]">
-              Software Engineer
+              {t("badge")}
             </span>
           </div>
 
           <p className="text-base md:text-lg lg:text-lg xl:text-lg 2xl:text-2xl text-foreground/80 dark:text-white/90 mb-4 max-w-3xl mx-auto leading-relaxed">
-            Desenvolvedor Back-End com Java, Spring e Apache Camel
-            que também mexe no Front-End com Javascript e TypeScript.
-            Criando soluções modernas e eficientes em nuvem ou on-premises.
+            {t("title")}
           </p>
+
+          {/* <p className="text-sm md:text-base text-foreground/70 dark:text-white/80 mb-6 max-w-3xl mx-auto leading-relaxed">
+            {t("subtitle")}
+          </p> */}
+
+          {/* <p className="text-base md:text-lg lg:text-lg xl:text-lg 2xl:text-2xl text-foreground/80 dark:text-white/90 mb-4 max-w-3xl mx-auto leading-relaxed">
+            {t("description")}
+          </p> */}
 
           {/* Experience Stats */}
           <div className="mb-8 flex flex-wrap justify-center gap-8 text-sm">
             <div className="flex flex-col items-center">
               <span className="text-2xl font-bold text-primary dark:text-emerald-400">
-                {yearsIT}+ Anos
+                {t("stats.it", { years: yearsIT })}
               </span>
               <span className="text-foreground/70 dark:text-white/80">
-                de Experiência em TI
+                {t("stats.itLabel")}
               </span>
             </div>
             <div className="flex flex-col items-center">
               <span className="text-2xl font-bold text-primary dark:text-emerald-400">
-                {yearsDev}+ Anos
+                {t("stats.dev", { years: yearsDev })}
               </span>
               <span className="text-foreground/70 dark:text-white/80">
-                de Experiência como Dev
+                {t("stats.devLabel")}
               </span>
             </div>
             <div className="flex flex-col items-center">
@@ -81,7 +89,7 @@ export const Hero = () => {
                 100%
               </span>
               <span className="text-foreground/70 dark:text-white/80">
-                End-to-End Solutions
+                {t("stats.endToEnd")}
               </span>
             </div>
           </div>
@@ -95,7 +103,7 @@ export const Hero = () => {
               href="#contact"
             >
               <FiMail className="h-5 w-5" />
-              Entre em Contato
+              {t("cta")}
             </Button>
             {/* <Button variant="outline" size="xl" className="font-semibold">
               <FiDownload className="h-5 w-5" />
@@ -106,7 +114,7 @@ export const Hero = () => {
           {/* Scroll Indicator */}
           <div className="flex flex-col items-center">
             <span className="text-foreground/60 dark:text-white/70 text-sm mb-2">
-              Role para baixo
+              {t("scroll")}
             </span>
             <Button
               variant="ghost"

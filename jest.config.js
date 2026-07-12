@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-require-imports */
+
 const nextJest = require('next/jest')
 
 /** @type {import('jest').Config} */

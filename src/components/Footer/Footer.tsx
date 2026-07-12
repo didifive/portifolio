@@ -9,8 +9,12 @@ import { Button } from "../ui/Button";
 import { urls } from "@/lib/urls";
 import { appConfig } from "@/lib/appConfig";
 import { currentYear } from "@/lib/utils";
+import { useTranslations } from "next-intl";
 
 export const Footer = () => {
+  const t = useTranslations("footer");
+  const nav = useTranslations("common.nav");
+
   const scrollToSection = (elementId: string) => {
     const element = document.getElementById(elementId);
     if (element) {
@@ -63,11 +67,11 @@ export const Footer = () => {
   ];
 
   const navLinks = [
-    { label: "Início", href: "#hero" },
-    { label: "Sobre", href: "#about" },
-    { label: "Experiência", href: "#experience" },
-    { label: "Projetos", href: "#projects" },
-    { label: "Contato", href: "#contact" },
+    { label: nav("home"), href: "#hero" },
+    { label: nav("about"), href: "#about" },
+    { label: nav("experience"), href: "#experience" },
+    { label: nav("projects"), href: "#projects" },
+    { label: nav("contact"), href: "#contact" },
   ];
 
   return (
@@ -80,8 +84,7 @@ export const Footer = () => {
                 Luis Zancanela
               </div>
               <p className="text-muted-foreground text-sm leading-relaxed">
-                Desenvolvedor Back-End apaixonado por criar soluções
-                inovadoras e de alta escala.
+                {t("tagline")}
               </p>
               <div className="flex space-x-3">
                 {socialLinks.map((social) => (
@@ -106,7 +109,7 @@ export const Footer = () => {
             </div>
 
             <div className="space-y-4">
-              <h4 className="font-semibold">Navegação</h4>
+              <h4 className="font-semibold">{t("navTitle")}</h4>
               <div className="flex flex-col space-y-2">
                 {navLinks.map((link) => (
                   <a
@@ -122,9 +125,9 @@ export const Footer = () => {
             </div>
 
             <div className="space-y-4">
-              <h4 className="font-semibold">Quer falar?</h4>
+              <h4 className="font-semibold">{t("talkTitle")}</h4>
               <p className="text-muted-foreground text-sm">
-                Bora falar sobre tecnologia, sistemas e Java?
+                {t("talkText")}
               </p>
               <Button 
               variant="default" 
@@ -132,7 +135,7 @@ export const Footer = () => {
               className="w-full md:w-auto"
               href="#contact">
                 <FaRegEnvelope className="h-4 w-4 mr-2" />
-                Entre em Contato
+                {t("button")}
               </Button>
             </div>
           </div>
@@ -140,7 +143,7 @@ export const Footer = () => {
           <div className="border-t pt-8">
             <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
               <div className="text-sm text-muted-foreground">
-                © {currentYear} Luis Zancanela. Todos os direitos reservados.
+                © {currentYear} Luis Zancanela. {t("copyright")}
               </div>
               <div className="text-xs text-muted-foreground">
                 v{appConfig.version}

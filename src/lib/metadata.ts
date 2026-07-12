@@ -1,10 +1,32 @@
 import type { Metadata } from "next";
 import { urls } from "@/lib/urls";
 
+export const supportedLocales = ["pt-BR", "en-US"] as const;
+export type SupportedLocale = (typeof supportedLocales)[number];
+
+export function isSupportedLocale(locale: string | undefined): locale is SupportedLocale {
+  return supportedLocales.includes(locale as SupportedLocale);
+}
+
+const localeConfigs: Record<SupportedLocale, { title: string; description: string; ogLocale: string }> = {
+  "pt-BR": {
+    title: "Luis Zancanela - Desenvolvedor Back-End | Java, Spring, TypeScript, Azure",
+    description:
+      "Portfólio de Luis Zancanela, desenvolvedor back-end especializado em Java, Spring Boot, Apache Camel e TypeScript. Mais de 5 anos de experiência em desenvolvimento de soluções modernas e eficientes na nuvem.",
+    ogLocale: "pt_BR",
+  },
+  "en-US": {
+    title: "Luis Zancanela - Backend Engineer | Java, Spring, TypeScript, Azure",
+    description:
+      "Portfolio of Luis Zancanela, a backend engineer specializing in Java, Spring Boot, Apache Camel, and TypeScript. More than 5 years of experience building modern and efficient cloud solutions.",
+    ogLocale: "en_US",
+  },
+};
+
 export const siteConfig = {
   name: "Luis Zancanela",
-  title: "Luis Zancanela - Desenvolvedor Back-End | Java, Spring, TypeScript, Azure",
-  description: "Portfólio de Luis Zancanela, desenvolvedor back-end especializado em Java, Spring Boot, Apache Camel e TypeScript. Mais de 5 anos de experiência em desenvolvimento de soluções modernas e eficientes na nuvem.",
+  title: localeConfigs["pt-BR"].title,
+  description: localeConfigs["pt-BR"].description,
   url: "https://zancanela.dev.br",
   keywords: [
     "desenvolvedor",
@@ -50,6 +72,16 @@ export const siteConfig = {
   type: "website"
 };
 
+export function getLocaleSiteConfig(locale: SupportedLocale) {
+  return {
+    ...siteConfig,
+    locale,
+    title: localeConfigs[locale].title,
+    description: localeConfigs[locale].description,
+    ogLocale: localeConfigs[locale].ogLocale,
+  };
+}
+
 export const defaultMetadata: Metadata = {
   title: {
     default: siteConfig.title,
@@ -64,7 +96,8 @@ export const defaultMetadata: Metadata = {
   alternates: {
     canonical: "/",
     languages: {
-      "pt-BR": "/",
+      "pt-BR": "/pt-BR",
+      "en-US": "/en-US",
     }
   },
   openGraph: {
@@ -123,36 +156,50 @@ export function generateViewport() {
 }
 
 export function generatePageMetadata({
+  locale = "pt-BR",
   title,
   description,
   path = "",
   images,
   noIndex = false
 }: {
+  locale?: SupportedLocale;
   title?: string;
   description?: string;
   path?: string;
   images?: string[];
   noIndex?: boolean;
 }): Metadata {
-  const pageUrl = `${siteConfig.url}${path}`;
+  const safeLocale = isSupportedLocale(locale) ? locale : "pt-BR";
+  const localeSiteConfig = getLocaleSiteConfig(safeLocale);
+  let normalizedPath = "";
+  if (path) {
+    normalizedPath = path.startsWith("/") ? path : `/${path}`;
+  }
+  const pageUrl = `${localeSiteConfig.url}${normalizedPath}`;
   
   return {
-    title,
-    description: description || siteConfig.description,
+    title: title || localeSiteConfig.title,
+    description: description || localeSiteConfig.description,
     alternates: {
-      canonical: pageUrl
+      canonical: pageUrl,
+      languages: {
+        "pt-BR": `${siteConfig.url}${normalizedPath}`,
+        "en-US": `${siteConfig.url}${normalizedPath}`,
+      },
     },
     openGraph: {
       url: pageUrl,
-      title: title || siteConfig.title,
-      description: description || siteConfig.description,
+      title: title || localeSiteConfig.title,
+      description: description || localeSiteConfig.description,
+      locale: localeSiteConfig.ogLocale,
+      alternateLocale: safeLocale === "pt-BR" ? "en_US" : "pt_BR",
       images: images || ["/og-image"]
     },
     twitter: {
       card: "summary_large_image",
-      title: title || siteConfig.title,
-      description: description || siteConfig.description,
+      title: title || localeSiteConfig.title,
+      description: description || localeSiteConfig.description,
       images: images || ["/og-image"]
     },
     robots: noIndex ? {

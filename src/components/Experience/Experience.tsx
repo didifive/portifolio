@@ -1,31 +1,24 @@
+import { getTranslations } from "next-intl/server";
 import { FaBuilding } from "react-icons/fa";
 import { Card, CardContent } from "../ui/Card";
 import { Badge } from "../ui/Badge";
 import { FiCalendar, FiMapPin } from "react-icons/fi";
 
-export const Experience = () => {
-  const experiences = [
-    {
-      company: "GFT Technologies",
-      position: "Software Engineer",
-      period: "Mai 2022 - Presente",
-      location: "São Paulo, SP - Remoto",
-      type: "Tempo Integral",
-      description: "Atendendo cliente do setor bancário desenvolvendo e sustentando APIs Java com Spring e Apache Camel em equipe ágil e ambientes cloud e on-premise.",
-      skills: ["Java", "Spring Boot", "Apache Camel", "Azure", "Azure DevOps", "APIs REST", "Microservices"],
-      current: true,
-    },
-    {
-      company: "Prefeitura Municipal de Orlândia",
-      position: "Monitor de Informática",
-      period: "Abr 2007 - Mai 2022",
-      location: "Orlândia, SP - Presencial",
-      type: "Tempo Integral",
-      description:
-        "Atuei por 15 anos na TI em geral com destaque na área de sistema em que eu implantei e integrei sistema gestor com coletores de leituras de água, registro de boletos de pagamento e execução fiscal e revisei e otimizei fórmulas e relatórios.",
-      skills: ["SQL", "Javascript ", "HTML", "CSS", "PHP"],
-      current: false,
-    },
+type ExperienceItem = {
+  company: string;
+  position: string;
+  period: string;
+  location: string;
+  description: string;
+  skills: string[];
+  current: boolean;
+};
+
+export const Experience = async () => {
+  const t = await getTranslations("experience");
+  const experiences: ExperienceItem[] = [
+    { ...(t.raw("items.gft") as Omit<ExperienceItem, "current">), current: true },
+    { ...(t.raw("items.orlandia") as Omit<ExperienceItem, "current">), current: false },
   ];
 
   return (
@@ -35,10 +28,10 @@ export const Experience = () => {
           {/* Header */}
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground dark:text-white">
-              Experiência Profissional
+              {t("title")}
             </h2>
             <p className="text-foreground/80 dark:text-white/90 text-lg">
-              Um breve resumo da minha jornada!
+              {t("subtitle")}
             </p>
           </div>
 
@@ -75,7 +68,7 @@ export const Experience = () => {
                                 variant="default"
                                 className="ml-3 text-xs group-hover:shadow-md transition-shadow duration-300"
                               >
-                                Atual
+                                  {t("current")}
                               </Badge>
                             )}
                           </div>
@@ -100,7 +93,7 @@ export const Experience = () => {
                       {/* Skills */}
                       <div>
                         <h4 className="text-sm font-medium mb-3 text-foreground/70 dark:text-white/80">
-                          Principais Tecnologias:
+                          {t("techTitle")}
                         </h4>
                         <div className="flex flex-wrap gap-2">
                           {exp.skills.map((skill) => (
