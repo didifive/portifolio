@@ -7,8 +7,8 @@ import { routing, type AppLocale } from "@/i18n/routing";
 import { usePathname, useRouter } from "@/i18n/navigation";
 
 const localeMeta: Record<AppLocale, { label: string; flag: string }> = {
-  "pt-BR": { label: "PT-BR", flag: "🇧🇷" },
-  "en-US": { label: "EN-US", flag: "🇺🇸" },
+  "pt-BR": { label: "Português", flag: "🇧🇷" },
+  "en-US": { label: "English", flag: "🇺🇸" },
 };
 
 const flagImages: Record<AppLocale, string> = {
@@ -79,14 +79,14 @@ export const LanguageSwitcher = () => {
                 type="button"
                 role="menuitem"
                 onClick={() => handleLocaleChange(targetLocale)}
-                className={`flex w-full items-center justify-between gap-3 rounded-xl px-3 py-2 text-sm transition-colors ${
+                className={`flex w-full items-center justify-between gap-2 rounded-xl px-2 py-2 text-sm transition-colors ${
                   isActive
                     ? "bg-primary text-primary-foreground"
                     : "text-foreground/80 hover:bg-muted hover:text-foreground"
                 }`}
                 aria-current={isActive ? "true" : undefined}
               >
-                <span className="inline-flex items-center gap-2">
+                <span className="inline-flex items-center gap-1">
                   <Image
                     src={flagImages[targetLocale]}
                     alt={targetLocale}

@@ -14,42 +14,9 @@ import { useTranslations } from "next-intl";
 export const Projects = () => {
   const GITHUB_USERNAME = "didifive";
   const t = useTranslations("projects");
-  const javaVersionsTags = [
-    t("ebooks.items.tags.java"),
-    t("ebooks.items.tags.java8"),
-    t("ebooks.items.tags.java11"),
-    t("ebooks.items.tags.java17"),
-    t("ebooks.items.tags.java21"),
-    t("ebooks.items.tags.java25"),
-    t("ebooks.items.tags.evolucaoJava"),
-    t("ebooks.items.tags.streamsApi"),
-    t("ebooks.items.tags.records"),
-    t("ebooks.items.tags.patternMatching"),
-    t("ebooks.items.tags.virtualThreads"),
-    t("ebooks.items.tags.backend")
-  ];
-  const kubernetesTags = [
-    t("ebooks.items.tags.kubernetes"),
-    t("ebooks.items.tags.devOps"),
-    t("ebooks.items.tags.cloudComputing"),
-    t("ebooks.items.tags.containers"),
-    t("ebooks.items.tags.orchestration"),
-    t("ebooks.items.tags.pods"),
-    t("ebooks.items.tags.errorDiagostics"),
-  ];
-  const apacheCamelTags = [
-    t("ebooks.items.tags.apacheCamel"),
-    t("ebooks.items.tags.java"),
-    t("ebooks.items.tags.springBoot"),
-    t("ebooks.items.tags.microservices"),
-    t("ebooks.items.tags.messaging"),
-    t("ebooks.items.tags.activeMQ"),
-    t("ebooks.items.tags.distributedArchitecture"),
-    t("ebooks.items.tags.eip"),
-    t("ebooks.items.tags.systemsIntegration"),
-    t("ebooks.items.tags.ai"),
-    t("ebooks.items.tags.backend")
-  ];
+  const javaVersionsTags = t.raw("ebooks.items.javaVersions.tags") as string[];
+  const kubernetesTags = t.raw("ebooks.items.kubernetes.tags") as string[];
+  const apacheCamelTags = t.raw("ebooks.items.apacheCamel.tags") as string[];
   const [projects, setProjects] = useState<GithubProjectEnriched[]>([]);
   const [ebooks] = useState<EbookItem[]>([
     {

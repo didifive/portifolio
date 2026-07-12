@@ -83,7 +83,7 @@
   "hero": {
     "name": "Luis Zancanela",
     "badge": "Software Engineer",
-    "title": "Backend Java Engineer com visão de produto e front-end moderno",
+    "title": "Construindo sistemas críticos em Java com integrações complexas e experiências modernas em TypeScript",
     "subtitle": "APIs críticas • Microsserviços • Integrações • Cloud • React/Next.js quando o desafio pede uma interface forte",
     "description": "Transformo sistemas complexos em soluções estáveis, escaláveis e fáceis de evoluir. Meu foco está em backend Java, mas eu também entrego front-end com experiência real em UX, performance e consistência visual.",
     "stats": {
@@ -113,47 +113,18 @@
       "items": {
         "javaVersions": {
           "title": "Java Bushidō - Do Java 8 ao 25: cortes precisos na evolução",
-          "description": "Guia prático que apresenta a evolução do Java do 8 ao 25, explicando de forma clara e progressiva os recursos mais importantes para quem está iniciando na linguagem."
+          "description": "Guia prático que apresenta a evolução do Java do 8 ao 25, explicando de forma clara e progressiva os recursos mais importantes para quem está iniciando na linguagem.",
+          "tags": ["Java", "Java 8", "Java 11", "Java 17", "Java 21", "Java 25", "Evolução do Java","Streams API", "Records", "Pattern Matching", "Virtual Threads", "Backend"]
         },
         "kubernetes": {
           "title": "A Empresa dos Deploys Infinitos: Onde os Microserviços Nunca Dormem",
-          "description": "Uma explicação didática do Kubernetes usando a analogia de uma empresa, tornando conceitos como pods, nodes, workloads e autoscaling simples e intuitivos."
+          "description": "Uma explicação didática do Kubernetes usando a analogia de uma empresa, tornando conceitos como pods, nodes, workloads e autoscaling simples e intuitivos.",
+          "tags": ["Kubernetes", "Microsserviços", "Cloud", "Cloud Computing", "DevOps", "Pods", "Containers", "Orquestração de Containers", "Diagnósticos de erros", "Backend"]
         },
         "apacheCamel": {
           "title": "O Despertar do Guerreiro Java: A Arte Shinobi dos Microsserviços Apache Camel",
-          "description": "Desenvolvimento de uma arquitetura de microsserviços em Java utilizando Apache Camel para rotas. O projeto demonstra comunicação assíncrona entre serviços (Kage e Shinobi) com integração prática com Spring Boot."
-        },
-        "tags": {
-          "java": "Java",
-          "java8": "Java 8",
-          "java11": "Java 11",
-          "java17": "Java 17",
-          "java21": "Java 21",
-          "java25": "Java 25",
-          "evolucaoJava": "Evolução do Java",
-          "streamsApi": "Streams API",
-          "records": "Records",
-          "patternMatching": "Pattern Matching",
-          "virtualThreads": "Virtual Threads",
-          "kubernetes": "Kubernetes",
-          "docker": "Docker",
-          "microservices": "Microsserviços",
-          "cloud": "Cloud",
-          "cloudComputing": "Cloud Computing",
-          "devOps": "DevOps",
-          "pods": "Pods",
-          "containers": "Containers",
-          "orchestration": "Orquestração de Containers",
-          "errorDiagostics": "Diagnósticos de erros",
-          "backend": "Backend",
-          "apacheCamel": "Apache Camel",
-          "springBoot":"Spring Boot", 
-          "messaging":"Mensageria", 
-          "activeMQ": "ActiveMQ",
-          "distributedArchitecture": "Arquitetura distribuída",
-          "eip": "EIP (Enterprise Integration Patterns)",
-          "systemsIntegration": "Integração de Sistemas",
-          "ai": "IA"
+          "description": "Desenvolvimento de uma arquitetura de microsserviços em Java utilizando Apache Camel para rotas. O projeto demonstra comunicação assíncrona entre serviços (Kage e Shinobi) com integração prática com Spring Boot.",
+          "tags": ["Apache Camel", "Spring Boot", "Mensageria", "ActiveMQ", "Arquitetura distribuída", "EIP (Enterprise Integration Patterns)", "Integração de Sistemas", "Backend"]
         }
       }
     },

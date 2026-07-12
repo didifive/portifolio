@@ -83,7 +83,7 @@
   "hero": {
     "name": "Luis Zancanela",
     "badge": "Software Engineer",
-    "title": "Backend Java Engineer with product vision and modern front-end skills",
+    "title": "Crafting resilient Java systems, advanced integrations, and modern TypeScript experiences.",
     "subtitle": "Critical APIs • Microservices • Integrations • Cloud • React/Next.js when the challenge needs a strong interface",
     "description": "I turn complex systems into stable, scalable, and easy-to-evolve solutions. My focus is backend Java, but I also deliver front-end work with real UX, performance, and visual consistency awareness.",
     "stats": {
@@ -113,47 +113,18 @@
       "items": {
         "javaVersions": {
           "title": "Java Bushidō – From Java 8 to 25 (Java Bushidō - Do Java 8 ao 25: cortes precisos na evolução)",
-          "description": "A practical guide explaining the evolution of Java from version 8 to 25, presenting the most important features in a clear and progressive way. This e‑book is available in Brazilian Portuguese."
+          "description": "A practical guide explaining the evolution of Java from version 8 to 25, presenting the most important features in a clear and progressive way. This e‑book is available in Brazilian Portuguese.",
+          "tags": ["Java", "Java 8", "Java 11", "Java 17", "Java 21", "Java 25", "Java Evolution", "Streams API", "Records", "Pattern Matching", "Virtual Threads", "Backend"]
         },
         "kubernetes": {
           "title": "The Company of Infinite Deploys (A Empresa dos Deploys Infinitos: Onde os Microserviços Nunca Dormem)",
-          "description": "A didactic explanation of Kubernetes using the analogy of a company, making concepts like pods, nodes, workloads, and autoscaling intuitive. This e‑book is available in Brazilian Portuguese."
+          "description": "A didactic explanation of Kubernetes using the analogy of a company, making concepts like pods, nodes, workloads, and autoscaling intuitive. This e‑book is available in Brazilian Portuguese.",
+          "tags": ["Kubernetes", "Microservices", "Cloud", "Cloud Computing", "DevOps", "Pods", "Containers", "Container Orchestration", "Error Diagnostics", "Backend"]
         },
         "apacheCamel": {
           "title": "The Awakening of the Java Warrior (O Despertar do Guerreiro Java: A Arte Shinobi dos Microsserviços Apache Camel)",
-          "description": "A microservices architecture built with Java and Apache Camel, demonstrating asynchronous communication between services with Spring Boot integration. This e‑book is available in Brazilian Portuguese."
-        },
-        "tags": {
-          "java": "Java",
-          "java8": "Java 8",
-          "java11": "Java 11",
-          "java17": "Java 17",
-          "java21": "Java 21",
-          "java25": "Java 25",
-          "evolucaoJava": "Java Evolution",
-          "streamsApi": "Streams API",
-          "records": "Records",
-          "patternMatching": "Pattern Matching",
-          "virtualThreads": "Virtual Threads",
-          "kubernetes": "Kubernetes",
-          "docker": "Docker",
-          "microservices": "Microservices",
-          "cloud": "Cloud",
-          "cloudComputing": "Cloud Computing",
-          "devOps": "DevOps",
-          "pods": "Pods",
-          "containers": "Containers",
-          "orchestration": "Container Orchestration",
-          "errorDiagostics": "Error Diagnostics",
-          "backend": "Backend",
-          "apacheCamel": "Apache Camel",
-          "springBoot":"Spring Boot", 
-          "messaging":"Messaging", 
-          "activeMQ": "ActiveMQ",
-          "distributedArchitecture": "Distributed Architecture",
-          "eip": "EIP (Enterprise Integration Patterns)",
-          "systemsIntegration": "Systems Integration",
-          "ai": "AI"
+          "description": "A microservices architecture built with Java and Apache Camel, demonstrating asynchronous communication between services with Spring Boot integration. This e‑book is available in Brazilian Portuguese.",
+          "tags": ["Apache Camel", "Spring Boot", "Messaging", "ActiveMQ", "Distributed Architecture", "EIP (Enterprise Integration Patterns)", "Systems Integration", "Backend"]
         }
       }
     },
