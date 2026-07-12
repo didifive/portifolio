@@ -159,7 +159,7 @@
     },
     "github": {
       "title": "Projetos GitHub",
-      "description": "Os 6 principais projetos públicos do meu GitHub, ordenados por estrelas e forks."
+      "description": "Os {totalProjects} principais projetos públicos do meu GitHub, ordenados por estrelas e forks."
     }
   },
   "contact": {

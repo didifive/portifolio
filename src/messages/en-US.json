@@ -159,7 +159,7 @@
     },
     "github": {
       "title": "GitHub Projects",
-      "description": "The top 6 public projects from my GitHub, ranked by stars and forks."
+      "description": "The top {totalProjects} public projects from my GitHub, ranked by stars and forks."
     }
   },
   "contact": {

@@ -5,6 +5,7 @@ import { Badge } from "../ui/Badge";
 import { FiGithub } from "react-icons/fi";
 import { ProjectsCarouselDots } from "./ProjectsCarouselDots";
 import type { GithubProject } from "./Projects.types";
+import { useTranslations } from "next-intl";
 
 type ProjectsGithubSectionProps = {
   pages: GithubProject[][];
@@ -17,7 +18,7 @@ type ProjectsGithubSectionProps = {
   totalProjects: number;
 };
 
-function GithubProjectCard({ project, emoji }: { project: GithubProject; emoji: string }) {
+function GithubProjectCard({ project, emoji }: Readonly<{ project: GithubProject; emoji: string }>) {
   const topicsLimit = 5;
 
   return (
@@ -107,14 +108,17 @@ export function ProjectsGithubSection({
   loading,
   error,
   totalProjects,
-}: ProjectsGithubSectionProps) {
+}: Readonly<ProjectsGithubSectionProps>) {
+  const t = useTranslations("projects");
+  const githubTitle = t("github.title");
+  const githubDescription = t("github.description", { totalProjects });
   const emojis = ["💻", "🛠️", "📦", "🚀", "🔧", "🌐"];
 
   return (
     <div className="mt-16 mb-8">
-      <h3 className="text-2xl font-semibold mb-4 text-foreground dark:text-white">Projetos GitHub</h3>
+      <h3 className="text-2xl font-semibold mb-4 text-foreground dark:text-white">{githubTitle}</h3>
       <p className="text-foreground/80 dark:text-white/90 mb-3 text-lg max-w-2xl">
-        Os {totalProjects} principais projetos públicos do meu GitHub, ordenados por estrelas e forks.
+        {githubDescription}
       </p>
       {loading && <p>Carregando projetos do GitHub...</p>}
 

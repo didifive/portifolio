@@ -4,6 +4,7 @@ import { Card, CardContent } from "../ui/Card";
 import { Badge } from "../ui/Badge";
 import { ProjectsCarouselDots } from "./ProjectsCarouselDots";
 import type { FeaturedProject } from "./Projects.types";
+import { useTranslations } from "next-intl";
 
 type ProjectsFeaturedSectionProps = {
   pages: FeaturedProject[][];
@@ -13,7 +14,7 @@ type ProjectsFeaturedSectionProps = {
   onDotSelect: (page: number) => void;
 };
 
-function FeaturedProjectCard({ project }: { project: FeaturedProject }) {
+function FeaturedProjectCard({ project }: Readonly<{ project: FeaturedProject }>) {
   return (
     <Card className="shadow-soft hover:shadow-medium transition-smooth group flex flex-col h-full w-full min-w-0">
       <CardContent className="p-0 flex-1">
@@ -37,12 +38,12 @@ function FeaturedProjectCard({ project }: { project: FeaturedProject }) {
             <h4 className="font-semibold mb-2 text-foreground dark:text-white">{project.title}</h4>
             <p className="text-foreground/80 dark:text-white/90 text-sm mb-4 leading-relaxed flex-1">{project.description}</p>
             <div className="mt-auto flex gap-2 items-center">
-              <Button variant="ghost" size="sm" href={project.href} target="_blank">
-                Visitar
-              </Button>
               <Badge variant="secondary" className="text-xs">
                 {project.badge}
               </Badge>
+              <Button variant="ghost" size="sm" href={project.href} target="_blank">
+                Visitar
+              </Button>
             </div>
           </div>
         </div>
@@ -51,10 +52,11 @@ function FeaturedProjectCard({ project }: { project: FeaturedProject }) {
   );
 }
 
-export function ProjectsFeaturedSection({ pages, currentPage, carouselRef, onScroll, onDotSelect }: ProjectsFeaturedSectionProps) {
+export function ProjectsFeaturedSection({ pages, currentPage, carouselRef, onScroll, onDotSelect }: Readonly<ProjectsFeaturedSectionProps>) {
+  const t = useTranslations("projects");
   return (
     <div className="mb-8">
-      <h3 className="text-2xl font-semibold mb-4 text-foreground dark:text-white">Projetos em destaque</h3>
+      <h3 className="text-2xl font-semibold mb-4 text-foreground dark:text-white">{t("highlighted.title")}</h3>
       <div
         ref={carouselRef}
         onScroll={onScroll}
