@@ -1,19 +1,7 @@
-import { About } from "@/components/About";
-import { Contact } from "@/components/Contact";
-import { Experience } from "@/components/Experience";
-import { Footer } from "@/components/Footer";
-import { Hero } from "@/components/Hero";
-import { Projects } from "@/components/Projects";
+import { getLocale } from "next-intl/server";
+import { redirect } from "next/navigation";
 
-export default function Home() {
-  return (
-    <>
-      <Hero />
-      <About />
-      <Experience />
-      <Projects />
-      <Contact />
-      <Footer />
-    </>
-  );
+export default async function RootPage() {
+  const locale = await getLocale();
+  redirect(`/${locale}`);
 }

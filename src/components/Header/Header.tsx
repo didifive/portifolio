@@ -12,11 +12,14 @@ import { Button } from "../ui/Button";
 import { ThemeToggle } from "../ThemeToggle";
 import { useActiveSection } from "@/hooks/useActiveSection";
 import { urls } from "@/lib/urls";
+import { LanguageSwitcher } from "../LanguageSwitcher";
+import { useTranslations } from "next-intl";
 
 export const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { activeSection, setActiveSection } = useActiveSection();
+  const t = useTranslations("common.nav");
 
   useEffect(() => {
     const handleScroll = () => {
@@ -55,11 +58,11 @@ export const Header = () => {
   };
 
   const navItems = [
-    { label: "Início", href: "#hero" },
-    { label: "Sobre", href: "#about" },
-    { label: "Experiência", href: "#experience" },
-    { label: "Projetos", href: "#projects" },
-    { label: "Contato", href: "#contact" },
+    { label: t("home"), href: "#hero" },
+    { label: t("about"), href: "#about" },
+    { label: t("experience"), href: "#experience" },
+    { label: t("projects"), href: "#projects" },
+    { label: t("contact"), href: "#contact" },
   ];
 
   return (
@@ -103,6 +106,7 @@ export const Header = () => {
 
           {/* Social Links & Theme Toggle */}
           <div className="hidden md:flex items-center space-x-4">
+            <LanguageSwitcher />
             <ThemeToggle />
             <div className="w-px h-6 bg-border"></div>
             <Button
@@ -168,6 +172,7 @@ export const Header = () => {
               );
             })}
             <div className="flex items-center space-x-4 pt-4">
+              <LanguageSwitcher />
               <ThemeToggle />
               <div className="w-px h-6 bg-border"></div>
               <Button variant="ghost" size="icon" href={urls.github}>

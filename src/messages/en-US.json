@@ -1,0 +1,181 @@
+{
+  "common": {
+    "nav": {
+      "home": "Home",
+      "about": "About",
+      "experience": "Experience",
+      "projects": "Projects",
+      "contact": "Contact"
+    },
+    "languageSwitcher": {
+      "ptBr": "Brazilian Portuguese",
+      "enUs": "United States English"
+    }
+  },
+  "about": {
+    "title": "About Me",
+    "intro": "Technology enthusiast with {yearsIT}+ years of IT experience and {yearsDev}+ years in software development, building innovative and scalable solutions.",
+    "journeyTitle": "My Journey",
+    "journey": [
+      "I enjoy coding, playing videogames, watching anime, and talking about technology, even better with coffee.",
+      "More than {yearsIT} years ago I started my IT career, working across support, infrastructure, communication, and systems.",
+      "Over the last {yearsDev} years, I have focused on software development, specializing in backend solutions that are robust, scalable, and secure."
+    ],
+    "skillsTitle": "Core Skills",
+    "skills": {
+      "backend": ["Java", "Spring Boot", "Apache Camel", "Node.js", "REST APIs", "Messaging", "Microservices", "Clean Architecture", "SOLID", "DDD", "SQL", "NoSQL"],
+      "frontend": ["React", "TypeScript", "Next.js", "Angular", "Bootstrap CSS", "Tailwind CSS", "Twelve-Factor Apps"],
+      "cloud": ["Azure", "GCP", "AWS", "Azure DevOps", "Jenkins", "Docker", "Kubernetes"]
+    },
+    "highlights": {
+      "backend": {
+        "title": "Back-End Developer",
+        "description": "Specialized in Java, Spring, and Apache Camel technologies"
+      },
+      "enterprise": {
+        "title": "Enterprise Experience",
+        "description": "Delivered corporate solutions for public and private sectors"
+      },
+      "team": {
+        "title": "Team Collaboration",
+        "description": "Worked in multidisciplinary teams and agile methodologies"
+      },
+      "quality": {
+        "title": "Quality Focus",
+        "description": "Committed to clean code, scalability, and best practices"
+      }
+    }
+  },
+  "experience": {
+    "title": "Professional Experience",
+    "subtitle": "A brief summary of my journey",
+    "current": "Current",
+    "techTitle": "Main Technologies:",
+    "items": {
+      "gft": {
+        "company": "GFT Technologies",
+        "position": "Software Engineer",
+        "period": "May 2022 - Present",
+        "location": "São Paulo, SP - Remote",
+        "type": "Full Time",
+        "description": "Supporting a banking client by developing and maintaining Java APIs with Spring and Apache Camel in an agile team and cloud and on-premise environments.",
+        "skills": ["Java", "Spring Boot", "Apache Camel", "Azure", "Azure DevOps", "REST APIs", "Microservices"]
+      },
+      "orlandia": {
+        "company": "Orlândia City Hall",
+        "position": "IT Technician",
+        "period": "Apr 2007 - May 2022",
+        "location": "Orlândia, SP - On-site",
+        "type": "Full Time",
+        "description": "I worked for 15 years in IT with emphasis on systems, implementing and integrating a management system with water-meter reading collectors, billing records, and tax enforcement, while also reviewing and optimizing formulas and reports.",
+        "skills": ["SQL", "JavaScript", "HTML", "CSS", "PHP"]
+      }
+    }
+  },
+  "footer": {
+    "tagline": "Backend developer passionate about building innovative and high-scale solutions.",
+    "navTitle": "Navigation",
+    "talkTitle": "Want to talk?",
+    "talkText": "Want to talk about technology, systems, and Java?",
+    "button": "Contact Me",
+    "copyright": "All rights reserved."
+  },
+  "hero": {
+    "name": "Luis Zancanela",
+    "badge": "Software Engineer",
+    "title": "Crafting resilient Java systems, advanced integrations, and modern TypeScript experiences.",
+    "subtitle": "Critical APIs • Microservices • Integrations • Cloud • React/Next.js when the challenge needs a strong interface",
+    "description": "I turn complex systems into stable, scalable, and easy-to-evolve solutions. My focus is backend Java, but I also deliver front-end work with real UX, performance, and visual consistency awareness.",
+    "stats": {
+      "it": "{years}+ years in IT",
+      "itLabel": "of experience in IT",
+      "dev": "{years}+ years as a dev",
+      "devLabel": "of experience as a dev",
+      "endToEnd": "End-to-end solutions"
+    },
+    "cta": "Contact Me",
+    "scroll": "Scroll down"
+  },
+  "projects": {
+    "title": "Projects",
+    "cta": "Interested in seeing more projects or discussing a collaboration?",
+    "button": "View More on GitHub",
+    "highlighted": {
+      "title": "Highlighted Projects"
+    },
+    "ebooks":{
+      "title": "Published E‑books",
+      "description": "E‑books on technology and software development published on LinkedIn.",
+      "labels": {
+        "publishedOn": "Published on",
+        "viewOnLinkedIn": "View on LinkedIn"
+      },
+      "items": {
+        "javaVersions": {
+          "title": "Java Bushidō – From Java 8 to 25 (Java Bushidō - Do Java 8 ao 25: cortes precisos na evolução)",
+          "description": "A practical guide explaining the evolution of Java from version 8 to 25, presenting the most important features in a clear and progressive way. This e‑book is available in Brazilian Portuguese.",
+          "tags": ["Java", "Java 8", "Java 11", "Java 17", "Java 21", "Java 25", "Java Evolution", "Streams API", "Records", "Pattern Matching", "Virtual Threads", "Backend"]
+        },
+        "kubernetes": {
+          "title": "The Company of Infinite Deploys (A Empresa dos Deploys Infinitos: Onde os Microserviços Nunca Dormem)",
+          "description": "A didactic explanation of Kubernetes using the analogy of a company, making concepts like pods, nodes, workloads, and autoscaling intuitive. This e‑book is available in Brazilian Portuguese.",
+          "tags": ["Kubernetes", "Microservices", "Cloud", "Cloud Computing", "DevOps", "Pods", "Containers", "Container Orchestration", "Error Diagnostics", "Backend"]
+        },
+        "apacheCamel": {
+          "title": "The Awakening of the Java Warrior (O Despertar do Guerreiro Java: A Arte Shinobi dos Microsserviços Apache Camel)",
+          "description": "A microservices architecture built with Java and Apache Camel, demonstrating asynchronous communication between services with Spring Boot integration. This e‑book is available in Brazilian Portuguese.",
+          "tags": ["Apache Camel", "Spring Boot", "Messaging", "ActiveMQ", "Distributed Architecture", "EIP (Enterprise Integration Patterns)", "Systems Integration", "Backend"]
+        }
+      }
+    },
+    "github": {
+      "title": "GitHub Projects",
+      "description": "The top {totalProjects} public projects from my GitHub, ranked by stars and forks."
+    }
+  },
+  "contact": {
+    "title": "Let's Talk?",
+    "subtitle": "I'm always open to discussing technology, new projects, or creative opportunities.",
+    "infoTitle": "Contact Info",
+    "socialTitle": "Social Links",
+    "availabilityTitle": "Open to Help and Learn",
+    "availabilityText": "Always available to collaborate on projects, answer questions, or explore new ideas. Constantly learning new technologies. Feel free to reach out.",
+    "formTitle": "Send a Message",
+    "labels": {
+      "name": "Name *",
+      "email": "Email *",
+      "subject": "Subject *",
+      "message": "Message *"
+    },
+    "placeholders": {
+      "name": "Your full name",
+      "email": "Your best email",
+      "subject": "What would you like to talk about?",
+      "message": "Write your message here..."
+    },
+    "contactInfo": {
+      "email": "Email",
+      "location": "Location",
+      "locationValue": "Orlândia, SP - Brazil"
+    },
+    "toast": {
+      "successTitle": "Message sent!",
+      "successDescription": "Thanks for reaching out! You will receive a confirmation email and I will reply soon.",
+      "errorTitle": "Error sending message",
+      "errorDescription": "Please try again in a few moments."
+    },
+    "validation": {
+      "nameMin": "Name must have at least 2 characters",
+      "nameMax": "Name must have at most 50 characters",
+      "emailInvalid": "Please enter a valid email",
+      "emailRequired": "Email is required",
+      "subjectMin": "Subject must have at least 5 characters",
+      "subjectMax": "Subject must have at most 100 characters",
+      "messageMin": "Message must have at least 10 characters",
+      "messageMax": "Message must have at most 500 characters"
+    },
+    "buttons": {
+      "submit": "Send Message"
+    }
+  }
+}

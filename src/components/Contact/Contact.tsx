@@ -5,11 +5,9 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import {
   FaRegEnvelope,
-  FaPhone,
   FaGithub,
   FaLinkedin,
   FaMapMarked,
-  FaInstagram,
 } from "react-icons/fa";
 import { LuSendHorizontal } from "react-icons/lu";
 import { useToast } from "@/hooks/use-toast";
@@ -19,31 +17,28 @@ import { Input } from "../ui/Input";
 import { Textarea } from "../ui/Textarea";
 import { Button } from "../ui/Button";
 import { urls } from "@/lib/urls";
+import { useTranslations } from "next-intl";
 
-// Schema de validação com Zod
-const contactSchema = z.object({
-  name: z
-    .string()
-    .min(2, "Nome deve ter pelo menos 2 caracteres")
-    .max(50, "Nome deve ter no máximo 50 caracteres"),
-  email: z
-    .string()
-    .email("Por favor, insira um email válido")
-    .min(1, "Email é obrigatório"),
-  subject: z
-    .string()
-    .min(5, "Assunto deve ter pelo menos 5 caracteres")
-    .max(100, "Assunto deve ter no máximo 100 caracteres"),
-  message: z
-    .string()
-    .min(10, "Mensagem deve ter pelo menos 10 caracteres")
-    .max(500, "Mensagem deve ter no máximo 500 caracteres"),
-});
+function createContactSchema(t: (key: string) => string) {
+  return z.object({
+    name: z.string().min(2, t("validation.nameMin")).max(50, t("validation.nameMax")),
+    email: z
+      .string()
+      .min(1, t("validation.emailRequired"))
+      .refine((value) => value.includes("@") && value.includes("."), {
+        message: t("validation.emailInvalid"),
+      }),
+    subject: z.string().min(5, t("validation.subjectMin")).max(100, t("validation.subjectMax")),
+    message: z.string().min(10, t("validation.messageMin")).max(500, t("validation.messageMax")),
+  });
+}
 
-type ContactFormData = z.infer<typeof contactSchema>;
+type ContactFormData = z.infer<ReturnType<typeof createContactSchema>>;
 
 export const Contact = () => {
   const { toast } = useToast();
+  const t = useTranslations("contact");
+  const contactSchema = createContactSchema(t);
   const {
     register,
     handleSubmit,
@@ -86,9 +81,8 @@ export const Contact = () => {
       }
 
       toast({
-        title: "Mensagens enviadas!",
-        description:
-          "Obrigado pelo contato! Você receberá um email de confirmação e responderei em breve.",
+        title: t("toast.successTitle"),
+        description: t("toast.successDescription"),
         variant: "default",
       });
 
@@ -97,11 +91,9 @@ export const Contact = () => {
       console.error("Erro ao enviar email:", error);
 
       toast({
-        title: "Erro ao enviar mensagem",
+        title: t("toast.errorTitle"),
         description:
-          error instanceof Error
-            ? error.message
-            : "Tente novamente em alguns instantes.",
+          error instanceof Error ? error.message : t("toast.errorDescription"),
         variant: "destructive",
       });
     }
@@ -109,8 +101,9 @@ export const Contact = () => {
 
   const contactInfo = [
     {
+      id: "email",
       icon: <FaRegEnvelope className="h-5 w-5" />,
-      label: "Email",
+      label: t("contactInfo.email"),
       value: urls.email,
       action: "mailto:luis@zancanela.dev.br",
     },
@@ -121,9 +114,10 @@ export const Contact = () => {
     //   action: "https://wa.me/5561992943297",
     // },
     {
+      id: "location",
       icon: <FaMapMarked className="h-5 w-5" />,
-      label: "Localização",
-      value: "Orlândia, SP - Brasil",
+      label: t("contactInfo.location"),
+      value: t("contactInfo.locationValue"),
       action: null,
     },
   ];
@@ -156,11 +150,10 @@ export const Contact = () => {
           {/* Header */}
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground dark:text-white">
-              Vamos Conversar?
+              {t("title")}
             </h2>
             <p className="text-foreground/80 dark:text-white/90 text-lg max-w-2xl mx-auto">
-              Estou sempre aberto para trocar uma ideia sobre tecnologia,
-              discutir novos projetos ou oportunidades criativas.
+              {t("subtitle")}
             </p>
           </div>
 
@@ -169,11 +162,11 @@ export const Contact = () => {
             <div className="lg:col-span-1 space-y-8">
               <div>
                 <h3 className="text-xl font-semibold mb-6 text-foreground dark:text-white">
-                  Informações de Contato
+                  {t("infoTitle")}
                 </h3>
                 <div className="space-y-4">
-                  {contactInfo.map((info, index) => (
-                    <div key={index} className="flex items-center space-x-4">
+                  {contactInfo.map((info) => (
+                    <div key={info.id} className="flex items-center space-x-4">
                       <div className="bg-gradient-primary p-2 rounded-lg text-white">
                         {info.icon}
                       </div>
@@ -202,7 +195,7 @@ export const Contact = () => {
               {/* Social Links */}
               <div>
                 <h4 className="font-medium mb-4 text-foreground dark:text-white">
-                  Redes Sociais
+                  {t("socialTitle")}
                 </h4>
                 <div className="flex space-x-4">
                   {socialLinks.map((social) => (
@@ -225,14 +218,11 @@ export const Contact = () => {
                   <div className="flex items-center space-x-3 mb-3">
                     <div className="w-3 h-3 bg-primary rounded-full"></div>
                     <span className="font-medium text-foreground dark:text-white">
-                      Open to Help and Learning
+                        {t("availabilityTitle")}
                     </span>
                   </div>
                   <p className="text-sm text-foreground/70 dark:text-white/80">
-                    Sempre disponível para colaborar em projetos, 
-                    tirar dúvidas ou explorar novas ideias. 
-                    Em constante aprendizado em tecnologias. 
-                    Sinta-se à vontade para entrar em contato.
+                      {t("availabilityText")}
                   </p>
                 </CardContent>
               </Card>
@@ -242,16 +232,16 @@ export const Contact = () => {
             <div className="lg:col-span-2">
               <Card shadow="medium">
                 <CardHeader>
-                  <CardTitle>Envie uma Mensagem</CardTitle>
+                  <CardTitle>{t("formTitle")}</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
                     <div className="grid md:grid-cols-2 gap-4">
                       <div className="space-y-2">
-                        <Label htmlFor="name">Nome *</Label>
+                        <Label htmlFor="name">{t("labels.name")}</Label>
                         <Input
                           id="name"
-                          placeholder="Seu nome completo"
+                          placeholder={t("placeholders.name")}
                           error={!!errors.name}
                           {...register("name")}
                         />
@@ -262,11 +252,11 @@ export const Contact = () => {
                         )}
                       </div>
                       <div className="space-y-2">
-                        <Label htmlFor="email">Email *</Label>
+                        <Label htmlFor="email">{t("labels.email")}</Label>
                         <Input
                           id="email"
                           type="email"
-                          placeholder="seu.email@exemplo.com"
+                          placeholder={t("placeholders.email")}
                           error={!!errors.email}
                           {...register("email")}
                         />
@@ -279,10 +269,10 @@ export const Contact = () => {
                     </div>
 
                     <div className="space-y-2">
-                      <Label htmlFor="subject">Assunto *</Label>
+                      <Label htmlFor="subject">{t("labels.subject")}</Label>
                       <Input
                         id="subject"
-                        placeholder="Sobre o que gostaria de conversar?"
+                        placeholder={t("placeholders.subject")}
                         error={!!errors.subject}
                         {...register("subject")}
                       />
@@ -294,10 +284,10 @@ export const Contact = () => {
                     </div>
 
                     <div className="space-y-2">
-                      <Label htmlFor="message">Mensagem *</Label>
+                      <Label htmlFor="message">{t("labels.message")}</Label>
                       <Textarea
                         id="message"
-                        placeholder="Descreva seu projeto ou ideia em detalhes..."
+                        placeholder={t("placeholders.message")}
                         rows={6}
                         {...register("message")}
                         error={!!errors.message}
@@ -319,12 +309,12 @@ export const Contact = () => {
                       {isSubmitting ? (
                         <>
                           <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></div>
-                          Enviando...
+                          ...
                         </>
                       ) : (
                         <>
                           <LuSendHorizontal className="h-4 w-4 mr-2" />
-                          Enviar Mensagem
+                          {t("buttons.submit")}
                         </>
                       )}
                     </Button>

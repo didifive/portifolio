@@ -4,6 +4,7 @@ type GithubProject = {
   id: number;
   name: string;
   html_url: string;
+  homepage: string | null;
   description: string;
   stargazers_count: number;
   forks_count: number;
@@ -15,6 +16,7 @@ export type GithubProjectEnriched = {
   id: number;
   name: string;
   html_url: string;
+  homepage: string | null;
   description: string;
   stargazers_count: number;
   forks_count: number;
@@ -118,6 +120,7 @@ export async function GET() {
         id: repo.id,
         name: repo.name,
         html_url: repo.html_url,
+        homepage: repo.homepage,
         description: repo.description,
         stargazers_count: repo.stargazers_count,
         forks_count: repo.forks_count,

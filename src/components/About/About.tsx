@@ -1,36 +1,38 @@
+import { getTranslations } from "next-intl/server";
 import { FaRocket } from "react-icons/fa";
 import { FiCode, FiTarget, FiUsers } from "react-icons/fi";
 import { Badge } from "../ui/Badge";
 import { Card, CardContent } from "../ui/Card";
 import { getYearsOfExperienceIT, getYearsOfExperienceDev } from "@/lib/utils";
 
-export const About = () => {
+export const About = async () => {
   const yearsIT = getYearsOfExperienceIT();
   const yearsDev = getYearsOfExperienceDev();
+  const t = await getTranslations("about");
+  const journey = t.raw("journey") as string[];
+  const backendSkills = t.raw("skills.backend") as string[];
+  const frontendSkills = t.raw("skills.frontend") as string[];
+  const cloudSkills = t.raw("skills.cloud") as string[];
   const highlights = [
     {
       icon: <FiCode className="h-6 w-6" />,
-      title: "Back-End Developer",
-      description:
-        "Especializado em tecnologias Java, Spring e Apache Camel",
+      title: t("highlights.backend.title"),
+      description: t("highlights.backend.description"),
     },
     {
       icon: <FaRocket className="h-6 w-6" />,
-      title: "Experiência Enterprise",
-      description:
-        "Trabalhou em soluções corporativas para o setor público e privado",
+      title: t("highlights.enterprise.title"),
+      description: t("highlights.enterprise.description"),
     },
     {
       icon: <FiUsers className="h-6 w-6" />,
-      title: "Trabalho em Equipe",
-      description:
-        "Experiência em times multidisciplinares e metodologias ágeis",
+      title: t("highlights.team.title"),
+      description: t("highlights.team.description"),
     },
     {
       icon: <FiTarget className="h-6 w-6" />,
-      title: "Foco em Qualidade",
-      description:
-        "Comprometido com código limpo, escalabilidade e boas práticas",
+      title: t("highlights.quality.title"),
+      description: t("highlights.quality.description"),
     },
   ];
 
@@ -41,12 +43,10 @@ export const About = () => {
           {/* Header */}
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground dark:text-white">
-              Sobre Mim
+              {t("title")}
             </h2>
             <p className="text-foreground/80 dark:text-white/90 text-lg max-w-2xl mx-auto">
-              Desenvolvedor apaixonado por tecnologia com <strong>{yearsIT}+ anos de
-              experiência em TI</strong> e <strong>{yearsDev}+ anos com desenvolvimento de sistemas</strong>,
-              criando soluções inovadoras e escaláveis.
+              {t("intro", { yearsIT, yearsDev })}
             </p>
           </div>
 
@@ -55,26 +55,23 @@ export const About = () => {
             <div className="space-y-6">
               <div className="space-y-4">
                 <h3 className="text-2xl font-semibold text-foreground dark:text-white">
-                  Minha Jornada
+                  {t("journeyTitle")}
                 </h3>
                 <p>
-                  👨‍💻 Gosto de codar, jogar videogame, assistir anime e falar de tecnologia (melhor ainda se acompanhado de café ☕).
+                  {journey[0]}
                 </p>
                 <p>
-                  💼 Há mais de {yearsIT} anos iniciei a carreira em TI (Tudo Incluso 😆), tendo a oportunidade de atuar em todas as frentes como suporte, 
-                  infraestrutura, comunicação e sistemas.
+                  {t("journey.1", { yearsIT })}
                 </p>
                 <p>
-                  🖥️ Nos últimos {yearsDev} anos, foquei minha trajetória como desenvolvedor de sistemas, especializando-me em back-end. 
-                  Tenho atuado na construção de soluções robustas, escaláveis e seguras, sempre buscando excelência técnica e alinhamento 
-                  com as necessidades do negócio.
+                  {t("journey.2", { yearsDev })}
                 </p>
               </div>
 
               {/* Skills Categories */}
               <div className="space-y-4">
                 <h4 className="text-lg font-semibold text-foreground dark:text-white">
-                  Principais Competências
+                  {t("skillsTitle")}
                 </h4>
                 <div className="space-y-3">
                   <div>
@@ -82,20 +79,7 @@ export const About = () => {
                       Backend
                     </span>
                     <div className="flex flex-wrap gap-2">
-                      {[
-                        "Java",
-                        "Spring Boot",
-                        "Apache Camel",
-                        "Node.js",
-                        "APIs REST",
-                        "Mensageria",
-                        "Microserviços",
-                        "Arquitetura Limpa",
-                        "SOLID",
-                        "DDD",
-                        "SQL",
-                        "NoSQL",
-                      ].map((skill, i) => (
+                      {backendSkills.map((skill, i) => (
                         <Badge
                           key={`${skill}-${i}`}
                           variant="secondary"
@@ -111,16 +95,7 @@ export const About = () => {
                       Frontend
                     </span>
                     <div className="flex flex-wrap gap-2">
-                      {[
-                        "React",
-                        "TypeScript",
-                        "Next.js",
-                        "Angular",
-                        "Bootstrap CSS",
-                        "Tailwind CSS",
-                        "Angular",
-                        "Twelve-Factor Apps",
-                      ].map((skill, i) => (
+                      {frontendSkills.map((skill, i) => (
                         <Badge
                           key={`${skill}-${i}`}
                           variant="secondary"
@@ -136,15 +111,7 @@ export const About = () => {
                       DevOps & Cloud
                     </span>
                     <div className="flex flex-wrap gap-2">
-                      {[
-                        "Azure",
-                        "GCP",
-                        "AWS",
-                        "Azure DevOps",
-                        "Jenkins",
-                        "Docker",
-                        "Kubernetes",
-                      ].map((skill, i) => (
+                      {cloudSkills.map((skill, i) => (
                         <Badge
                           key={`${skill}-${i}`}
                           variant="secondary"

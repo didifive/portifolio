@@ -9,39 +9,44 @@ import { ProjectsEbooksSection } from "./ProjectsEbooksSection";
 import { ProjectsFeaturedSection } from "./ProjectsFeaturedSection";
 import { ProjectsGithubSection } from "./ProjectsGithubSection";
 import type { CarouselLayout, EbookItem, FeaturedProject } from "./Projects.types";
+import { useTranslations } from "next-intl";
 
 export const Projects = () => {
   const GITHUB_USERNAME = "didifive";
+  const t = useTranslations("projects");
+  const javaVersionsTags = t.raw("ebooks.items.javaVersions.tags") as string[];
+  const kubernetesTags = t.raw("ebooks.items.kubernetes.tags") as string[];
+  const apacheCamelTags = t.raw("ebooks.items.apacheCamel.tags") as string[];
   const [projects, setProjects] = useState<GithubProjectEnriched[]>([]);
   const [ebooks] = useState<EbookItem[]>([
     {
       id: "ebook-java-versions",
-      title: "Java Bushidō - Do Java 8 ao 25: cortes precisos na evolução",
-      description: "Guia prático que apresenta a evolução do Java do 8 ao 25, explicando de forma clara e progressiva os recursos mais importantes para quem está iniciando na linguagem.",
+      title: t("ebooks.items.javaVersions.title"),
+      description: t("ebooks.items.javaVersions.description"),
       pdfUrl: "https://github.com/didifive/ebook-com-ia/blob/feature/java-versions/ebook-Java-Bushido.pdf",
       imageUrl: "/ebooks/ebook-Java-Bushido.png",
       publicationUrl: "https://www.linkedin.com/posts/luis-zancanela_ebook-java-bushido-do-java-8-ao-25-ugcPost-7460482597991833600-0gqe",
-      tags: ["Java", "Java 8", "Java 11", "Java 17", "Java 21", "Java 25", "Evolução do Java", "Streams API", "Records", "Pattern Matching", "Virtual Threads", "Backend"],
+      tags: javaVersionsTags,
       publishedAt: "2026-05-14",
     },
     {
       id: "ebook-kubernetes",
-      title: "A Empresa dos Deploys Infinitos: Onde os Microserviços Nunca Dormem",
-      description: "Uma explicação didática do Kubernetes usando a analogia de uma empresa, tornando conceitos como pods, nodes, workloads e autoscaling simples e intuitivos.",
+      title: t("ebooks.items.kubernetes.title"),
+      description: t("ebooks.items.kubernetes.description"),
       pdfUrl: "https://github.com/didifive/ebook-com-ia/blob/kubernetes/ebook-A-Empresa-Dos-Deploys-Infinitos.pdf",
       imageUrl: "/ebooks/ebook-A-Empresa-Dos-Deploys-Infinitos.png",
       publicationUrl: "https://www.linkedin.com/posts/luis-zancanela_ebook-a-empresa-dos-deploys-infinitos-ugcPost-7456528397234667520-M8Z6",
-      tags: ["Kubernetes", "DevOps", "Cloud Computing", "Containers", "Orquestração de Containers", "Pods", "Diagnósticos de erros"],
+      tags: kubernetesTags,
       publishedAt: "2026-05-04",
     },
     {
       id: "ebook-apache-camel",
-      title: "O Despertar do Guerreiro Java: A Arte Shinobi dos Microsserviços Apache Camel",
-      description: "Desenvolvimento de uma arquitetura de microsserviços em Java utilizando Apache Camel para rotas. O projeto demonstra comunicação assíncrona entre serviços (Kage e Shinobi) com integração prática com Spring Boot.",
+      title: t("ebooks.items.apacheCamel.title"),
+      description: t("ebooks.items.apacheCamel.description"),
       pdfUrl: "https://github.com/didifive/ebook-com-ia/blob/main/ebook-O-Despertar-do-Guerreiro-Java.pdf",
       imageUrl: "/ebooks/ebook-O-Despertar-do-Guerreiro-Java.png",
       publicationUrl: "https://www.linkedin.com/posts/luis-zancanela_ebook-o-despertar-do-guerreiro-java-activity-7337951881333256193-kBKw",
-      tags: ["Apache Camel", "Java", "Spring Boot", "Microsserviços", "Mensageria", "ActiveMQ", "Arquitetura distribuída", "EIP", "Integração de Sistemas", "IA", "Backend"],
+      tags: apacheCamelTags,
       publishedAt: "2025-06-09",
     },
   ]);
@@ -128,7 +133,7 @@ export const Projects = () => {
 
   const filteredProjects = projects.filter((project) => {
     const name = (project.name || "").toLowerCase();
-    const homepage = (((project as any).homepage) || "").toLowerCase();
+    const homepage = (project.homepage || "").toLowerCase();
     const html = (project.html_url || "").toLowerCase();
 
     if (name.includes("vetor") || homepage.includes("vetorpessoal") || html.includes("vetorpessoal")) {
@@ -173,7 +178,7 @@ export const Projects = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground dark:text-white">Projetos</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground dark:text-white">{t("title")}</h2>
           </div>
 
           <ProjectsFeaturedSection
@@ -204,10 +209,10 @@ export const Projects = () => {
           />
 
           <div className="text-center mt-12">
-            <p className="text-foreground/80 dark:text-white/90 mb-6">Interessado em ver mais projetos ou discutir uma colaboração?</p>
+            <p className="text-foreground/80 dark:text-white/90 mb-6">{t("cta")}</p>
             <Button variant="hero" size="lg" href={`https://github.com/${GITHUB_USERNAME}`} target="_blank">
               <FiGithub className="h-5 w-5 mr-2" />
-              Ver Mais no GitHub
+              {t("button")}
             </Button>
           </div>
         </div>
