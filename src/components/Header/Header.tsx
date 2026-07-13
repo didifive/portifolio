@@ -70,7 +70,7 @@ export const Header = () => {
       className={`fixed top-0 left-0 right-0 z-50 transition-smooth ${
         isScrolled
           ? "bg-background/80 backdrop-blur-lg shadow-soft"
-          : "bg-transparent"
+          : "md:bg-transparent bg-background/95"
       }`}
     >
       <nav className="w-full px-4 sm:px-6 lg:px-8 py-4">
