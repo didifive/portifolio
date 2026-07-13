@@ -54,12 +54,12 @@
     "items": {
       "gft": {
         "company": "GFT Technologies",
-        "position": "Software Engineer",
+        "position": "Desenvolvedor Backend",
         "period": "Mai 2022 - Presente",
         "location": "São Paulo, SP - Remoto",
         "type": "Tempo Integral",
-        "description": "Atendendo cliente do setor bancário desenvolvendo e sustentando APIs Java com Spring e Apache Camel em equipe ágil e ambientes cloud e on-premise.",
-        "skills": ["Java", "Spring Boot", "Apache Camel", "Azure", "Azure DevOps", "APIs REST", "Microservices"]
+        "description": "Desenvolvimento e sustentação de sistemas críticos em Java, criando e evoluindo APIs REST e microsserviços com Spring Boot e Apache Camel. Atuação em integrações corporativas complexas com Kafka, Azure Service Bus/Event Hub e IBM MQ, aplicando padrões de resiliência, idempotência e arquitetura distribuída. Trabalho em squads ágeis, contribuindo para modernização de aplicações, observabilidade, troubleshooting e entregas contínuas em ambientes cloud e on‑premise.",
+        "skills": ["Java", "Spring Boot", "Apache Camel", "Azure", "Azure DevOps", "APIs REST", "Microsserviços", "Integrações corporativas", "Mensageria", "Kafka", "Azure Event Hub", "IBM MQ", "Arquitetura hexagonal", "SAGA", "SQL", "NoSQL", "Docker", "Kubernetes", "Azure", "GCP", "AWS"]
       },
       "orlandia": {
         "company": "Prefeitura Municipal de Orlândia",
@@ -67,8 +67,8 @@
         "period": "Abr 2007 - Mai 2022",
         "location": "Orlândia, SP - Presencial",
         "type": "Tempo Integral",
-        "description": "Atuei por 15 anos na TI em geral com destaque na área de sistema em que eu implantei e integrei sistema gestor com coletores de leituras de água, registro de boletos de pagamento e execução fiscal e revisei e otimizei fórmulas e relatórios.",
-        "skills": ["SQL", "Javascript", "HTML", "CSS", "PHP"]
+        "description": "Automação de processos e otimização de rotinas críticas com SQL, reduzindo tempos operacionais e garantindo precisão em cálculos tributários e integrações bancárias. Atuação em análise de dados, revisão de regras de negócio, homologação de sistemas e suporte técnico às áreas de operação. Experiência administrativa aplicando visão sistêmica, documentação, parametrização e melhoria contínua.",
+        "skills": ["SQL", "JavaScript", "HTML", "CSS", "PHP", "Visão Sistêmica", "Parametrização", "Integrações bancárias", "Automação de processos", "Análise de dados", "Homologação de sistemas"]
       }
     }
   },
