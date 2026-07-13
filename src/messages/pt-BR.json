@@ -59,7 +59,7 @@
         "location": "São Paulo, SP - Remoto",
         "type": "Tempo Integral",
         "description": "Desenvolvimento e sustentação de sistemas críticos em Java, criando e evoluindo APIs REST e microsserviços com Spring Boot e Apache Camel. Atuação em integrações corporativas complexas com Kafka, Azure Service Bus/Event Hub e IBM MQ, aplicando padrões de resiliência, idempotência e arquitetura distribuída. Trabalho em squads ágeis, contribuindo para modernização de aplicações, observabilidade, troubleshooting e entregas contínuas em ambientes cloud e on‑premise.",
-        "skills": ["Java", "Spring Boot", "Apache Camel", "Azure", "Azure DevOps", "APIs REST", "Microsserviços", "Integrações corporativas", "Mensageria", "Kafka", "Azure Event Hub", "IBM MQ", "Arquitetura hexagonal", "SAGA", "SQL", "NoSQL", "Docker", "Kubernetes", "Azure", "GCP", "AWS"]
+        "skills": ["Java", "Spring Boot", "Apache Camel", "Azure DevOps", "APIs REST", "Microsserviços", "Integrações corporativas", "Mensageria", "Kafka", "Azure Event Hub", "IBM MQ", "Arquitetura hexagonal", "SAGA", "SQL", "NoSQL", "Docker", "Kubernetes", "Azure", "GCP", "AWS"]
       },
       "orlandia": {
         "company": "Prefeitura Municipal de Orlândia",

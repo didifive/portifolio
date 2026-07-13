@@ -67,7 +67,7 @@ export const LanguageSwitcher = () => {
       {isOpen && (
         <div
           role="menu"
-          className="absolute right-0 mt-2 min-w-40 overflow-hidden rounded-2xl border border-border bg-background/95 p-1 shadow-lg backdrop-blur-md"
+          className="absolute left-0 sm:right-0 mt-2 min-w-40 overflow-hidden rounded-2xl border border-border bg-background/95 p-1 shadow-lg backdrop-blur-md"
         >
           {routing.locales.map((targetLocale) => {
             const isActive = locale === targetLocale;

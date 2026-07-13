@@ -59,7 +59,7 @@
         "location": "São Paulo, SP - Remote",
         "type": "Full Time",
         "description": "Development and maintenance of critical Java systems, building and evolving REST APIs and microservices using Spring Boot and Apache Camel. Work on complex enterprise integrations with Kafka, Azure Service Bus/Event Hub, and IBM MQ, applying resilience patterns, idempotency, and distributed architecture. Collaboration in agile squads, contributing to application modernization, observability, troubleshooting, and continuous delivery across cloud and on‑premise environments.",
-        "skills": ["Java", "Spring Boot", "Apache Camel", "Microservices", "REST APIs", "Enterprise Integrations", "Messaging", "Kafka", "Azure Event Hub", "IBM MQ", "Hexagonal Architecture", "SAGA",  "SQL", "NoSQL", "Docker", "Kubernetes", "Azure", "GCP", "AWS"]
+        "skills": ["Java", "Spring Boot", "Apache Camel", "Microservices", "REST APIs", "Enterprise Integrations", "Messaging", "Kafka", "IBM MQ", "Hexagonal Architecture", "SAGA",  "SQL", "NoSQL", "Docker", "Kubernetes"]
       },
       "orlandia": {
         "company": "Orlândia City Hall",
