@@ -347,6 +347,23 @@ O projeto é compatível com qualquer plataforma que suporte Next.js:
 - **Digital Ocean**
 - **AWS Amplify**
 
+### 🔄 Versionamento Automático
+
+Este projeto utiliza Semantic Release integrado ao GitHub Actions para gerar versões automaticamente sempre que há merge na branch main.
+O fluxo funciona assim:
+- Os commits seguem o padrão Conventional Commits (feat:, fix:, docs:, etc.).
+- O GitHub Actions executa o semantic‑release após o merge.
+- O semantic‑release:
+  - analisa os commits
+  - determina se a versão será patch, minor ou major
+  - atualiza o CHANGELOG.md
+  - atualiza o package.json
+  - cria a tag (vX.Y.Z)
+  - publica o release no GitHub
+
+O Netlify detecta o push automático e realiza o deploy.
+💡 Isso garante um fluxo de CI/CD totalmente automatizado, com versionamento consistente e releases documentados.
+
 ---
 
 ## 🙏 Créditos
