@@ -8,7 +8,7 @@ import { ProjectsCarouselDots } from "./ProjectsCarouselDots";
 import { formatDate } from "./Projects.helpers";
 import { urls } from "@/lib/urls";
 import type { EbookCoverErrorMap, EbookCoverMap, EbookItem } from "./Projects.types";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 
 type ProjectsEbooksSectionProps = Readonly<{
   pages: EbookItem[][];
@@ -20,6 +20,7 @@ type ProjectsEbooksSectionProps = Readonly<{
 
 function EbookCard({ ebook, cover, hasError }: Readonly<{ ebook: EbookItem; cover?: string; hasError?: boolean }>) {
   const t = useTranslations("projects");
+  const locale = useLocale();
   const publishedOn = t("ebooks.labels.publishedOn");
   const viewOnLinkedIn = t("ebooks.labels.viewOnLinkedIn");
   let coverContent: React.ReactNode;
@@ -49,7 +50,7 @@ function EbookCard({ ebook, cover, hasError }: Readonly<{ ebook: EbookItem; cove
 
             <div className="mb-4 flex items-center gap-2 text-xs text-foreground/70 dark:text-white/70">
               <span className="font-medium">{publishedOn}</span>
-              <span>{formatDate(ebook.publishedAt)}</span>
+              <span>{formatDate(ebook.publishedAt, locale)}</span>
             </div>
 
             <div className="flex flex-wrap gap-2 mb-4">

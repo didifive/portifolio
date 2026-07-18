@@ -27,6 +27,10 @@ export type FeaturedProject = {
   image?: string | null;
   href: string;
   badge: string;
+  backgroundColor?: string;
+  publishedAt?: string;
+  updatedAt?: string;
 };
+
 
 export type GithubProject = GithubProjectEnriched;

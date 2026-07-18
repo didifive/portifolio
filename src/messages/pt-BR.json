@@ -101,7 +101,26 @@
     "cta": "Interessado em ver mais projetos ou discutir uma colaboração?",
     "button": "Ver Mais no GitHub",
     "highlighted": {
-      "title": "Projetos em destaque"
+      "title": "Projetos em destaque",
+      "labels": {
+        "publishedOn": "Publicado em",
+        "updatedOn": "Atualizado em",
+        "visitSite": "Visitar"
+      },
+      "items": {
+        "vetorPessoal": {
+          "title": "Vetor Pessoal",
+          "description": "Mais do que currículo: organize sua trajetória, conquistas e metas, mas também descubra e planeje seu propósito de vida e carreira. Evolua com autoconhecimento, propósito e impacto."
+        },
+        "genius": {
+          "title": "Genius",
+          "description": "Jogo de memória inspirado no clássico Genius. Utiliza JavaScript, HTML e CSS para estudo de lógica, manipulação do DOM e eventos."
+        },
+        "jungleIr": {
+          "title": "Jungle IR",
+          "description": "Jogo de plataforma com desafios e obstáculos. Desenvolvido para estudo de lógica, manipulação do DOM e eventos com React."
+        }
+      }
     },
     "ebooks":{
       "title": "Ebooks publicados",
