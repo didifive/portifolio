@@ -35,6 +35,7 @@ export const currentYear = new Date().getFullYear();
 
 const START_YEAR_IT = 2007; // Quando começou em TI
 const START_YEAR_DEV = 2022; // Quando começou como desenvolvedor
+const START_YEAR_COPYRIGHT = 2025; // Ano de início do copyright
 
 export const getYearsOfExperienceIT = () => {
   return currentYear - START_YEAR_IT;
@@ -42,4 +43,8 @@ export const getYearsOfExperienceIT = () => {
 
 export const getYearsOfExperienceDev = () => {
   return currentYear - START_YEAR_DEV;
+};
+
+export const getCopyRightYearsDisplay = () => {
+  return currentYear > START_YEAR_COPYRIGHT ? `${START_YEAR_COPYRIGHT}-${currentYear}` : `${START_YEAR_COPYRIGHT}`;
 };
