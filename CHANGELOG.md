@@ -1,3 +1,10 @@
+# [1.6.0](https://github.com/didifive/portifolio/compare/v1.5.0...v1.6.0) (2026-07-18)
+
+
+### Features
+
+* atualiza semantin release ([16e6cbb](https://github.com/didifive/portifolio/commit/16e6cbba5aef4726a142a538344de8e8a934b62e))
+
 # [1.5.0](https://github.com/didifive/portifolio/compare/v1.4.1...v1.5.0) (2026-07-18)
 
 
