@@ -74,15 +74,41 @@ export const Projects = () => {
     () => [
       {
         id: "vetor-pessoal",
-        title: featuredMeta?.title ?? "Vetor Pessoal",
-        description: featuredMeta?.description ?? "Site pessoal e portfólio - Vetor Pessoal.",
+        title: featuredMeta?.title ?? t("highlighted.items.vetorPessoal.title"),
+        description: t("highlighted.items.vetorPessoal.description"),
         image: featuredMeta?.image,
         href: "https://vetorpessoal.com.br",
         badge: "Website",
+        backgroundColor: "#0F172A",
+        publishedAt: "2024-02-14",
+        updatedAt: "2024-10-03",
+      },
+      {
+        id: "jungle-ir",
+        title: t("highlighted.items.jungleIr.title"),
+        description: t("highlighted.items.jungleIr.description"),
+        image: "/projects/jungle-ir.jpeg",
+        href: "https://jungle-ir.zancanela.dev.br",
+        badge: "Game",
+        backgroundColor: "#0A3A2A",
+        publishedAt: "2026-02-14",
+        updatedAt: "2021-10-27",
+      },
+      {
+        id: "genius",
+        title: t("highlighted.items.genius.title"),
+        description: t("highlighted.items.genius.description"),
+        image: "/projects/genius.jpeg",
+        href: "https://genius.zancanela.dev.br",
+        badge: "Game",
+        backgroundColor: "#0A3A2A",
+        publishedAt: "2026-02-03",
+        updatedAt: "2022-02-01",
       },
     ],
     [featuredMeta]
   );
+
 
   useEffect(() => {
     async function fetchProjects() {

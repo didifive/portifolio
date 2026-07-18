@@ -101,7 +101,26 @@
     "cta": "Interested in seeing more projects or discussing a collaboration?",
     "button": "View More on GitHub",
     "highlighted": {
-      "title": "Highlighted Projects"
+      "title": "Highlighted Projects",
+      "labels": {
+        "publishedOn": "Published on",
+        "updatedOn": "Updated on",
+        "visitSite": "Visit Site"
+      },
+      "items": {
+        "vetorPessoal": {
+          "title": "Vetor Pessoal",
+          "description": "More than a resume: organize your journey, achievements, and goals — and also discover and plan your life and career purpose. Grow through self‑knowledge, purpose, and impact."
+        },
+        "genius": {
+          "title": "Genius",
+          "description": "A memory game inspired by the classic Genius. Uses JavaScript, HTML, and CSS to study logic, DOM manipulation, and event handling."
+        },
+        "jungleIr": {
+          "title": "Jungle IR",
+          "description": "A platform game with challenges and obstacles. Developed for studying logic, DOM manipulation, and event handling with React."
+        }
+      }
     },
     "ebooks":{
       "title": "Published E‑books",

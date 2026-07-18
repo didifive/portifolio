@@ -12,7 +12,7 @@ export function chunkItems<T>(items: T[], size: number) {
 
 export function getCarouselLayout(width: number): CarouselLayout {
   if (width >= 1024) {
-    return { featuredItemsPerPage: 2, githubItemsPerPage: 3 };
+    return { featuredItemsPerPage: 3, githubItemsPerPage: 3 };
   }
 
   if (width >= 640) {
@@ -22,13 +22,13 @@ export function getCarouselLayout(width: number): CarouselLayout {
   return { featuredItemsPerPage: 1, githubItemsPerPage: 1 };
 }
 
-export function formatDate(value?: string | null) {
+export function formatDate(value?: string | null, locale: string = "pt-BR"): string {
   if (!value) return "Publicação indisponível";
 
   const isDateOnly = /^\d{4}-\d{2}-\d{2}$/.test(value);
   const date = isDateOnly ? new Date(`${value}T00:00:00Z`) : new Date(value);
 
-  return new Intl.DateTimeFormat("pt-BR", {
+  return new Intl.DateTimeFormat(locale, {
     day: "2-digit",
     month: "2-digit",
     year: "numeric",
