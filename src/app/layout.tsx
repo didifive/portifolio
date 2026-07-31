@@ -16,6 +16,8 @@ export default function RootLayout({
     <html suppressHydrationWarning>
       <head>
         <HomeStructuredData />
+        <link rel="preload" href="/flags/br.svg" as="image" />
+        <link rel="preload" href="/flags/us.svg" as="image" />
       </head>
       <body className="antialiased font-sans">
         <ThemeProvider
