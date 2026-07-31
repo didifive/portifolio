@@ -131,6 +131,7 @@ export function HomeStructuredData() {
       "Apache Camel",
       "Docker",
       "Azure",
+      "GCP",
       "Microservices",
       "API REST",
       "TypeScript",
