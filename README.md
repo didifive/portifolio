@@ -3,10 +3,10 @@
 # Portfólio - Luis Zancanela
 
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-[![Next.js](https://img.shields.io/badge/Next.js-15.5.2-black?logo=next.js)](https://nextjs.org/)
-[![React](https://img.shields.io/badge/React-19.1.0-61DAFB?logo=react)](https://reactjs.org/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.0-3178C6?logo=typescript)](https://www.typescriptlang.org/)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.4-06B6D4?logo=tailwind-css)](https://tailwindcss.com/)
+[![Next.js](https://img.shields.io/badge/Next.js-16.2.10-black?logo=next.js)](https://nextjs.org/)
+[![React](https://img.shields.io/badge/React-19.2.4-61DAFB?logo=react)](https://reactjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.9.3-3178C6?logo=typescript)](https://www.typescriptlang.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4.2.2-06B6D4?logo=tailwind-css)](https://tailwindcss.com/)
 [![Netlify Status](https://api.netlify.com/api/v1/badges/947bcbd3-022a-4c09-84b7-06b47e1859ee/deploy-status)](https://app.netlify.com/projects/zancaneladev/deploys)
 
 **Portfólio moderno e responsivo desenvolvido com Next.js, React e Tailwind CSS**
@@ -38,7 +38,7 @@
 
 Este é o portfólio pessoal do **Luis Zancanela**, desenvolvedor back-end com mais de 5 anos de experiência em desenvolvimento web. O site apresenta uma interface moderna e profissional, destacando as habilidades, experiências e projetos desenvolvidos ao longo da carreira.
 
-O projeto foi desenvolvido como uma oportunidade de demonstrar conhecimento em tecnologias modernas como Next.js 15, React 19, TypeScript e Tailwind CSS, aplicando os melhores padrões de desenvolvimento web, performance e acessibilidade. Para configurações rápidas, consulte o [RESEND.md](docs/RESEND.md).
+O projeto foi desenvolvido como uma oportunidade de demonstrar conhecimento em tecnologias modernas como Next.js 16, React 19, TypeScript e Tailwind CSS, aplicando os melhores padrões de desenvolvimento web, performance e acessibilidade. Para configurações rápidas, consulte o [RESEND.md](docs/RESEND.md).
 
 ### 🎯 Objetivos do Projeto
 
@@ -52,7 +52,7 @@ O projeto foi desenvolvido como uma oportunidade de demonstrar conhecimento em t
 
 ## ✨ Características
 
-- ⚡ **Framework Moderno**: Construído com Next.js 15 e React 19
+- ⚡ **Framework Moderno**: Construído com Next.js 16 e React 19
 - 🎨 **Design Profissional**: Interface moderna e responsiva com Tailwind CSS
 - 🌙 **Tema Dinâmico**: Alternância entre modo claro e escuro
 - 📧 **Formulário Integrado**: Envio de emails automático com Resend
@@ -68,10 +68,10 @@ O projeto foi desenvolvido como uma oportunidade de demonstrar conhecimento em t
 ## 🛠️ Tecnologias
 
 ### Tecnologias Principais
-- **[Next.js](https://nextjs.org/)** (v15.5.2) - Framework React com App Router
-- **[React](https://reactjs.org/)** (v19.1.0) - Biblioteca para UI
+- **[Next.js](https://nextjs.org/)** (v16.2.10) - Framework React com App Router
+- **[React](https://reactjs.org/)** (v19.2.4) - Biblioteca para UI
 - **[TypeScript](https://www.typescriptlang.org/)** (v5) - Tipagem estática
-- **[Tailwind CSS](https://tailwindcss.com/)** (v3.4) - Framework CSS utility-first
+- **[Tailwind CSS](https://tailwindcss.com/)** (v4.2.2) - Framework CSS utility-first
 
 ### Bibliotecas Adicionais
 - **[Radix UI](https://www.radix-ui.com/)** - Componentes acessíveis
@@ -94,33 +94,34 @@ O projeto foi desenvolvido como uma oportunidade de demonstrar conhecimento em t
 
 ```
 src/
-├── app/                    # App Router do Next.js
-│   ├── api/               # API Routes
-│   │   ├── send-email/    # Endpoint para envio de emails
-│   │   ├── test-resend/   # Teste da integração Resend
-│   │   └── github/        # Integração com GitHub
-│   ├── og-image/          # Geração de Open Graph images
-│   ├── globals.css        # Estilos globais
-│   ├── layout.tsx         # Layout raiz
-│   ├── page.tsx           # Página principal
-│   ├── robots.ts          # Meta tags de robots
-│   └── sitemap.ts         # Mapa do site
-├── components/            # Componentes React
-│   ├── About/            # Seção sobre
-│   ├── Contact/          # Formulário de contato
-│   ├── Experience/       # Experiência profissional
-│   ├── Footer/           # Rodapé
-│   ├── Header/           # Cabeçalho/navegação
-│   ├── Hero/             # Seção principal
-│   ├── Projects/         # Projetos realizados
-│   ├── Main/             # Layout principal
-│   ├── Section/          # Componente de seção
-│   ├── ThemeToggle/      # Alternador de tema
-│   ├── providers/        # Providers (tema, etc.)
-│   ├── OptimizedImage.tsx  # Componente de imagem otimizada
-│   ├── SEOHead.tsx        # Cabeçalho com SEO
-│   ├── StructuredData.tsx # Schema markup
-│   └── ui/               # Componentes base de UI
+├── app/                      # App Router do Next.js
+│   ├── api/                  # API Routes (server actions)
+│   │   ├── send-email/       # Envio de emails via Resend
+│   │   ├── test-resend/      # Endpoint de teste da integração Resend
+│   │   └── github/           # Integração com GitHub (webhooks/testes)
+│   ├── og-image/             # Geração de imagens Open Graph
+│   ├── globals.css           # Estilos globais
+│   ├── layout.tsx            # Layout raiz da aplicação
+│   ├── page.tsx              # Página principal
+│   ├── robots.ts             # Configuração de robots.txt
+│   └── sitemap.ts            # Geração automática de sitemap
+│
+├── components/               # Componentes reutilizáveis
+│   ├── About/                # Seção "Sobre"
+│   ├── Contact/              # Formulário de contato
+│   ├── Experience/           # Experiência profissional
+│   ├── Footer/               # Rodapé
+│   ├── Header/               # Navegação
+│   ├── Hero/                 # Seção principal
+│   ├── Projects/             # Projetos em destaque
+│   ├── Main/                 # Layout principal
+│   ├── Section/              # Wrapper de seções
+│   ├── ThemeToggle/          # Alternância de tema
+│   ├── providers/            # Providers globais (tema, etc.)
+│   ├── OptimizedImage.tsx    # Componente de imagem otimizada
+│   ├── SEOHead.tsx           # SEO e meta tags
+│   ├── StructuredData.tsx    # Schema.org / JSON-LD
+│   └── ui/                   # Componentes base de UI (design system)
 │       ├── Badge/
 │       ├── Button/
 │       ├── Card/
@@ -130,19 +131,23 @@ src/
 │       ├── Textarea/
 │       ├── Toast/
 │       └── Toaster/
-├── emails/               # Templates de email
+│
+├── emails/                   # Templates de email (React Email)
 │   ├── confirmation-email.tsx
 │   └── contact-form-email.tsx
-├── hooks/                # Custom hooks
+│
+├── hooks/                    # Hooks personalizados
 │   ├── use-toast.ts
 │   ├── useActiveSection.ts
 │   └── useSEO.ts
-├── lib/                  # Utilitários e configurações
-│   ├── appConfig.ts
-│   ├── metadata.ts
-│   ├── urls.ts
-│   └── utils.ts
-└── public/              # Arquivos estáticos
+│
+├── lib/                      # Utilitários e configurações
+│   ├── appConfig.ts          # Configurações globais
+│   ├── metadata.ts           # Metadados de SEO
+│   ├── urls.ts               # URLs centralizadas
+│   └── utils.ts              # Funções utilitárias
+│
+└── public/                   # Arquivos estáticos (imagens, ícones, fontes)
 ```
 
 ### Componentes Principais
