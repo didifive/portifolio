@@ -87,9 +87,9 @@
     "subtitle": "APIs críticas • Microsserviços • Integrações • Cloud • React/Next.js quando o desafio pede uma interface forte",
     "description": "Transformo sistemas complexos em soluções estáveis, escaláveis e fáceis de evoluir. Meu foco está em backend Java, mas eu também entrego front-end com experiência real em UX, performance e consistência visual.",
     "stats": {
-      "it": "{years}+ anos em TI",
+      "it": "{years}+ anos",
       "itLabel": "de experiência em TI",
-      "dev": "{years}+ anos como dev",
+      "dev": "{years}+ anos",
       "devLabel": "de experiência como dev",
       "endToEnd": "Soluções end-to-end"
     },

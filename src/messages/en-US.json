@@ -87,9 +87,9 @@
     "subtitle": "Critical APIs • Microservices • Integrations • Cloud • React/Next.js when the challenge needs a strong interface",
     "description": "I turn complex systems into stable, scalable, and easy-to-evolve solutions. My focus is backend Java, but I also deliver front-end work with real UX, performance, and visual consistency awareness.",
     "stats": {
-      "it": "{years}+ years in IT",
+      "it": "{years}+ years",
       "itLabel": "of experience in IT",
-      "dev": "{years}+ years as a dev",
+      "dev": "{years}+ years",
       "devLabel": "of experience as a dev",
       "endToEnd": "End-to-end solutions"
     },

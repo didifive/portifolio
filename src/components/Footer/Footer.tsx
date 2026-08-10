@@ -8,7 +8,7 @@ import {
 import { Button } from "../ui/Button";
 import { urls } from "@/lib/urls";
 import { appConfig } from "@/lib/appConfig";
-import { currentYear } from "@/lib/utils";
+import { getCopyRightYearsDisplay } from "@/lib/utils";
 import { useTranslations } from "next-intl";
 
 export const Footer = () => {
@@ -143,7 +143,7 @@ export const Footer = () => {
           <div className="border-t pt-8">
             <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
               <div className="text-sm text-muted-foreground">
-                © {currentYear} Luis Zancanela. {t("copyright")}
+                © {getCopyRightYearsDisplay()} Luis Zancanela. {t("copyright")}
               </div>
               <div className="text-xs text-muted-foreground">
                 v{appConfig.version}
