@@ -1,3 +1,10 @@
+# [1.7.0](https://github.com/didifive/portifolio/compare/v1.6.0...v1.7.0) (2026-08-10)
+
+
+### Features
+
+* update footer copyyears ([759e2ed](https://github.com/didifive/portifolio/commit/759e2ede76b983cf94a7d3e2a675634352b7ebde))
+
 # [1.6.0](https://github.com/didifive/portifolio/compare/v1.5.0...v1.6.0) (2026-07-18)
 
 
