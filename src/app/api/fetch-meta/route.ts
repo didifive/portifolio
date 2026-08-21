@@ -1,6 +1,11 @@
 import { NextResponse } from "next/server";
 
-const ALLOWED_HOSTS = new Set(["vetorpessoal.com.br", "www.vetorpessoal.com.br"].map(h => h.toLowerCase()));
+const ALLOWED_HOSTS = new Set([
+  "vetorpessoal.com.br",
+  "www.vetorpessoal.com.br",
+  "legisvisao.com.br",
+  "www.legisvisao.com.br",
+].map(h => h.toLowerCase()));
 
 function extractMeta(html: string) {
   const ogTitle = /<meta\s+property=["']og:title["']\s+content=["']([^"']+)["']\s*\/??>/i.exec(html)?.[1];

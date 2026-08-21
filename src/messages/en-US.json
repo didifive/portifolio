@@ -112,6 +112,10 @@
           "title": "Vetor Pessoal",
           "description": "More than a resume: organize your journey, achievements, and goals — and also discover and plan your life and career purpose. Grow through self‑knowledge, purpose, and impact."
         },
+        "legisvisao": {
+          "title": "LegisVisão",
+          "description": "Civic and independent platform to discover political affinity with Federal Deputies and Parties based on real roll-call votes in the Chamber of Deputies with 100% Local-First privacy."
+        },
         "genius": {
           "title": "Genius",
           "description": "A memory game inspired by the classic Genius. Uses JavaScript, HTML, and CSS to study logic, DOM manipulation, and event handling."

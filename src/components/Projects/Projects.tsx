@@ -52,7 +52,9 @@ export const Projects = () => {
   ]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  const [featuredMeta, setFeaturedMeta] = useState<{ title?: string | null; description?: string | null; image?: string | null } | null>(null);
+  const [featuredMetaMap, setFeaturedMetaMap] = useState<
+    Record<string, { title?: string | null; description?: string | null; image?: string | null }>
+  >({});
   const [carouselLayout, setCarouselLayout] = useState<CarouselLayout>({
     featuredItemsPerPage: 1,
     githubItemsPerPage: 1,
@@ -74,14 +76,25 @@ export const Projects = () => {
     () => [
       {
         id: "vetor-pessoal",
-        title: featuredMeta?.title ?? t("highlighted.items.vetorPessoal.title"),
+        title: featuredMetaMap["vetor-pessoal"]?.title ?? t("highlighted.items.vetorPessoal.title"),
         description: t("highlighted.items.vetorPessoal.description"),
-        image: featuredMeta?.image,
+        image: featuredMetaMap["vetor-pessoal"]?.image,
         href: "https://vetorpessoal.com.br",
         badge: "Website",
         backgroundColor: "#0F172A",
-        publishedAt: "2024-02-14",
-        updatedAt: "2024-10-03",
+        publishedAt: "2026-01-15",
+        updatedAt: "2026-08-20",
+      },
+      {
+        id: "legisvisao",
+        title: featuredMetaMap["legisvisao"]?.title ?? t("highlighted.items.legisvisao.title"),
+        description: t("highlighted.items.legisvisao.description"),
+        image: featuredMetaMap["legisvisao"]?.image,
+        href: "https://legisvisao.com.br",
+        badge: "Web App",
+        backgroundColor: "#022C22",
+        publishedAt: "2026-08-17",
+        updatedAt: "2026-08-21",
       },
       {
         id: "jungle-ir",
@@ -106,7 +119,7 @@ export const Projects = () => {
         updatedAt: "2022-02-01",
       },
     ],
-    [featuredMeta]
+    [featuredMetaMap, t]
   );
 
 
@@ -132,14 +145,25 @@ export const Projects = () => {
     }
 
     async function fetchFeaturedMeta() {
-      try {
-        const resp = await fetch("/api/fetch-meta?url=https://vetorpessoal.com.br");
-        if (!resp.ok) return;
-        const json = await resp.json();
-        if (json?.ok && json.meta) setFeaturedMeta(json.meta);
-      } catch {
-        // ignore
-      }
+      const urls = [
+        { id: "vetor-pessoal", url: "https://vetorpessoal.com.br" },
+        { id: "legisvisao", url: "https://legisvisao.com.br" },
+      ];
+
+      await Promise.all(
+        urls.map(async ({ id, url }) => {
+          try {
+            const resp = await fetch(`/api/fetch-meta?url=${encodeURIComponent(url)}`);
+            if (!resp.ok) return;
+            const json = await resp.json();
+            if (json?.ok && json.meta) {
+              setFeaturedMetaMap((prev) => ({ ...prev, [id]: json.meta }));
+            }
+          } catch {
+            // ignore
+          }
+        })
+      );
     }
 
     fetchProjects();
@@ -162,7 +186,14 @@ export const Projects = () => {
     const homepage = (project.homepage || "").toLowerCase();
     const html = (project.html_url || "").toLowerCase();
 
-    if (name.includes("vetor") || homepage.includes("vetorpessoal") || html.includes("vetorpessoal")) {
+    if (
+      name.includes("vetor") ||
+      homepage.includes("vetorpessoal") ||
+      html.includes("vetorpessoal") ||
+      name.includes("legisvisao") ||
+      homepage.includes("legisvisao") ||
+      html.includes("legisvisao")
+    ) {
       return false;
     }
 
