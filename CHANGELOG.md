@@ -1,3 +1,11 @@
+# [1.8.0](https://github.com/didifive/portifolio/compare/v1.7.0...v1.8.0) (2026-08-22)
+
+
+### Features
+
+* add GitHub Actions workflow for automated semantic releases ([38619f1](https://github.com/didifive/portifolio/commit/38619f165221e4af109809c0c1523c52f0ea2261))
+* implement project showcase and localization support while upgrading dependencies and configuring test environment ([eacc836](https://github.com/didifive/portifolio/commit/eacc8363f9a9682626060f5650e3d04cc54f6863))
+
 # [1.7.0](https://github.com/didifive/portifolio/compare/v1.6.0...v1.7.0) (2026-08-10)
 
 
