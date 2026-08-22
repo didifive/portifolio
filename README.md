@@ -3,7 +3,7 @@
 # Portfólio - Luis Zancanela
 
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-[![Next.js](https://img.shields.io/badge/Next.js-16.2.10-black?logo=next.js)](https://nextjs.org/)
+[![Next.js](https://img.shields.io/badge/Next.js-16.3.2-black?logo=next.js)](https://nextjs.org/)
 [![React](https://img.shields.io/badge/React-19.2.4-61DAFB?logo=react)](https://reactjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.9.3-3178C6?logo=typescript)](https://www.typescriptlang.org/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4.2.2-06B6D4?logo=tailwind-css)](https://tailwindcss.com/)
@@ -38,53 +38,53 @@
 
 Este é o portfólio pessoal do **Luis Zancanela**, desenvolvedor back-end com mais de 5 anos de experiência em desenvolvimento web. O site apresenta uma interface moderna e profissional, destacando as habilidades, experiências e projetos desenvolvidos ao longo da carreira.
 
-O projeto foi desenvolvido como uma oportunidade de demonstrar conhecimento em tecnologias modernas como Next.js 16, React 19, TypeScript e Tailwind CSS, aplicando os melhores padrões de desenvolvimento web, performance e acessibilidade. Para configurações rápidas, consulte o [RESEND.md](docs/RESEND.md).
+O projeto foi desenvolvido como uma oportunidade de demonstrar conhecimento em tecnologias modernas como Next.js 16, React 19, TypeScript e Tailwind CSS, aplicando os melhores padrões de desenvolvimento web, internacionalização, performance e acessibilidade. Para configurações rápidas de email, consulte o [RESEND.md](docs/RESEND.md).
 
 ### 🎯 Objetivos do Projeto
 
-- Apresentar um portfólio profissional e responsivo
+- Apresentar um portfólio profissional, multilíngue e responsivo
 - Demonstrar habilidades com tecnologias modernas do mercado
-- Facilitar o contato através de formulário de mensagens
-- Implementar boas práticas de SEO e acessibilidade
-- Otimizar performance e experiência do usuário
+- Facilitar o contato através de formulário de mensagens integrado
+- Destacar projetos ativos na web com metadados dinâmicos e e-books técnicos
+- Implementar boas práticas de SEO, acessibilidade e performance
+- Otimizar a experiência do usuário com micro-interações e tema adaptativo
 
 ---
 
 ## ✨ Características
 
-- ⚡ **Framework Moderno**: Construído com Next.js 16 e React 19
+- ⚡ **Framework Moderno**: Construído com Next.js 16 (Turbopack) e React 19
+- 🌐 **Internacionalização (i18n)**: Suporte completo a múltiplos idiomas (`pt-BR` e `en-US`) com `next-intl`
 - 🎨 **Design Profissional**: Interface moderna e responsiva com Tailwind CSS
-- 🌙 **Tema Dinâmico**: Alternância entre modo claro e escuro
-- 📧 **Formulário Integrado**: Envio de emails automático com Resend
-- 🚀 **Performance Otimizada**: Build optimizado e carregamento rápido
-- ♿ **Acessibilidade**: Componentes WCAG 2.1 AA compliant
-- 📱 **Responsivo**: Funciona perfeitamente em todos os dispositivos
-- 🔍 **SEO Otimizado**: Meta tags estruturadas e schema markup
-- 🎯 **UX Focado**: Animações suaves e micro-interações
-- 📊 **Análise Integrada**: Métricas de desempenho monitoradas
+- 🌙 **Tema Dinâmico**: Alternância fluida entre modo claro e escuro com persistência
+- 🚀 **Projetos e E-books**: Carrosséis interativos com projetos em destaque, busca dinâmica de OpenGraph, e-books e repositórios GitHub
+- 📧 **Formulário Integrado**: Envio automático e confirmação de emails com Resend
+- ⚡ **Performance Otimizada**: Imagens sob demanda, geração estática (SSG) e build ultrarrápido
+- ♿ **Acessibilidade**: Componentes baseados em Radix UI e diretrizes WCAG 2.1 AA
+- 📱 **100% Responsivo**: Experiência fluida em mobile, tablets e desktops
+- 🔍 **SEO Completo**: Meta tags Open Graph dinâmicas, Sitemap, Robots e dados estruturados (Schema.org / JSON-LD)
 
 ---
 
 ## 🛠️ Tecnologias
 
 ### Tecnologias Principais
-- **[Next.js](https://nextjs.org/)** (v16.2.10) - Framework React com App Router
-- **[React](https://reactjs.org/)** (v19.2.4) - Biblioteca para UI
-- **[TypeScript](https://www.typescriptlang.org/)** (v5) - Tipagem estática
-- **[Tailwind CSS](https://tailwindcss.com/)** (v4.2.2) - Framework CSS utility-first
+- **[Next.js](https://nextjs.org/)** (v16.3.2) - Framework React com App Router e Turbopack
+- **[React](https://reactjs.org/)** (v19.2.4) - Biblioteca para interfaces declarativas
+- **[TypeScript](https://www.typescriptlang.org/)** (v5.9.3) - Tipagem estática robusta
+- **[Tailwind CSS](https://tailwindcss.com/)** (v4.2.2) - Framework CSS utility-first moderno
 
 ### Bibliotecas Adicionais
-- **[Radix UI](https://www.radix-ui.com/)** - Componentes acessíveis
-- **[React Email](https://react.email/)** - Templates de email
-- **[React Hook Form](https://react-hook-form.com/)** - Gerenciamento de formulários
-- **[Zod](https://zod.dev/)** - Validação de schema
-- **[Next Themes](https://github.com/pacocoursey/next-themes)** - Sistema de temas
-- **[Resend](https://resend.com/)** - Serviço de envio de emails
+- **[next-intl](https://next-intl.dev/)** - Internacionalização e roteamento localizado
+- **[Radix UI](https://www.radix-ui.com/)** - Componentes de acessibilidade primitives
+- **[React Hook Form](https://react-hook-form.com/)** & **[Zod](https://zod.dev/)** - Validação de formulários com tipagem
+- **[Next Themes](https://github.com/pacocoursey/next-themes)** - Gerenciamento de tema claro/escuro
+- **[Resend](https://resend.com/)** & **[React Email](https://react.email/)** - Envio e templates de email
 
 ### Ferramentas de Desenvolvimento
 - **[ESLint](https://eslint.org/)** - Análise estática de código
-- **[Jest](https://jestjs.io/)** - Framework de testes
-- **[TypeScript](https://www.typescriptlang.org/)** - Verificação de tipos
+- **[Jest](https://jestjs.io/)** & **[Testing Library](https://testing-library.com/)** - Testes unitários e de componentes
+- **[Semantic Release](https://semantic-release.gitbook.io/)** - Versionamento semântico automatizado
 
 ---
 
@@ -95,70 +95,63 @@ O projeto foi desenvolvido como uma oportunidade de demonstrar conhecimento em t
 ```
 src/
 ├── app/                      # App Router do Next.js
-│   ├── api/                  # API Routes (server actions)
+│   ├── [locale]/             # Rotas localizadas (/pt-BR e /en-US)
+│   │   ├── layout.tsx        # Layout específico do locale com providers
+│   │   └── page.tsx          # Página principal renderizada
+│   ├── api/                  # API Routes
+│   │   ├── fetch-meta/       # Extração dinâmica e segura de OpenGraph (Vetor Pessoal, LegisVisão)
+│   │   ├── github/           # Integração com GitHub API para projetos públicos
+│   │   ├── pdf-proxy/        # Proxy com cache em memória para visualização de PDFs
 │   │   ├── send-email/       # Envio de emails via Resend
-│   │   ├── test-resend/      # Endpoint de teste da integração Resend
-│   │   └── github/           # Integração com GitHub (webhooks/testes)
-│   ├── og-image/             # Geração de imagens Open Graph
-│   ├── globals.css           # Estilos globais
+│   │   └── test-resend/      # Endpoint de teste de conectividade Resend
+│   ├── og-image/             # Geração de imagens Open Graph dinâmicas
+│   ├── globals.css           # Estilos globais e tokens de cores
 │   ├── layout.tsx            # Layout raiz da aplicação
-│   ├── page.tsx              # Página principal
-│   ├── robots.ts             # Configuração de robots.txt
-│   └── sitemap.ts            # Geração automática de sitemap
+│   ├── page.tsx              # Redirecionamento inicial de locale
+│   ├── robots.ts             # Geração de robots.txt
+│   └── sitemap.ts            # Geração automática de sitemap multilíngue
 │
 ├── components/               # Componentes reutilizáveis
 │   ├── About/                # Seção "Sobre"
-│   ├── Contact/              # Formulário de contato
-│   ├── Experience/           # Experiência profissional
-│   ├── Footer/               # Rodapé
-│   ├── Header/               # Navegação
-│   ├── Hero/                 # Seção principal
-│   ├── Projects/             # Projetos em destaque
-│   ├── Main/                 # Layout principal
-│   ├── Section/              # Wrapper de seções
-│   ├── ThemeToggle/          # Alternância de tema
-│   ├── providers/            # Providers globais (tema, etc.)
+│   ├── Contact/              # Formulário de contato funcional
+│   ├── Experience/           # Linha do tempo e experiência profissional
+│   ├── Footer/               # Rodapé com links e informações
+│   ├── Header/               # Barra de navegação responsiva
+│   ├── Hero/                 # Apresentação principal
+│   ├── LanguageSwitcher/     # Seletor de idioma (pt-BR / en-US)
+│   ├── Main/                 # Estrutura do layout principal
+│   ├── Projects/             # Showcase (Destaques, E-books e GitHub)
+│   ├── Section/              # Wrapper padronizado de seções
+│   ├── ThemeToggle/          # Alternância de tema claro/escuro
+│   ├── providers/            # Providers globais (NextThemes, etc.)
 │   ├── OptimizedImage.tsx    # Componente de imagem otimizada
-│   ├── SEOHead.tsx           # SEO e meta tags
-│   ├── StructuredData.tsx    # Schema.org / JSON-LD
-│   └── ui/                   # Componentes base de UI (design system)
-│       ├── Badge/
-│       ├── Button/
-│       ├── Card/
-│       ├── Form/
-│       ├── Input/
-│       ├── Label/
-│       ├── Textarea/
-│       ├── Toast/
-│       └── Toaster/
+│   ├── SEOHead.tsx           # Tags de SEO
+│   ├── StructuredData.tsx    # Schema.org / JSON-LD estruturado
+│   └── ui/                   # Design system e componentes base (Radix/Tailwind)
 │
 ├── emails/                   # Templates de email (React Email)
 │   ├── confirmation-email.tsx
 │   └── contact-form-email.tsx
 │
-├── hooks/                    # Hooks personalizados
-│   ├── use-toast.ts
-│   ├── useActiveSection.ts
-│   └── useSEO.ts
-│
-├── lib/                      # Utilitários e configurações
-│   ├── appConfig.ts          # Configurações globais
-│   ├── metadata.ts           # Metadados de SEO
-│   ├── urls.ts               # URLs centralizadas
-│   └── utils.ts              # Funções utilitárias
-│
-└── public/                   # Arquivos estáticos (imagens, ícones, fontes)
+├── hooks/                    # Hooks personalizados (use-toast, useActiveSection, etc.)
+├── i18n/                     # Configuração de internacionalização (routing, request, navigation)
+├── lib/                      # Utilitários, URLs centralizadas e metadados
+├── messages/                 # Dicionários de tradução (pt-BR.json, en-US.json)
+└── public/                   # Arquivos estáticos (imagens, ícones, bandeiras, e-books)
 ```
 
 ### Componentes Principais
 
-- **Hero**: Seção de apresentação principal com foto e informações
-- **About**: Histórico pessoal e profissional
-- **Experience**: Trajetória profissional e habilidades técnicas
-- **Projects**: Showcase de projetos destacados
-- **Contact**: Formulário funcional de contato
-- **Footer**: Links sociais e informações de rodapé
-- **ThemeToggle**: Sistema de alternância entre temas
+- **Hero**: Apresentação visual de impacto com links diretos e estatísticas
+- **About**: Resumo da trajetória, jornada profissional e principais competências
+- **Experience**: Linha do tempo detalhada com empresas, tecnologias e responsabilidades
+- **Projects**: Showcase completo dividido em:
+  - *Projetos em Destaque*: Plataformas online reais (**Vetor Pessoal**, **LegisVisão**) com extração automática de OpenGraph e jogos interativos (**Jungle IR**, **Genius**).
+  - *E-books Publicados*: Obras técnicas publicadas no LinkedIn sobre Java Bushidō, Kubernetes e Apache Camel.
+  - *Projetos GitHub*: Repositórios públicos buscados dinamicamente via GitHub API.
+- **Contact**: Formulário validado com feedback visual e envio assíncrono
+- **LanguageSwitcher**: Alternância fluida de idioma entre Português e Inglês
+- **ThemeToggle**: Controle dinâmico de tema claro e escuro
 
 ---
 

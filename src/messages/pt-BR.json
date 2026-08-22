@@ -112,6 +112,10 @@
           "title": "Vetor Pessoal",
           "description": "Mais do que currículo: organize sua trajetória, conquistas e metas, mas também descubra e planeje seu propósito de vida e carreira. Evolua com autoconhecimento, propósito e impacto."
         },
+        "legisvisao": {
+          "title": "LegisVisão",
+          "description": "Plataforma cívica e transparente para descobrir afinidade com Deputados Federais e Partidos com base em votações nominais reais no Plenário da Câmara dos Deputados de forma 100% privada (Local-First)."
+        },
         "genius": {
           "title": "Genius",
           "description": "Jogo de memória inspirado no clássico Genius. Utiliza JavaScript, HTML e CSS para estudo de lógica, manipulação do DOM e eventos."

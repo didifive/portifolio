@@ -57,12 +57,6 @@ function FeaturedProjectCard({ project }: Readonly<{ project: FeaturedProject }>
               {project.publishedAt && (
                 <span>{t("highlighted.labels.publishedOn")} {formatDate(project.publishedAt, locale)}</span>
               )}
-              {project.publishedAt && project.updatedAt && (
-                <span> • </span>
-              )}
-              {project.updatedAt && (
-                <span>{t("highlighted.labels.updatedOn")} {formatDate(project.updatedAt, locale)}</span>
-              )}
             </div>
             <div className="mt-auto flex gap-2 items-center">
               <Badge variant="secondary" className="text-xs">
