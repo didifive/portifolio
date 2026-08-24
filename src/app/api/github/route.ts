@@ -36,7 +36,7 @@ export async function GET() {
     return NextResponse.json(cachedData);
   }
 
-  const GITHUB_TOKEN = process.env.NEXT_PUBLIC_GITHUB_TOKEN;
+  const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
   const username = "didifive";
   const projectLimit = 6;
   const itemsPerPage = 100;
