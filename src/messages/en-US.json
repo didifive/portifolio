@@ -108,6 +108,10 @@
         "visitSite": "Visit Site"
       },
       "items": {
+        "pubMecha": {
+          "title": "PubMecha",
+          "description": "Hub for creating, reviewing, and publishing messages on Telegram, WhatsApp, and Discord with data saved exclusively on your device ."
+        },
         "vetorPessoal": {
           "title": "Vetor Pessoal",
           "description": "More than a resume: organize your journey, achievements, and goals — and also discover and plan your life and career purpose. Grow through self‑knowledge, purpose, and impact."

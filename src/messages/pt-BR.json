@@ -108,6 +108,10 @@
         "visitSite": "Visitar"
       },
       "items": {
+        "pubMecha": {
+          "title": "PubMecha",
+          "description": "Hub para criar, revisar e publicar mensagens em Telegram, WhatsApp e Discord com dados salvos exclusivamente no seu dispositivo."
+        },
         "vetorPessoal": {
           "title": "Vetor Pessoal",
           "description": "Mais do que currículo: organize sua trajetória, conquistas e metas, mas também descubra e planeje seu propósito de vida e carreira. Evolua com autoconhecimento, propósito e impacto."
