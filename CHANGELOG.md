@@ -1,3 +1,10 @@
+# [1.9.0](https://github.com/didifive/portifolio/compare/v1.8.0...v1.9.0) (2026-09-10)
+
+
+### Features
+
+* add pubmecha ([93add0e](https://github.com/didifive/portifolio/commit/93add0e2a7d486221ea239d2493abd303b06ee18))
+
 # [1.8.0](https://github.com/didifive/portifolio/compare/v1.7.0...v1.8.0) (2026-08-22)
 
 
