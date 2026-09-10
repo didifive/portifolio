@@ -52,9 +52,6 @@ export const Projects = () => {
   ]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  const [featuredMetaMap, setFeaturedMetaMap] = useState<
-    Record<string, { title?: string | null; description?: string | null; image?: string | null }>
-  >({});
   const [carouselLayout, setCarouselLayout] = useState<CarouselLayout>({
     featuredItemsPerPage: 1,
     githubItemsPerPage: 1,
@@ -75,21 +72,32 @@ export const Projects = () => {
   const featuredProjects = useMemo<FeaturedProject[]>(
     () => [
       {
+        id: "pubMecha",
+        title: t("highlighted.items.pubMecha.title"),
+        description: t("highlighted.items.pubMecha.description"),
+        image: "/projects/pubmecha.png",
+        href: "https://www.pubmecha.com.br",
+        badge: "Web App",
+        backgroundColor: "#0B0F17",
+        publishedAt: "2026-09-06",
+        updatedAt: "2026-09-10",
+      },
+      {
         id: "vetor-pessoal",
-        title: featuredMetaMap["vetor-pessoal"]?.title ?? t("highlighted.items.vetorPessoal.title"),
+        title: t("highlighted.items.vetorPessoal.title"),
         description: t("highlighted.items.vetorPessoal.description"),
-        image: featuredMetaMap["vetor-pessoal"]?.image,
+        image: "/projects/vetor-pessoal.png",
         href: "https://vetorpessoal.com.br",
-        badge: "Website",
+        badge: "Web App",
         backgroundColor: "#0F172A",
         publishedAt: "2026-01-15",
         updatedAt: "2026-08-20",
       },
       {
         id: "legisvisao",
-        title: featuredMetaMap["legisvisao"]?.title ?? t("highlighted.items.legisvisao.title"),
+        title: t("highlighted.items.legisvisao.title"),
         description: t("highlighted.items.legisvisao.description"),
-        image: featuredMetaMap["legisvisao"]?.image,
+        image: "/projects/legisvisao.png",
         href: "https://legisvisao.com.br",
         badge: "Web App",
         backgroundColor: "#022C22",
@@ -119,7 +127,7 @@ export const Projects = () => {
         updatedAt: "2022-02-01",
       },
     ],
-    [featuredMetaMap, t]
+    [t]
   );
 
 
@@ -144,30 +152,7 @@ export const Projects = () => {
       }
     }
 
-    async function fetchFeaturedMeta() {
-      const urls = [
-        { id: "vetor-pessoal", url: "https://vetorpessoal.com.br" },
-        { id: "legisvisao", url: "https://legisvisao.com.br" },
-      ];
-
-      await Promise.all(
-        urls.map(async ({ id, url }) => {
-          try {
-            const resp = await fetch(`/api/fetch-meta?url=${encodeURIComponent(url)}`);
-            if (!resp.ok) return;
-            const json = await resp.json();
-            if (json?.ok && json.meta) {
-              setFeaturedMetaMap((prev) => ({ ...prev, [id]: json.meta }));
-            }
-          } catch {
-            // ignore
-          }
-        })
-      );
-    }
-
     fetchProjects();
-    fetchFeaturedMeta();
   }, []);
 
   useEffect(() => {
