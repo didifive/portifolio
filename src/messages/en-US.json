@@ -108,6 +108,10 @@
         "visitSite": "Visit Site"
       },
       "items": {
+        "festometria": {
+          "title": "Festometria",
+          "description": "Calculate the exact amount of food, beverages, and disposable supplies for your event. Get a ready-to-shop list organized by supermarket package sizes."
+        },
         "pubMecha": {
           "title": "PubMecha",
           "description": "Hub for creating, reviewing, and publishing messages on Telegram, WhatsApp, and Discord with data saved exclusively on your device ."

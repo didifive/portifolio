@@ -1,6 +1,7 @@
 "use client";
 
 import type { RefObject } from "react";
+import Image from "next/image";
 import { Button } from "../ui/Button";
 import { Card, CardContent } from "../ui/Card";
 import { Badge } from "../ui/Badge";
@@ -26,7 +27,7 @@ function EbookCard({ ebook, cover, hasError }: Readonly<{ ebook: EbookItem; cove
   let coverContent: React.ReactNode;
 
   if (cover) {
-    coverContent = <img src={cover} alt={`Capa do ebook ${ebook.title}`} className="h-full w-full object-contain object-center" />;
+    coverContent = <Image src={cover} alt={`Capa do ebook ${ebook.title}`} className="h-full w-full object-contain object-center" />;
   } else if (hasError) {
     coverContent = <div className="flex h-full w-full items-center justify-center bg-transparent text-foreground/60 dark:text-white/60">Capa indisponível</div>;
   } else {

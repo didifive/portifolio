@@ -108,6 +108,10 @@
         "visitSite": "Visitar"
       },
       "items": {
+        "festometria": {
+          "title": "Festometria",
+          "description": "Calcule a quantidade exata de comidas, bebidas e descartáveis para o seu evento. Receba uma lista pronta em embalagens de supermercados."
+        },
         "pubMecha": {
           "title": "PubMecha",
           "description": "Hub para criar, revisar e publicar mensagens em Telegram, WhatsApp e Discord com dados salvos exclusivamente no seu dispositivo."
