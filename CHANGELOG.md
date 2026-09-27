@@ -1,3 +1,10 @@
+# [1.10.0](https://github.com/didifive/portifolio/compare/v1.9.0...v1.10.0) (2026-09-27)
+
+
+### Features
+
+* adiciona festometria e atualiza next ([4f06e85](https://github.com/didifive/portifolio/commit/4f06e85de6c91b01d3998f2ad49ef745868697d9))
+
 # [1.9.0](https://github.com/didifive/portifolio/compare/v1.8.0...v1.9.0) (2026-09-10)
 
 
