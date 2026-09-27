@@ -72,6 +72,17 @@ export const Projects = () => {
   const featuredProjects = useMemo<FeaturedProject[]>(
     () => [
       {
+        id: "festometria",
+        title: t("highlighted.items.festometria.title"),
+        description: t("highlighted.items.festometria.description"),
+        image: "/projects/festometria.png",
+        href: "https://www.festometria.com.br",
+        badge: "Web App",
+        backgroundColor: "#E8542F",
+        publishedAt: "2026-09-27",
+        updatedAt: "2026-09-27",
+      },
+      {
         id: "pubMecha",
         title: t("highlighted.items.pubMecha.title"),
         description: t("highlighted.items.pubMecha.description"),

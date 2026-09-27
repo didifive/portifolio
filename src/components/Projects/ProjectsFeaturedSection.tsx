@@ -1,4 +1,5 @@
 import type { RefObject } from "react";
+import Image from "next/image";
 import { Button } from "../ui/Button";
 import { Card, CardContent } from "../ui/Card";
 import { Badge } from "../ui/Badge";
@@ -28,7 +29,7 @@ function FeaturedProjectCard({ project }: Readonly<{ project: FeaturedProject }>
                 className="w-full aspect-[16/9] flex items-center justify-center bg-gray-900 dark:bg-gray-800 overflow-hidden"
                 style={{ backgroundColor: project.backgroundColor || "transparent" }}
               >
-                <img
+                <Image
                   src={project.image}
                   alt={project.title}
                   className="w-full h-full object-contain object-center"
